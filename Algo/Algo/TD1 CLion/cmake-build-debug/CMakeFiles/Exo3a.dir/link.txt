@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Exo3a.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Exo3a.dir/objects.a @CMakeFiles\Exo3a.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Exo3a.dir/objects.a -Wl,--no-whole-archive  -o Exo3a.exe -Wl,--out-implib,libExo3a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Exo3a.dir\linklibs.rsp

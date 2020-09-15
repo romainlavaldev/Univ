@@ -140,7 +140,7 @@ void ajouter(t_pers *pers, int *nb_pers)
     for (i = 0; i < *nb_pers; i++)
     {
 
-        if (*nom == *(pers[i].nom))
+        if (nom == pers[i].nom)
         {
             trouve = 1;
         }
@@ -152,7 +152,7 @@ void ajouter(t_pers *pers, int *nb_pers)
     else
     {
         printf("%s", nom); //debug
-        pers[*nb_pers].nom = nom;
+        *pers[*nb_pers].nom = nom;
         printf("Entrez la categorie du personnage (0,1,2,3) : ");
         scanf("%i", &(pers[*nb_pers].categ));
         printf("Entrez la position X du personnage : ");
@@ -178,7 +178,7 @@ void supprimer(t_pers *pers, int *nb_pers)
     for (i = 0; i < *nb_pers; i++)
     {
 
-        if (*nomPerso == *(pers[i].nom))
+        if (nomPerso == pers[i].nom)
         {
             indiceSuppr = i;
         }

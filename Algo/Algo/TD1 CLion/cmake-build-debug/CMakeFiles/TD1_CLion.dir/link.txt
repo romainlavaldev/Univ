@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\TD1_CLion.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\TD1_CLion.dir/objects.a @CMakeFiles\TD1_CLion.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\TD1_CLion.dir/objects.a -Wl,--no-whole-archive  -o TD1_CLion.exe -Wl,--out-implib,libTD1_CLion.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TD1_CLion.dir\linklibs.rsp
