@@ -1,0 +1,6 @@
+Exo1: Exo1.o pileTab.o
+    gcc -o Exo1 Exo1.o pileTab.o
+pileTab.o: pileTab.c
+    gcc -o pileTab.o pileTab.c
+Exo1.o: Exo1.c
+    gcc -o Exo1.o Exo1.c
