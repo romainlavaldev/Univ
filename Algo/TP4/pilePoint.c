@@ -1,12 +1,12 @@
-#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct element
+typedef struct elementPile
 {
     int valeur;
-    struct element *suivant;
-} t_element;
+    struct elementPile *suivant;
+} t_elementPile;
 
-t_element *pile;
+t_elementPile *pile;
 
 void initPile()
 {
@@ -20,9 +20,9 @@ int pileVide()
 
 void empiler(int n)
 {
-    t_element *nouv;
+    t_elementPile *nouv;
 
-    nouv = malloc(sizeof(t_element));
+    nouv = malloc(sizeof(t_elementPile));
     nouv->valeur = n;
     nouv->suivant = pile;
     pile = nouv;
@@ -30,7 +30,7 @@ void empiler(int n)
 
 void depiler(int *n)
 {
-    t_element *sommet;
+    t_elementPile *sommet;
     if (pile != NULL)
     {
         *n = pile->valeur;

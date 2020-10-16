@@ -1,0 +1,8 @@
+Exo3 : pileTab.o file.o tp4lab.o
+	gcc pileTab.o file.o tp4lab.o -o Exo3
+pileTab.o : pileTab.c
+	gcc -c pileTab.c
+file.o : file.c
+	gcc -c file.c
+tp4lab.o : tp4lab.c
+	gcc -c tp4lab.c
