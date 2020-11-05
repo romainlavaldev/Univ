@@ -1,0 +1,54 @@
+<body>
+    <h1>OUai c'est super</h1>
+    <p>On adore oui c'est trop génial wawawa ! tro bien j'adore les pates oui oui baguette</p>
+
+
+    <div>
+        <img src="https://lh3.googleusercontent.com/proxy/ieTWzzaGGfxmdXv3CdIWEFV0Z1jEDPdA2kvQ4NPQAcemLxaoJOqXMdxg5KdTUomAt7ff3sOZJfXjf66Q5LTUqXwmL_94rbLOtb0m3P_jL7Mqi3Cacw" alt="oui" id="imagechelou1">
+    </div>
+
+    <div>
+        <h1>les p'tits boutons leu</h1>
+        <button id="alerteBTN">Clique tout de suite</button><br>
+        <button id="jourBTN">jour</button>
+        <button id="nuitBTN">nuit</button>
+    </div>
+
+    <div>
+        <h1>Actions sur les p'tite images</h1>
+        fait passer sur le truc <br>
+        <img src="https://www.davidcouturier.fr/wp-content/uploads/2012/12/http-i.f1g.fr-media-ext-1900x1900-madame.lefigaro.fr-sites-default-files-img-2014-12-grumpy-cat.jpg" alt="non" id="imagechelou2">
+    </div>
+
+    <script>
+        let photo1 = document.getElementById("imagechelou1");
+        photo1.addEventListener("mouseover", function(){alert("Mais nan c'est fou !");});
+
+
+        let alerteBTN = document.getElementById("alerteBTN");
+        alerteBTN.addEventListener("click", function(){alert("vous avez cliqué (bravo)");});
+
+        function changeCouleurs(fond, police, h1){
+            document.documentElement.style.backgroundColor = fond;
+            document.documentElement.style.color = police;
+            let titres = document.getElementsByTagName('h1');
+            for (let i = 0; i < titres.length; i++) {
+                titres[i].style.color = h1;            
+            }
+        }
+
+
+        document.getElementById("nuitBTN").addEventListener("click", function(){changeCouleurs('black', 'white', 'grey')});
+        document.getElementById("jourBTN").addEventListener("click", function(){changeCouleurs('white', 'black', 'black')});
+
+        let photo2 = document.getElementById("imagechelou2");
+        photo2.addEventListener("mouseover", function(){
+            photo2.src = 'https://ohmyup.com/wp-content/uploads/2020/03/acheter-des-carrotes.jpg';
+        });
+
+        photo2.addEventListener("mouseout", function(){
+            photo2.src = 'https://www.davidcouturier.fr/wp-content/uploads/2012/12/http-i.f1g.fr-media-ext-1900x1900-madame.lefigaro.fr-sites-default-files-img-2014-12-grumpy-cat.jpg';
+        });
+
+    </script>
+</body>

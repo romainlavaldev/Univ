@@ -1,0 +1,22 @@
+div.jeu {
+    height: 520px;
+    width:  520px;
+    margin: 2em auto 2em auto;
+}
+ div.case {
+  height: 100px;
+  width:  100px;
+  border: 1px solid black;
+  float: left;
+  margin: 10px;
+  background-color: #9999FF;
+}
+img {
+    height: 100px;
+    width:  100px;
+    visibility: hidden;
+}
+hr {
+    clear: both;
+    visibility: hidden;
+}
