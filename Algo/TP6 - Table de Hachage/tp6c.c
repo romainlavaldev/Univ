@@ -51,6 +51,20 @@ int est_present(int entier)
     return 0;
 }
 
+void supprimer(int entier)
+{
+    int i = hachage(entier);
+    t_element *p = table[i];
+    if (est_present(entier))
+    {
+        while (p->suivant->valeur != entier)
+        {
+            p = p->suivant;
+        }
+        p->suivant = p->suivant->suivant;
+    }
+}
+
 void insertion(void)
 {
     int nbr;
@@ -114,16 +128,18 @@ int main()
         printf("\n  Menu:\n");
         printf("1) Ajouter un element dans la table\n");
         printf("2) Rechercher un element dans la table\n");
-        printf("3) Quitter\n\n");
+
+        printf("3) Supprimer une valeur\n");
+        printf("4) Quitter\n\n");
 
         // lecture et v�rification du choix de l'utilisateur
         do
         {
-            printf("Votre choix [1-3] ? ");
+            printf("Votre choix [1-4] ? ");
             scanf("%d", &rep);
-            if (rep < 1 || rep > 3)
-                printf("Votre choix doit etre compris entre 1 et 3\n");
-        } while (rep < 1 || rep > 3);
+            if (rep < 1 || rep > 4)
+                printf("Votre choix doit etre compris entre 1 et 4\n");
+        } while (rep < 1 || rep > 4);
 
         // traitement du choix de l'utilisateur
         switch (rep)
@@ -134,16 +150,22 @@ int main()
         case 2:
             recherche();
             break;
-        case 3:
+        case 4:
         {
             printf("Au revoir!\n");
             break;
         }
+        case 3:
+            printf("Quelle valeur suppr ? : ");
+            int nbr;
+            scanf("%i", &nbr);
+            supprimer(nbr);
+            break;
         }
 
         if (debog)
             afficher_table();
-    } while (rep != 3);
+    } while (rep != 4);
 
     return EXIT_SUCCESS;
 }
