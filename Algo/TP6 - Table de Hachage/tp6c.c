@@ -55,13 +55,16 @@ void supprimer(int entier)
 {
     int i = hachage(entier);
     t_element *p = table[i];
+    t_element *old;
     if (est_present(entier))
     {
         while (p->suivant->valeur != entier)
         {
             p = p->suivant;
         }
+        old = p->suivant;
         p->suivant = p->suivant->suivant;
+        free(old);
     }
 }
 

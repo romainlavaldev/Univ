@@ -12,20 +12,79 @@ void vider_liste()
         init_liste(i);
 }
 
-int taille()
+int taille(int n)
 {
+    en_tete(n);
+    int i = 0;
+    while (!hors_liste(n))
+    {
+        i++;
+        suivant(n);
+    }
+    return i;
 }
 
 void saisie()
 {
+
+    int iliste, entier;
+    printf("Quelle liste ? : ");
+    scanf("%i", &iliste);
+    init_liste(iliste);
+    printf("Veuillez entrer un nombre entier par entier (-1 = fin): ");
+    en_tete(iliste);
+    scanf("%i", &entier);
+    while (entier != -1)
+    {
+
+        ajout_droit(iliste, entier);
+        scanf("%i", &entier);
+    }
 }
 
 void affichage()
 {
+    int iliste;
+    printf("Quelle liste ? : ");
+    scanf("%i", &iliste);
+
+    printf("entier numéro %i : ", iliste);
+    en_tete(iliste);
+    int nbrLu;
+    while (!hors_liste(iliste))
+    {
+        valeur_elt(iliste, &nbrLu);
+        printf("%i", nbrLu);
+        suivant(iliste);
+    }
 }
 
 void affectation(void)
 {
+    int ilisteSource, ilisteDest;
+    printf("Quelle liste ? : ");
+    scanf("%i", &ilisteSource);
+    printf("Dans quelle liste ? : ");
+    scanf("%i", &ilisteDest);
+
+    if (taille(ilisteSource) == 0)
+        printf("liste vide");
+
+    else if (taille(ilisteSource) < taille(ilisteDest))
+    {
+        init_liste(ilisteDest);
+
+        en_tete(ilisteSource);
+        en_tete(ilisteDest);
+        int vec;
+        while (!hors_liste(ilisteSource))
+        {
+            valeur_elt(ilisteSource, &vec);
+            modif_elt(ilisteDest, vec);
+            suivant(ilisteSource);
+            suivant(ilisteDest);
+        }
+    }
 }
 
 void comparaison(void)
