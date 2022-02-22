@@ -143,7 +143,7 @@ public class SuperChat3000Frame extends JFrame {
         }
 
         System.out.println("Connection réussie");
-        ChatManager manager = new ChatManager(serverConnexion, chatTextArea, messageTextField, sendBtn);
+        new ChatManager(serverConnexion, chatTextArea, messageTextField, sendBtn);
     }
 
 

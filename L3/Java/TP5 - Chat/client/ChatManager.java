@@ -5,7 +5,6 @@ import java.io.*;
 import java.net.Socket;
 
 public class ChatManager {
-    private Socket serverConnexion;
     private JTextArea chatTxtArea;
     private JTextField messageTxtField;
     private JButton sendBtn;
@@ -13,7 +12,6 @@ public class ChatManager {
     private BufferedWriter output;
 
     public ChatManager(Socket serverConnexion, JTextArea chatTxtArea, JTextField messageTxtField, JButton sendBtn) {
-        this.serverConnexion = serverConnexion;
         this.chatTxtArea = chatTxtArea;
         this.messageTxtField = messageTxtField;
         this.sendBtn = sendBtn;
