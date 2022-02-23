@@ -5,14 +5,14 @@ import java.io.*;
 import java.net.Socket;
 
 public class ChatManager {
-    private JTextArea chatTxtArea;
-    private JTextField messageTxtField;
-    private JButton sendBtn;
+    private final JTextPane chatTextPane;
+    private final JTextField messageTxtField;
+    private final JButton sendBtn;
     private BufferedReader input;
     private BufferedWriter output;
 
-    public ChatManager(Socket serverConnexion, JTextArea chatTxtArea, JTextField messageTxtField, JButton sendBtn) {
-        this.chatTxtArea = chatTxtArea;
+    public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient) {
+        this.chatTextPane = chatTextPane;
         this.messageTxtField = messageTxtField;
         this.sendBtn = sendBtn;
 
@@ -23,8 +23,17 @@ public class ChatManager {
             e.printStackTrace();
         }
 
-        ChatReader chatUpdate = new ChatReader(input, chatTxtArea);
+        ChatReader chatUpdate = new ChatReader(input, chatTextPane);
         chatUpdate.start();
+
+        try {
+            output.write(nomClient);
+            output.newLine();
+            output.flush();
+        }catch (IOException e){
+            System.err.println("Problème d'envoi du nom du client");
+            e.printStackTrace();
+        }
 
         sendBtn.addActionListener(new ActionListener() {
             @Override

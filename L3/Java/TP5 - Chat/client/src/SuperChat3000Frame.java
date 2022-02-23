@@ -1,4 +1,8 @@
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.Document;
+import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +14,7 @@ public class SuperChat3000Frame extends JFrame {
     JButton connexionBtn;{
         connexionBtn = new JButton("Connection");
         connexionBtn.setPreferredSize(new Dimension(20, 10));
+        connexionBtn.setEnabled(false);
     }
 
     JTextField nameTxtField;{
@@ -30,11 +35,12 @@ public class SuperChat3000Frame extends JFrame {
     }
 
     JList<Client> connectedList;{
-        connectedList = new JList<Client>();
+        connectedList = new JList<>();
     }
 
-    JTextArea chatTextArea;{
-        chatTextArea = new JTextArea();
+    JTextPane chatTextPane;{
+        chatTextPane = new JTextPane();
+        chatTextPane.addStyle("colorPrint", null);
     }
 
     JTextField messageTextField;{
@@ -49,7 +55,22 @@ public class SuperChat3000Frame extends JFrame {
 
     public SuperChat3000Frame(String name){
         super(name);
-        buildInterface();
+
+        DocumentListener dl = new DocumentAdapter(){
+            @Override
+            public void insertUpdate(DocumentEvent documentEvent) {
+                checkEmptyTextField();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent documentEvent) {
+                checkEmptyTextField();
+            }
+        };
+
+        nameTxtField.getDocument().addDocumentListener(dl);
+        ipTxtField.getDocument().addDocumentListener(dl);
+        portTxtField.getDocument().addDocumentListener(dl);
 
         connexionBtn.addActionListener(new ActionListener() {
             @Override
@@ -57,6 +78,17 @@ public class SuperChat3000Frame extends JFrame {
                 connect();
             }
         });
+
+
+        buildInterface();
+    }
+
+    private void checkEmptyTextField() {
+        if (!nameTxtField.getText().isBlank() && !ipTxtField.getText().isBlank() && !portTxtField.getText().isBlank()){
+            connexionBtn.setEnabled(true);
+        }else{
+            connexionBtn.setEnabled(false);
+        }
     }
 
     private void buildInterface(){
@@ -105,7 +137,7 @@ public class SuperChat3000Frame extends JFrame {
         //Center
         JPanel chatPanel = new VerticalPanel();
         chatPanel.add(new JLabel("Discussion"));
-        chatPanel.add(chatTextArea);
+        chatPanel.add(chatTextPane);
         chatPanel.add(new JLabel("Message"));
         chatPanel.add(messageTextField);
         chatPanel.add(sendBtn);
@@ -131,9 +163,9 @@ public class SuperChat3000Frame extends JFrame {
 
 
 
-        System.out.println(String.format("Tentative de connection : %s@%s -p %s", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText()));
+        System.out.printf("Tentative de connection : %s@%s -p %s%n", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText());
 
-        Socket serverConnexion = null;
+        Socket serverConnexion;
         try {
             serverConnexion = new Socket(ipTxtField.getText(), Integer.parseInt(portTxtField.getText()));
         } catch (IOException e) {
@@ -143,7 +175,7 @@ public class SuperChat3000Frame extends JFrame {
         }
 
         System.out.println("Connection réussie");
-        new ChatManager(serverConnexion, chatTextArea, messageTextField, sendBtn);
+        new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText());
     }
 
 
