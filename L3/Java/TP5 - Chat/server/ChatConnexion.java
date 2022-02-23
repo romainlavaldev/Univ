@@ -1,46 +1,63 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatConnexion extends Thread {
     
-    private String clientName;
-    private String clientColor;
-    private BufferedReader input;
-    private List<BufferedWriter> connectedClientsOutput;
+    private Client client;
+    private List<Client> connectedClients;
 
-    public ChatConnexion(String clientName, String clientColor, Socket clientConnexion, List<BufferedWriter> connectedClientsOutput){
-        this.clientColor = clientColor;
-        this.clientName = clientName;
-        this.connectedClientsOutput = connectedClientsOutput;
-        try {
-            input = new BufferedReader(new InputStreamReader(clientConnexion.getInputStream()));
-        } catch (IOException e) {
-            System.err.println("Erreur dans l'ouverture du tube avec le client");
-            e.printStackTrace();
-            return;
-        }
+    public ChatConnexion(Client client, List<Client> connectedClients){
+        
+        this.client = client;
+        this.connectedClients = connectedClients;
+        connectedClients.add(client);
+        System.out.printf("Client ajouté a la liste (%d)\n", connectedClients.size());
+
+        sendClientList();
 
         start();
     }
     
+    private void sendClientList() {
+
+        String data = "CLIENTLIST:";
+
+        System.out.printf("nb connectés : (%d)\n", connectedClients.size());
+
+        for (Client client : connectedClients) {
+            data += client.getColor() + "%55%" + client.getName() + "%23%";
+        }
+
+        for (Client client : connectedClients) {
+            try {
+                client.getOutput().write(data);
+                client.getOutput().newLine();
+                client.getOutput().flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public void run(){
         String line = "";
         
         while(true){
             try {
-                line = input.readLine();
+                line = client.getInput().readLine();
             } catch (IOException e) {
                 System.err.println("Erreur lecture message");
                 e.printStackTrace();
             }
             
-            for (BufferedWriter output : connectedClientsOutput) {
+            for (Client client : connectedClients) {
                 try {
-                    output.write(clientColor + ">>" + clientName + " - " + line);
-                    output.newLine();
-                    output.flush();
+                    client.getOutput().write(client.getColor() + ">>" + client.getName() + " - " + line);
+                    client.getOutput().newLine();
+                    client.getOutput().flush();
                 } catch (IOException e) {
                     System.err.println("Erreur envoi message");
                     e.printStackTrace();

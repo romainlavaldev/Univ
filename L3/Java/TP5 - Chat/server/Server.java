@@ -20,23 +20,23 @@ public class Server {
         listener = new ServerSocket(Integer.parseInt(args[0]));
         System.out.println("Ouerture du server sur le port " + args[0]);
 
-        List<BufferedWriter> connectedClientsOutput = new ArrayList<BufferedWriter>();
+        List<Client> connectedClients = new ArrayList<Client>();
 
 
-        Socket client = null;
+        Socket clientConnexion = null;
         while(true){
             //Attente d'un client
             System.out.println("Attente d'un nouveau client");
-            client = listener.accept();
-            System.out.printf("Client connected");
+            clientConnexion = listener.accept();
+            System.out.println("Client connected");
 
-            //Recuperatons des streams
-            BufferedReader input = null;
-            input = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            //Recuperatons du nom
+            BufferedReader input = new BufferedReader(new InputStreamReader(clientConnexion.getInputStream()));
+            BufferedWriter output = new BufferedWriter(new OutputStreamWriter(clientConnexion.getOutputStream()));
 
-            connectedClientsOutput.add(new BufferedWriter(new OutputStreamWriter(client.getOutputStream())));
+            Client client = new Client(output, input, input.readLine(), getRandomColor());
 
-            new ChatConnexion(input.readLine(), getRandomColor(), client, connectedClientsOutput);
+            new ChatConnexion(client, connectedClients);
         }
 
         //listener.close();
