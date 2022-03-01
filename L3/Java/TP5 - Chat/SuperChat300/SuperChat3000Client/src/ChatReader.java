@@ -118,9 +118,13 @@ public class ChatReader extends Thread{
                                     s = typingTextPane.getStyle("colorPrint");
                                     StyleConstants.setForeground(s, Color.decode(clientsMap.get(clientName)));
 
-                                    sDoc.insertString(sDoc.getLength(), messagePart + ", ", s);
+                                    sDoc.insertString(sDoc.getLength(), messagePart + " ", s);
                                 }
                             }
+
+                            s = typingTextPane.getStyle("colorPrint");
+                            StyleConstants.setForeground(s, Color.decode(clientsMap.get(clientName)));
+                            sDoc.insertString(sDoc.getLength(), " | ", s);
                         }
 
                     } else if (received.equals("%99%")){

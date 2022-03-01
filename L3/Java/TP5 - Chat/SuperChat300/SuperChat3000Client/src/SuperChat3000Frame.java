@@ -73,7 +73,7 @@ public class SuperChat3000Frame extends JFrame {
     JTextPane typingTextPane;{
         typingTextPane = new JTextPane();
         typingTextPane.addStyle("colorPrint", null);
-        chatTextPane.addStyle("emoteStyle", null);
+        typingTextPane.addStyle("emoteStyle", null);
 
         typingTextPane.setEditable(false);
     }
