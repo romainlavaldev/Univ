@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.io.*;
 
+
 public class Server {
 
     public static void main(String[] args) throws IOException {
@@ -18,7 +19,9 @@ public class Server {
         //Ouverture du server
         ServerSocket listener = null;
         listener = new ServerSocket(Integer.parseInt(args[0]));
-        System.out.println("Ouerture du server sur le port " + args[0]);
+
+
+        System.out.println("Ouerture du server sur le port " + args[0] + " addr : " + InetAddress.getLocalHost().getHostAddress());
 
         List<Client> connectedClients = new ArrayList<Client>();
 
@@ -34,9 +37,10 @@ public class Server {
             BufferedReader input = new BufferedReader(new InputStreamReader(clientConnexion.getInputStream()));
             BufferedWriter output = new BufferedWriter(new OutputStreamWriter(clientConnexion.getOutputStream()));
 
-            Client client = new Client(output, input, input.readLine(), getRandomColor());
+            Client client = new Client(output, input, input.readLine(), getRandomColor(), null);
 
             new ChatConnexion(client, connectedClients);
+            
         }
 
         //listener.close();
@@ -45,9 +49,13 @@ public class Server {
 
     private static String getRandomColor() {
 
-        Random obj = new Random();
-        int rand_num = obj.nextInt(0xffffff + 1);
+        String colors[] = {"#3d9624", "#3de258", "#f9eb3b", "#c84de6", "#fe95a4", "#e39f0e", "#ec5617", "#d0ed00", "#8c782f", "#fc15b2", "#7dddd2", "#7f85d0", "#738765", "#cf7974", "#75335c", "#c65eda"};
 
-        return String.format("#%06x", rand_num);
+        return colors[new Random().nextInt(colors.length)];
+
+        //Random obj = new Random();
+        //int rand_num = obj.nextInt(0xffffff + 1);
+
+        //return String.format("#%06x", rand_num);
     }
 }

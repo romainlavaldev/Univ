@@ -1,6 +1,7 @@
 import java.io.*;
-import java.net.Socket;
-import java.util.ArrayList;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ChatConnexion extends Thread {
@@ -11,9 +12,25 @@ public class ChatConnexion extends Thread {
     public ChatConnexion(Client client, List<Client> connectedClients){
         
         this.client = client;
+        this.client.setConnexion(this);
         this.connectedClients = connectedClients;
         connectedClients.add(client);
         System.out.printf("Client ajouté a la liste (%d)\n", connectedClients.size());
+
+        for (Client clientConnected : connectedClients){
+            try {
+                clientConnected.getOutput().write("#FF0000" + getTime() + " SYSTEM" + " - " + this.client.getName() + " connected");
+                clientConnected.getOutput().newLine();
+                clientConnected.getOutput().flush();
+
+                System.out.println("Connexion message sended to 1 client");
+            } catch (IOException e) {
+                System.err.println("Erreur envoi message");
+                clientConnected.disconnect();
+                e.printStackTrace();
+            }
+        }
+
 
         sendClientList();
 
@@ -26,16 +43,19 @@ public class ChatConnexion extends Thread {
 
         System.out.printf("nb connectés : (%d)\n", connectedClients.size());
 
-        for (Client client : connectedClients) {
-            data += client.getColor() + "%55%" + client.getName() + "%23%";
+        for (Client clienConnected : connectedClients) {
+            data += clienConnected.getColor() + "%55%" + clienConnected.getName() + "%23%";
         }
 
-        for (Client client : connectedClients) {
+        for (Client clientConnected : connectedClients) {
             try {
-                client.getOutput().write(data);
-                client.getOutput().newLine();
-                client.getOutput().flush();
+                clientConnected.getOutput().write(data);
+                clientConnected.getOutput().newLine();
+                clientConnected.getOutput().flush();
+                System.out.println("Client list sended to 1 client");
             } catch (IOException e) {
+                System.out.println("Error sending connected list");
+                clientConnected.disconnect();
                 e.printStackTrace();
             }
         }
@@ -50,20 +70,69 @@ public class ChatConnexion extends Thread {
                 line = client.getInput().readLine();
             } catch (IOException e) {
                 System.err.println("Erreur lecture message");
+                disconnect();
                 e.printStackTrace();
+                //connectedClients.remove(client);
+                break;
             }
+
             
-            for (Client client : connectedClients) {
-                try {
-                    client.getOutput().write(client.getColor() + ">>" + client.getName() + " - " + line);
-                    client.getOutput().newLine();
-                    client.getOutput().flush();
-                } catch (IOException e) {
-                    System.err.println("Erreur envoi message");
-                    e.printStackTrace();
+            
+            if(line != null){
+
+                if (line.equals("%99%")){
+                    disconnect();
+                    return;
+                }
+
+                for (Client clientConnected : connectedClients) {
+                    try {
+                        clientConnected.getOutput().write(this.client.getColor() + getTime() + " >>" + this.client.getName() + " - " + line);
+                        clientConnected.getOutput().newLine();
+                        clientConnected.getOutput().flush();
+                        System.out.println("message sended to 1 client");
+                    } catch (IOException e) {
+                        System.err.println("Erreur envoi message");
+                        clientConnected.disconnect();
+                        e.printStackTrace();
+                    }
                 }
             }
-            
         }
+    }
+
+    public void disconnect() {
+
+        connectedClients.remove(client);
+        try {
+            client.getInput().close();
+            client.getOutput().close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+
+        for (Client clientConnected : connectedClients){
+            try {
+                clientConnected.getOutput().write("#FF0000" + getTime() + " SYSTEM" + " - " + this.client.getName() + " diconnected");
+                clientConnected.getOutput().newLine();
+                clientConnected.getOutput().flush();
+                System.out.println("Connexion message sended to 1 client");
+            } catch (IOException e) {
+                System.err.println("Erreur envoi message");
+                e.printStackTrace();
+            }
+        }
+
+        if(connectedClients.size() != 0){
+            sendClientList();
+        }
+
+        System.out.println(client.getName() + " disconnected");
+    }
+
+    private String getTime(){
+        Format f = new SimpleDateFormat("HH:mm:ss");
+        return f.format(new Date());
     }
 }

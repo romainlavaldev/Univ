@@ -1,13 +1,18 @@
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.text.DefaultCaret;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.Socket;
+
+import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 
 public class SuperChat3000Frame extends JFrame {
 
@@ -20,31 +25,70 @@ public class SuperChat3000Frame extends JFrame {
     JTextField nameTxtField;{
         nameTxtField = new JTextField();
         nameTxtField.setColumns(20);
+
+        nameTxtField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                connect();
+            }
+        });
     }
 
 
     JTextField ipTxtField;{
         ipTxtField = new JTextField();
         ipTxtField.setColumns(20);
+
+        ipTxtField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                connect();
+            }
+        });
+
+        ipTxtField.setText("127.0.1.1");
     }
 
 
     JTextField portTxtField;{
         portTxtField = new JTextField();
         portTxtField.setColumns(20);
+
+        portTxtField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                connect();
+            }
+        });
+
+        portTxtField.setText("8888");
     }
 
-    JList<Client> connectedList;{
+    JList<String> connectedList;{
         connectedList = new JList<>();
     }
 
     JTextPane chatTextPane;{
         chatTextPane = new JTextPane();
         chatTextPane.addStyle("colorPrint", null);
+        //chatTextPane.setMinimumSize(new Dimension(100, 250));
+        chatTextPane.setEditable(false);
+
+        chatTextPane.getDocument().addDocumentListener(new DocumentAdapter(){
+
+            @Override
+            public void insertUpdate(DocumentEvent documentEvent) {
+                chatTextPane.setCaretPosition(chatTextPane.getDocument().getLength());
+
+
+            }
+        });
     }
 
     JTextField messageTextField;{
         messageTextField = new JTextField();
+        messageTextField.setMaximumSize(new Dimension(10000, 60));
+
     }
 
     JButton sendBtn;{
@@ -52,6 +96,8 @@ public class SuperChat3000Frame extends JFrame {
 
         connexionBtn.setPreferredSize(new Dimension(20, 10));
     }
+
+    private boolean connected = false;
 
     public SuperChat3000Frame(String name){
         super(name);
@@ -79,8 +125,17 @@ public class SuperChat3000Frame extends JFrame {
             }
         });
 
-
         buildInterface();
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (connected){
+                    connect();
+                }
+                super.windowClosing(e);
+            }
+        });
     }
 
     private void checkEmptyTextField() {
@@ -137,45 +192,79 @@ public class SuperChat3000Frame extends JFrame {
         //Center
         JPanel chatPanel = new VerticalPanel();
         chatPanel.add(new JLabel("Discussion"));
-        chatPanel.add(chatTextPane);
+        JScrollPane jsp = new JScrollPane(chatTextPane);
+        jsp.setPreferredSize(new Dimension(100, 250));
+        chatPanel.add(jsp);
         chatPanel.add(new JLabel("Message"));
         chatPanel.add(messageTextField);
         chatPanel.add(sendBtn);
         this.getContentPane().add(chatPanel, BorderLayout.CENTER);
     }
 
+    private ChatManager chatManager;
+
     private void connect(){
 
-        if(nameTxtField.getText().isBlank()){
-            JOptionPane.showMessageDialog(this, "Vous n'avez pas mis de nom !");
-            return;
+        if (!connected){
+            if(nameTxtField.getText().isBlank()){
+                JOptionPane.showMessageDialog(this, "Vous n'avez pas mis de nom !");
+                return;
+            }
+
+            if (!ipTxtField.getText().matches("([0-9]+(\\.[0-9]+)+)")){
+                JOptionPane.showMessageDialog(this,"Le format de l'IP est invalide !");
+                return;
+            }
+
+            if(!portTxtField.getText().matches("[0-9]+")){
+                JOptionPane.showMessageDialog(this, "Le format du port est invalide");
+                return;
+            }
+
+
+
+            System.out.printf("Tentative de connection : %s@%s -p %s%n", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText());
+
+            Socket serverConnexion;
+            try {
+                serverConnexion = new Socket(ipTxtField.getText(), Integer.parseInt(portTxtField.getText()));
+            } catch (IOException e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Problème de connection au server !\n\n" + e.getMessage());
+                return;
+            }
+
+            System.out.println("Connection réussie");
+            this.chatManager = new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText(), connectedList);
+            connexionBtn.setText("Disconnect");
+
+            nameTxtField.setEnabled(false);
+            ipTxtField.setEnabled(false);
+            portTxtField.setEnabled(false);
+
+            messageTextField.grabFocus();
+            connected = true;
+        }else{
+            messageTextField.setText("%99%");
+            sendBtn.doClick();
+
+            connexionBtn.setText("Connect");
+
+            nameTxtField.setEnabled(true);
+            ipTxtField.setEnabled(true);
+            portTxtField.setEnabled(true);
+
+            chatTextPane.setText("");
+
+            connectedList.setModel(new DefaultListModel());
+
+            this.chatManager.disconnect();
+
+            connected = false;
         }
 
-        if (!ipTxtField.getText().matches("([0-9]+(\\.[0-9]+)+)")){
-            JOptionPane.showMessageDialog(this,"Le format de l'IP est invalide !");
-            return;
-        }
-
-        if(!portTxtField.getText().matches("[0-9]+")){
-            JOptionPane.showMessageDialog(this, "Le format du port est invalide");
-            return;
-        }
 
 
-
-        System.out.printf("Tentative de connection : %s@%s -p %s%n", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText());
-
-        Socket serverConnexion;
-        try {
-            serverConnexion = new Socket(ipTxtField.getText(), Integer.parseInt(portTxtField.getText()));
-        } catch (IOException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Problème de connection au server !\n\n" + e.getMessage());
-            return;
-        }
-
-        System.out.println("Connection réussie");
-        new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText());
     }
 
 

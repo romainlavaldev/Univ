@@ -6,12 +6,14 @@ public class Client {
     private final BufferedReader input;
     private final String name;
     private final String color;
+    private ChatConnexion connexion;
 
-    public Client(BufferedWriter out, BufferedReader in,String name, String color){
+    public Client(BufferedWriter out, BufferedReader in,String name, String color, ChatConnexion connexion){
         this.output = out;
         this.input =  in;
         this.name = name;
         this.color = color;
+        this.connexion = connexion;
     }
 
     public String getName(){
@@ -28,6 +30,15 @@ public class Client {
 
     public BufferedReader getInput(){
         return input;
+    }
+
+    public void setConnexion(ChatConnexion connexion){
+        this.connexion = connexion;
+    }
+
+    public void disconnect(){
+        System.out.println(this.name + " got deconected");
+        this.connexion.disconnect();
     }
 
 }
