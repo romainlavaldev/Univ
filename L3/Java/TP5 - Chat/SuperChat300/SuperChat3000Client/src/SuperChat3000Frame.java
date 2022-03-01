@@ -70,6 +70,14 @@ public class SuperChat3000Frame extends JFrame {
         });
     }
 
+    JTextPane typingTextPane;{
+        typingTextPane = new JTextPane();
+        typingTextPane.addStyle("colorPrint", null);
+        chatTextPane.addStyle("emoteStyle", null);
+
+        typingTextPane.setEditable(false);
+    }
+
     JTextField messageTextField;{
         messageTextField = new JTextField();
         messageTextField.setMaximumSize(new Dimension(10000, 60));
@@ -189,6 +197,7 @@ public class SuperChat3000Frame extends JFrame {
         JScrollPane jsp = new JScrollPane(chatTextPane);
         jsp.setPreferredSize(new Dimension(100, 250));
         chatPanel.add(jsp);
+        chatPanel.add(typingTextPane);
         chatPanel.add(new JLabel("Message"));
         chatPanel.add(messageTextField);
         JPanel tmp = new JPanel(new FlowLayout());
@@ -233,7 +242,7 @@ public class SuperChat3000Frame extends JFrame {
             }
 
             System.out.println("Connected to server");
-            this.chatManager = new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText(), connectedList, this);
+            this.chatManager = new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText(), connectedList, this, typingTextPane);
             connexionBtn.setText("Disconnect");
 
             nameTxtField.setEnabled(false);
@@ -253,6 +262,7 @@ public class SuperChat3000Frame extends JFrame {
             portTxtField.setEnabled(true);
 
             chatTextPane.setText("");
+            typingTextPane.setText("");
 
             connectedList.setModel(new DefaultListModel());
 

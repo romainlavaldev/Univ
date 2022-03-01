@@ -7,6 +7,9 @@ public class Client {
     private final String name;
     private final String color;
     private ChatConnexion connexion;
+    private boolean typing;{
+        typing = false;
+    }
 
     public Client(BufferedWriter out, BufferedReader in,String name, String color, ChatConnexion connexion){
         this.output = out;
@@ -41,4 +44,11 @@ public class Client {
         this.connexion.disconnect();
     }
 
+    public boolean isTyping() {
+        return typing;
+    }
+
+    public void setTyping(boolean typing) {
+        this.typing = typing;
+    }
 }

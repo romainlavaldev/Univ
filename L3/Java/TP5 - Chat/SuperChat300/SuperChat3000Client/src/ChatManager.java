@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
@@ -10,8 +11,11 @@ public class ChatManager {
     private BufferedReader input;
     private BufferedWriter output;
     private final ChatReader chatReader;
+    private boolean writing;{
+        writing = false;
+    }
 
-    public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient, JList<String> connectedList, SuperChat3000Frame superChat3000Frame) {
+    public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient, JList<String> connectedList, SuperChat3000Frame superChat3000Frame, JTextPane typingTextPane) {
         this.messageTxtField = messageTxtField;
         this.sendBtn = sendBtn;
 
@@ -22,7 +26,7 @@ public class ChatManager {
             e.printStackTrace();
         }
 
-        this.chatReader = new ChatReader(input, chatTextPane, connectedList, superChat3000Frame);
+        this.chatReader = new ChatReader(input, chatTextPane, connectedList, superChat3000Frame, typingTextPane);
         this.chatReader.start();
 
         try {
@@ -47,6 +51,41 @@ public class ChatManager {
                 sendMessage();
             }
         });
+
+        messageTxtField.getDocument().addDocumentListener(new DocumentAdapter(){
+            @Override
+            public void insertUpdate(DocumentEvent documentEvent) {
+                if (!writing && !messageTxtField.getText().isBlank()){
+
+
+                    sendWrite(true);
+                    writing = true;
+                }
+
+
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent documentEvent) {
+                if (writing && messageTxtField.getText().isBlank()){
+
+                    sendWrite(false);
+                    writing = false;
+                }
+            }
+        });
+    }
+
+    private void sendWrite(boolean b) {
+        String code = b ? "%88%TRUE" : "%88%FALSE";
+        System.out.println("Sending writing state (" + code + ") ...");
+        try {
+            output.write(code);
+            output.newLine();
+            output.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void sendMessage(){

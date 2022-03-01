@@ -81,20 +81,58 @@ public class ChatConnexion extends Thread {
                 if (line.equals("%99%")){
                     disconnect();
                     return;
-                }
+                }else if(line.startsWith("%88%")){
+                    if (line.replace("%88%", "").equals("TRUE")){
+                        System.out.println(client.getName() + " started typing");
+                        client.setTyping(true);
 
-                for (Client clientConnected : connectedClients) {
-                    try {
-                        clientConnected.getOutput().write(this.client.getColor() + getTime() + " >> " + this.client.getName() + " - " + line);
-                        clientConnected.getOutput().newLine();
-                        clientConnected.getOutput().flush();
-                        System.out.println("message sended from " + this.client.getName() + " to " + clientConnected.getName());
-                    } catch (IOException e) {
-                        System.err.println("Erreur while sending message from " + this.client.getName() + " to " + clientConnected.getName());
-                        clientConnected.disconnect();
-                        e.printStackTrace();
+                        sendTypingClients();
+                    }
+                    else if (line.replace("%88%", "").equals("FALSE")){
+                        System.out.println(client.getName() + " stopped typing");
+                        client.setTyping(false);
+
+                        sendTypingClients();
+                    }
+                }else{
+                    for (Client clientConnected : connectedClients) {
+                        try {
+                            clientConnected.getOutput().write(this.client.getColor() + getTime() + " >> " + this.client.getName() + " - " + line);
+                            clientConnected.getOutput().newLine();
+                            clientConnected.getOutput().flush();
+                            System.out.println("message sended from " + this.client.getName() + " to " + clientConnected.getName());
+                        } catch (IOException e) {
+                            System.err.println("Erreur while sending message from " + this.client.getName() + " to " + clientConnected.getName());
+                            clientConnected.disconnect();
+                            e.printStackTrace();
+                        }
                     }
                 }
+            }
+        }
+    }
+
+    private void sendTypingClients() {
+        String data = "TYPINGLIST:";
+
+        for (Client clienConnected : connectedClients) {
+            if (clienConnected.isTyping()){
+                data += clienConnected.getColor() + "%55%" + clienConnected.getName() + "%23%";
+            }
+        }
+
+        System.out.println(data);
+
+        for (Client clientConnected : connectedClients) {
+            try {
+                clientConnected.getOutput().write(data);
+                clientConnected.getOutput().newLine();
+                clientConnected.getOutput().flush();
+                System.out.println("Client typing list sended to " + clientConnected.getName());
+            } catch (IOException e) {
+                System.out.println("Error while sending client typing list " + clientConnected.getName());
+                clientConnected.disconnect();
+                e.printStackTrace();
             }
         }
     }
@@ -124,6 +162,7 @@ public class ChatConnexion extends Thread {
 
         if(connectedClients.size() != 0){
             sendClientList();
+            sendTypingClients();
         }
 
         System.out.println(client.getName() + " disconnected");

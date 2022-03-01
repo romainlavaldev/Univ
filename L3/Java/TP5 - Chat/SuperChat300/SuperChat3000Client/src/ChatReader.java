@@ -16,6 +16,7 @@ public class ChatReader extends Thread{
 
     private final BufferedReader input;
     private final JTextPane chatTextPane;
+    private final JTextPane typingTextPane;
     private final JList<String> connectedList;
     public boolean running;
     private final SuperChat3000Frame superChat3000Frame;
@@ -33,11 +34,12 @@ public class ChatReader extends Thread{
         }
     }
 
-    public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList, SuperChat3000Frame superChat3000Frame) {
+    public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList, SuperChat3000Frame superChat3000Frame, JTextPane typingTextPane) {
         this.input = input;
         this.chatTextPane = chatTextPane;
         this.connectedList = connectedList;
         this.superChat3000Frame = superChat3000Frame;
+        this.typingTextPane = typingTextPane;
     }
 
     @Override
@@ -66,6 +68,60 @@ public class ChatReader extends Thread{
 
 
                         populateConnectedClients(clientsMap);
+
+                    }else if (received.startsWith("TYPINGLIST:")) {
+                        Map<String, String> clientsMap = new HashMap<>();
+
+                        typingTextPane.setText("");
+
+
+                        StyledDocument sDoc = typingTextPane.getStyledDocument();
+
+
+                        Style s = typingTextPane.getStyle("colorPrint");
+                        StyleConstants.setForeground(s, Color.white);
+                        sDoc.insertString(sDoc.getLength(), "Typing : ", s);
+
+                        for (String client : received.replace("TYPINGLIST:", "").split("%23%")) {
+
+                            if (client.split("%55").length != 1) {
+                                String color = client.split("%55%")[0];
+                                String name = client.split("%55%")[1];
+
+                                clientsMap.put(name, color);
+
+                            }
+                        }
+
+                        for (String clientName : clientsMap.keySet()) {
+                            for (String messagePart : clientName.split(" ")) {
+
+                                if (messagePart.startsWith("//")) {
+                                    s = typingTextPane.getStyle("emoteStyle");
+
+                                    ImageIcon ico;
+
+                                    if (emoteMap.get(messagePart.replace("//", "")) == null) {
+                                        ico = emoteMap.get("unknown");
+                                    } else {
+                                        ico = emoteMap.get(messagePart.replace("//", ""));
+                                    }
+
+                                    StyleConstants.setIcon(s, ico);
+
+                                    sDoc.insertString(sDoc.getLength(), "replaced text", s);
+
+                                    sDoc.insertString(sDoc.getLength(), " ", null);
+
+                                } else {
+                                    //Affichage du message en couleur
+                                    s = typingTextPane.getStyle("colorPrint");
+                                    StyleConstants.setForeground(s, Color.decode(clientsMap.get(clientName)));
+
+                                    sDoc.insertString(sDoc.getLength(), messagePart + ", ", s);
+                                }
+                            }
+                        }
 
                     } else if (received.equals("%99%")){
                         superChat3000Frame.connect();
