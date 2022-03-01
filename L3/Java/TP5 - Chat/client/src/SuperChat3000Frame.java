@@ -1,9 +1,7 @@
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.text.DefaultCaret;
-import javax.swing.text.Document;
-import javax.swing.text.DocumentFilter;
+import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -71,6 +69,10 @@ public class SuperChat3000Frame extends JFrame {
     JTextPane chatTextPane;{
         chatTextPane = new JTextPane();
         chatTextPane.addStyle("colorPrint", null);
+
+
+        Style s = chatTextPane.getStyle("colorPrint");
+        StyleConstants.setFontSize(s, 16);
         //chatTextPane.setMinimumSize(new Dimension(100, 250));
         chatTextPane.setEditable(false);
 

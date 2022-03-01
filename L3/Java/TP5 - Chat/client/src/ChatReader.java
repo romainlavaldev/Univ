@@ -91,5 +91,27 @@ public class ChatReader extends Thread{
         }
 
         connectedList.setModel(lm);
+
+        connectedList.setCellRenderer(new DefaultListCellRenderer() {
+
+            @Override
+            public Component getListCellRendererComponent(JList list, Object value, int index,
+                                                          boolean isSelected, boolean cellHasFocus) {
+                Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                if (value instanceof String) {
+                    String nextUser = (String) value;
+                    setText(nextUser);
+                    setBackground(Color.red);
+                    if (isSelected) {
+                        setBackground(getBackground().darker());
+                    }
+                } else {
+                    setText("error?");
+                }
+                return c;
+            }
+
+        });
     }
+
 }
