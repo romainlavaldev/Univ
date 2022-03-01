@@ -3,8 +3,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -20,27 +18,17 @@ public class SuperChat3000Frame extends JFrame {
 
     JTextField nameTxtField;{
         nameTxtField = new JTextField();
-        nameTxtField.setColumns(20);
+        nameTxtField.setColumns(10);
 
-        nameTxtField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                connect();
-            }
-        });
+        nameTxtField.addActionListener(actionEvent -> connect());
     }
 
 
     JTextField ipTxtField;{
         ipTxtField = new JTextField();
-        ipTxtField.setColumns(20);
+        ipTxtField.setColumns(10);
 
-        ipTxtField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                connect();
-            }
-        });
+        ipTxtField.addActionListener(actionEvent -> connect());
 
         ipTxtField.setText("127.0.1.1");
     }
@@ -48,14 +36,9 @@ public class SuperChat3000Frame extends JFrame {
 
     JTextField portTxtField;{
         portTxtField = new JTextField();
-        portTxtField.setColumns(20);
+        portTxtField.setColumns(10);
 
-        portTxtField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                connect();
-            }
-        });
+        portTxtField.addActionListener(actionEvent -> connect());
 
         portTxtField.setText("8888");
     }
@@ -96,7 +79,11 @@ public class SuperChat3000Frame extends JFrame {
     JButton sendBtn;{
         sendBtn = new JButton("Send");
 
-        connexionBtn.setPreferredSize(new Dimension(20, 10));
+    }
+
+    JButton emoteBtn;{
+        emoteBtn = new JButton("Emote");
+
     }
 
     private boolean connected = false;
@@ -120,11 +107,14 @@ public class SuperChat3000Frame extends JFrame {
         ipTxtField.getDocument().addDocumentListener(dl);
         portTxtField.getDocument().addDocumentListener(dl);
 
-        connexionBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                connect();
+        connexionBtn.addActionListener(actionEvent -> connect());
+
+        emoteBtn.addActionListener(actionEvent -> {
+            IconeSelectionDialog isd = new IconeSelectionDialog();
+            if (!isd.getEmoteJList().isSelectionEmpty()){
+                messageTextField.setText(messageTextField.getText() + " //" + isd.getEmoteJList().getSelectedValue());
             }
+
         });
 
         buildInterface();
@@ -141,11 +131,7 @@ public class SuperChat3000Frame extends JFrame {
     }
 
     private void checkEmptyTextField() {
-        if (!nameTxtField.getText().isBlank() && !ipTxtField.getText().isBlank() && !portTxtField.getText().isBlank()){
-            connexionBtn.setEnabled(true);
-        }else{
-            connexionBtn.setEnabled(false);
-        }
+        connexionBtn.setEnabled(!nameTxtField.getText().isBlank() && !ipTxtField.getText().isBlank() && !portTxtField.getText().isBlank());
     }
 
     private void buildInterface(){
@@ -180,8 +166,14 @@ public class SuperChat3000Frame extends JFrame {
         connexionPanel.add(portPanel);
 
         this.getContentPane().setLayout(new BorderLayout(0,0));
-        this.getContentPane().add(connexionPanel, BorderLayout.NORTH);
 
+        JPanel headerPanel = new JPanel(new FlowLayout());
+        JLabel logo = new JLabel(new ImageIcon("img/LOGO.png"));
+        logo.setPreferredSize(new Dimension(100, 100));
+        headerPanel.add(logo);
+        headerPanel.add(connexionPanel);
+
+        this.getContentPane().add(headerPanel, BorderLayout.NORTH);
 
 
         //WEST
@@ -199,7 +191,11 @@ public class SuperChat3000Frame extends JFrame {
         chatPanel.add(jsp);
         chatPanel.add(new JLabel("Message"));
         chatPanel.add(messageTextField);
-        chatPanel.add(sendBtn);
+        JPanel tmp = new JPanel(new FlowLayout());
+        tmp.add(sendBtn);
+        tmp.add(emoteBtn);
+
+        chatPanel.add(tmp);
         this.getContentPane().add(chatPanel, BorderLayout.CENTER);
     }
 

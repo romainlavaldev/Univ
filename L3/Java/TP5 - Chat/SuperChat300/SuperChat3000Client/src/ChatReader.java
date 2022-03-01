@@ -5,10 +5,11 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ChatReader extends Thread{
@@ -18,6 +19,19 @@ public class ChatReader extends Thread{
     private final JList<String> connectedList;
     public boolean running;
     private final SuperChat3000Frame superChat3000Frame;
+    private final Map<String, ImageIcon> emoteMap;{
+        emoteMap = new HashMap<>();
+
+        File dir = null;
+
+        dir = new File("img" + File.separator + "emotes");
+
+        for (File emoteFile : dir.listFiles()){
+            String emoteName = emoteFile.getName().split("\\.")[0].replace("EMO", "");
+
+            this.emoteMap.put(emoteName, new ImageIcon("img" + File.separator + "emotes" + File.separator + emoteFile.getName()));
+        }
+    }
 
     public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList, SuperChat3000Frame superChat3000Frame) {
         this.input = input;
@@ -38,9 +52,8 @@ public class ChatReader extends Thread{
 
 
                     if (received.startsWith("CLIENTLIST:")) {
-                        List<Client> clients = new ArrayList<>();
 
-                        Map<String, String> clientsMap = new HashMap<String, String>();
+                        Map<String, String> clientsMap = new HashMap<>();
 
                         for (String client : received.replace("CLIENTLIST:", "").split("%23%")) {
 
@@ -49,7 +62,6 @@ public class ChatReader extends Thread{
 
                             clientsMap.put(name, color);
 
-                            clients.add(new Client(name, color));
                         }
 
 
@@ -73,25 +85,32 @@ public class ChatReader extends Thread{
                         StyleConstants.setForeground(s, Color.white);
                         sDoc.insertString(sDoc.getLength(), time, s);
 
-                        boolean emo = false;
-                        for (String messagePart : message.split("//")){
-                            if(emo){
+                        for (String messagePart : message.split(" ")){
+
+                            if (messagePart.startsWith("//")){
                                 s = chatTextPane.getStyle("emoteStyle");
-                                StyleConstants.setIcon(s, getIconFromEmoteName(messagePart));
+
+                                ImageIcon ico;
+
+                                if (emoteMap.get(messagePart.replace("//", "")) == null){
+                                    ico = emoteMap.get("unknown");
+                                }else{
+                                    ico = emoteMap.get(messagePart.replace("//", ""));
+                                }
+
+                                StyleConstants.setIcon(s, ico);
 
                                 sDoc.insertString(sDoc.getLength(), "replaced text", s);
-                                emo = false;
 
-                            }else {
+                                sDoc.insertString(sDoc.getLength(), " ", null);
+
+                            }else{
                                 //Affichage du message en couleur
                                 s = chatTextPane.getStyle("colorPrint");
                                 StyleConstants.setForeground(s, Color.decode(color));
 
-                                sDoc.insertString(sDoc.getLength(), messagePart, s);
-                                emo = true;
-
+                                sDoc.insertString(sDoc.getLength(), messagePart + " ", s);
                             }
-
                         }
 
                         s = chatTextPane.getStyle("colorPrint");
@@ -101,36 +120,20 @@ public class ChatReader extends Thread{
                     }
                 }
 
-            } catch(IOException e){
-                e.printStackTrace();
-            } catch(BadLocationException e){
+            } catch(BadLocationException | IOException e){
                 e.printStackTrace();
             }
 
         }
     }
 
-    private ImageIcon getIconFromEmoteName(String messagePart) {
-
-        if (messagePart.equals("hop3x")){
-            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOhop3x.jpg"));
-        } else if (messagePart.equals("wave")){
-            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOwave.png"));
-        }else if (messagePart.equals("uwu")){
-            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOuwu.png"));
-        }else if (messagePart.equals("thinking")){
-            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOthinking.png"));
-        }
-
-        return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOunknown.png"));
-    }
 
     public void setRunning(boolean running){
         this.running = running;
     }
 
     private void populateConnectedClients(Map<String, String> clients) {
-        DefaultListModel lm = new DefaultListModel();
+        DefaultListModel<String> lm = new DefaultListModel<> ();
 
         for (String clientName : clients.keySet()){
             lm.addElement(clientName);
