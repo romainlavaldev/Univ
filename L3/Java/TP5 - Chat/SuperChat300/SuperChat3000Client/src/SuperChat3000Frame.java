@@ -10,12 +10,10 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.Socket;
 
-import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
-
 public class SuperChat3000Frame extends JFrame {
 
     JButton connexionBtn;{
-        connexionBtn = new JButton("Connection");
+        connexionBtn = new JButton("Connect");
         connexionBtn.setPreferredSize(new Dimension(20, 10));
         connexionBtn.setEnabled(false);
     }
@@ -64,11 +62,13 @@ public class SuperChat3000Frame extends JFrame {
 
     JList<String> connectedList;{
         connectedList = new JList<>();
+        connectedList.setPreferredSize(new Dimension(100, 10));
     }
 
     JTextPane chatTextPane;{
         chatTextPane = new JTextPane();
         chatTextPane.addStyle("colorPrint", null);
+        chatTextPane.addStyle("emoteStyle", null);
 
 
         Style s = chatTextPane.getStyle("colorPrint");
@@ -94,7 +94,7 @@ public class SuperChat3000Frame extends JFrame {
     }
 
     JButton sendBtn;{
-        sendBtn = new JButton("Envoyer");
+        sendBtn = new JButton("Send");
 
         connexionBtn.setPreferredSize(new Dimension(20, 10));
     }
@@ -153,7 +153,7 @@ public class SuperChat3000Frame extends JFrame {
         //Name Label + TxtBox
         JPanel namePanel = new JPanel();
         namePanel.setLayout(new FlowLayout());
-        namePanel.add(new JLabel("Nom"));
+        namePanel.add(new JLabel("Name"));
         namePanel.add(nameTxtField);
 
         //IP Label + TxtBox
@@ -186,14 +186,14 @@ public class SuperChat3000Frame extends JFrame {
 
         //WEST
         JPanel connectedPanel = new VerticalPanel();
-        connectedPanel.add(new JLabel("Connectés"));
+        connectedPanel.add(new JLabel("Connected Users"));
         connectedPanel.add(connectedList);
 
         this.getContentPane().add(connectedPanel, BorderLayout.WEST);
 
         //Center
         JPanel chatPanel = new VerticalPanel();
-        chatPanel.add(new JLabel("Discussion"));
+        chatPanel.add(new JLabel("Chat"));
         JScrollPane jsp = new JScrollPane(chatTextPane);
         jsp.setPreferredSize(new Dimension(100, 250));
         chatPanel.add(jsp);
@@ -205,39 +205,39 @@ public class SuperChat3000Frame extends JFrame {
 
     private ChatManager chatManager;
 
-    private void connect(){
+    public void connect(){
 
         if (!connected){
             if(nameTxtField.getText().isBlank()){
-                JOptionPane.showMessageDialog(this, "Vous n'avez pas mis de nom !");
+                JOptionPane.showMessageDialog(this, "Name field is empty !");
                 return;
             }
 
             if (!ipTxtField.getText().matches("([0-9]+(\\.[0-9]+)+)")){
-                JOptionPane.showMessageDialog(this,"Le format de l'IP est invalide !");
+                JOptionPane.showMessageDialog(this,"IP format is incorrect !");
                 return;
             }
 
             if(!portTxtField.getText().matches("[0-9]+")){
-                JOptionPane.showMessageDialog(this, "Le format du port est invalide");
+                JOptionPane.showMessageDialog(this, "Port format is incorrect");
                 return;
             }
 
 
 
-            System.out.printf("Tentative de connection : %s@%s -p %s%n", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText());
+            System.out.printf("Trying to reach server : %s@%s -p %s%n", nameTxtField.getText(), ipTxtField.getText(), portTxtField.getText());
 
             Socket serverConnexion;
             try {
                 serverConnexion = new Socket(ipTxtField.getText(), Integer.parseInt(portTxtField.getText()));
             } catch (IOException e) {
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Problème de connection au server !\n\n" + e.getMessage());
+                JOptionPane.showMessageDialog(this, "Can't reach server !\n\n" + e.getMessage());
                 return;
             }
 
-            System.out.println("Connection réussie");
-            this.chatManager = new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText(), connectedList);
+            System.out.println("Connected to server");
+            this.chatManager = new ChatManager(serverConnexion, chatTextPane, messageTextField, sendBtn, nameTxtField.getText(), connectedList, this);
             connexionBtn.setText("Disconnect");
 
             nameTxtField.setEnabled(false);

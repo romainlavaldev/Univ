@@ -7,19 +7,23 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ChatReader extends Thread{
 
-    private BufferedReader input;
-    private JTextPane chatTextPane;
-    private JList<String> connectedList;
+    private final BufferedReader input;
+    private final JTextPane chatTextPane;
+    private final JList<String> connectedList;
     public boolean running;
+    private final SuperChat3000Frame superChat3000Frame;
 
-    public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList) {
+    public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList, SuperChat3000Frame superChat3000Frame) {
         this.input = input;
         this.chatTextPane = chatTextPane;
         this.connectedList = connectedList;
+        this.superChat3000Frame = superChat3000Frame;
     }
 
     @Override
@@ -35,17 +39,25 @@ public class ChatReader extends Thread{
 
                     if (received.startsWith("CLIENTLIST:")) {
                         List<Client> clients = new ArrayList<>();
+
+                        Map<String, String> clientsMap = new HashMap<String, String>();
+
                         for (String client : received.replace("CLIENTLIST:", "").split("%23%")) {
 
                             String color = client.split("%55%")[0];
                             String name = client.split("%55%")[1];
 
+                            clientsMap.put(name, color);
+
                             clients.add(new Client(name, color));
                         }
 
 
-                        populateConnectedClients(clients);
+                        populateConnectedClients(clientsMap);
 
+                    } else if (received.equals("%99%")){
+                        superChat3000Frame.connect();
+                        JOptionPane.showMessageDialog(superChat3000Frame,"server closed by operator ");
                     } else {
                         String color = received.substring(0, 7);
                         String message = received.replace(color, "");
@@ -61,12 +73,31 @@ public class ChatReader extends Thread{
                         StyleConstants.setForeground(s, Color.white);
                         sDoc.insertString(sDoc.getLength(), time, s);
 
+                        boolean emo = false;
+                        for (String messagePart : message.split("//")){
+                            if(emo){
+                                s = chatTextPane.getStyle("emoteStyle");
+                                StyleConstants.setIcon(s, getIconFromEmoteName(messagePart));
 
-                        //Affichage du message en couleur
+                                sDoc.insertString(sDoc.getLength(), "replaced text", s);
+                                emo = false;
+
+                            }else {
+                                //Affichage du message en couleur
+                                s = chatTextPane.getStyle("colorPrint");
+                                StyleConstants.setForeground(s, Color.decode(color));
+
+                                sDoc.insertString(sDoc.getLength(), messagePart, s);
+                                emo = true;
+
+                            }
+
+                        }
+
                         s = chatTextPane.getStyle("colorPrint");
                         StyleConstants.setForeground(s, Color.decode(color));
 
-                        sDoc.insertString(sDoc.getLength(), message + "\n", s);
+                        sDoc.insertString(sDoc.getLength(), "\n", s);
                     }
                 }
 
@@ -79,15 +110,30 @@ public class ChatReader extends Thread{
         }
     }
 
+    private ImageIcon getIconFromEmoteName(String messagePart) {
+
+        if (messagePart.equals("hop3x")){
+            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOhop3x.jpg"));
+        } else if (messagePart.equals("wave")){
+            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOwave.png"));
+        }else if (messagePart.equals("uwu")){
+            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOuwu.png"));
+        }else if (messagePart.equals("thinking")){
+            return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOthinking.png"));
+        }
+
+        return new ImageIcon(this.getClass().getClassLoader().getResource("img/EMOunknown.png"));
+    }
+
     public void setRunning(boolean running){
         this.running = running;
     }
 
-    private void populateConnectedClients(List<Client> clients) {
+    private void populateConnectedClients(Map<String, String> clients) {
         DefaultListModel lm = new DefaultListModel();
 
-        for (Client client : clients){
-            lm.addElement(client.getName());
+        for (String clientName : clients.keySet()){
+            lm.addElement(clientName);
         }
 
         connectedList.setModel(lm);
@@ -101,7 +147,9 @@ public class ChatReader extends Thread{
                 if (value instanceof String) {
                     String nextUser = (String) value;
                     setText(nextUser);
-                    setBackground(Color.red);
+                    String color = clients.get(nextUser);
+                    setForeground(Color.decode(color));
+
                     if (isSelected) {
                         setBackground(getBackground().darker());
                     }

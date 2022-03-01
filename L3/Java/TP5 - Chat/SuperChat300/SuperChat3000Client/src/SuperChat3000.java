@@ -1,5 +1,5 @@
 import javax.swing.*;
-import com.formdev.flatlaf.intellijthemes.*;
+
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.*;
 
 public class SuperChat3000 {

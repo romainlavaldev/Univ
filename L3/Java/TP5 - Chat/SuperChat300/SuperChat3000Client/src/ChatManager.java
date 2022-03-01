@@ -5,19 +5,15 @@ import java.io.*;
 import java.net.Socket;
 
 public class ChatManager {
-    private final JTextPane chatTextPane;
     private final JTextField messageTxtField;
     private final JButton sendBtn;
     private BufferedReader input;
     private BufferedWriter output;
-    private JList<String> connectedList;
-    private ChatReader chatReader;
+    private final ChatReader chatReader;
 
-    public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient, JList<String> connectedList) {
-        this.chatTextPane = chatTextPane;
+    public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient, JList<String> connectedList, SuperChat3000Frame superChat3000Frame) {
         this.messageTxtField = messageTxtField;
         this.sendBtn = sendBtn;
-        this.connectedList = connectedList;
 
         try {
             input = new BufferedReader(new InputStreamReader(serverConnexion.getInputStream()));
@@ -26,7 +22,7 @@ public class ChatManager {
             e.printStackTrace();
         }
 
-        this.chatReader = new ChatReader(input, chatTextPane, connectedList);
+        this.chatReader = new ChatReader(input, chatTextPane, connectedList, superChat3000Frame);
         this.chatReader.start();
 
         try {
@@ -34,7 +30,7 @@ public class ChatManager {
             output.newLine();
             output.flush();
         }catch (IOException e){
-            System.err.println("Problème d'envoi du nom du client");
+            System.err.println("Problem while sending client name");
             e.printStackTrace();
         }
 
@@ -55,11 +51,11 @@ public class ChatManager {
 
     private void sendMessage(){
         if(messageTxtField.getText().isBlank()){
-            JOptionPane.showMessageDialog(null, "Le message est vide");
+            JOptionPane.showMessageDialog(null, "Message field is empty !");
           return;
         }
 
-        System.out.println("Envoi du message");
+        System.out.println("Sending message ...");
         try {
             output.write(messageTxtField.getText());
             output.newLine();

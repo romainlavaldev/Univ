@@ -15,7 +15,7 @@ public class ChatConnexion extends Thread {
         this.client.setConnexion(this);
         this.connectedClients = connectedClients;
         connectedClients.add(client);
-        System.out.printf("Client ajouté a la liste (%d)\n", connectedClients.size());
+        System.out.printf("Client added to the list. count : (%d)\n", connectedClients.size());
 
         for (Client clientConnected : connectedClients){
             try {
@@ -23,9 +23,9 @@ public class ChatConnexion extends Thread {
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
 
-                System.out.println("Connexion message sended to 1 client");
+                System.out.println("Connexion message sended to " + clientConnected.getName());
             } catch (IOException e) {
-                System.err.println("Erreur envoi message");
+                System.err.println("Error while sending message to " + clientConnected.getName());
                 clientConnected.disconnect();
                 e.printStackTrace();
             }
@@ -41,8 +41,6 @@ public class ChatConnexion extends Thread {
 
         String data = "CLIENTLIST:";
 
-        System.out.printf("nb connectés : (%d)\n", connectedClients.size());
-
         for (Client clienConnected : connectedClients) {
             data += clienConnected.getColor() + "%55%" + clienConnected.getName() + "%23%";
         }
@@ -52,9 +50,9 @@ public class ChatConnexion extends Thread {
                 clientConnected.getOutput().write(data);
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
-                System.out.println("Client list sended to 1 client");
+                System.out.println("Client list sended to " + clientConnected.getName());
             } catch (IOException e) {
-                System.out.println("Error sending connected list");
+                System.out.println("Error while sending connected list to " + clientConnected.getName());
                 clientConnected.disconnect();
                 e.printStackTrace();
             }
@@ -69,11 +67,11 @@ public class ChatConnexion extends Thread {
             try {
                 line = client.getInput().readLine();
             } catch (IOException e) {
-                System.err.println("Erreur lecture message");
+                System.err.println("Erreur while reading message from " + this.client.getName());
                 disconnect();
                 e.printStackTrace();
                 //connectedClients.remove(client);
-                break;
+                return;
             }
 
             
@@ -90,9 +88,9 @@ public class ChatConnexion extends Thread {
                         clientConnected.getOutput().write(this.client.getColor() + getTime() + " >>" + this.client.getName() + " - " + line);
                         clientConnected.getOutput().newLine();
                         clientConnected.getOutput().flush();
-                        System.out.println("message sended to 1 client");
+                        System.out.println("message sended from " + this.client.getName() + " to " + clientConnected.getName());
                     } catch (IOException e) {
-                        System.err.println("Erreur envoi message");
+                        System.err.println("Erreur while sending message from " + this.client.getName() + " to " + clientConnected.getName());
                         clientConnected.disconnect();
                         e.printStackTrace();
                     }
@@ -117,9 +115,9 @@ public class ChatConnexion extends Thread {
                 clientConnected.getOutput().write("#FF0000" + getTime() + " SYSTEM" + " - " + this.client.getName() + " diconnected");
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
-                System.out.println("Connexion message sended to 1 client");
+                System.out.println("Connexion message sended from " + this.client.getName() + " to " + clientConnected.getName());
             } catch (IOException e) {
-                System.err.println("Erreur envoi message");
+                System.err.println("Error while sending message from " + this.client.getName() + " to " + clientConnected.getName());
                 e.printStackTrace();
             }
         }
