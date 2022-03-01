@@ -40,7 +40,10 @@ public class IconeSelectionDialog extends VerticalPanel {
             }
         });
 
-        this.add(emoteJList);
+
+
+
+        this.add(new JScrollPane(emoteJList));
 
         JOptionPane.showMessageDialog(null, this, "Choose an emote", JOptionPane.DEFAULT_OPTION);
     }

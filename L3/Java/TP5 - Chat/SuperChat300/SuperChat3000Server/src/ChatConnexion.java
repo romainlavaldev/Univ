@@ -85,7 +85,7 @@ public class ChatConnexion extends Thread {
 
                 for (Client clientConnected : connectedClients) {
                     try {
-                        clientConnected.getOutput().write(this.client.getColor() + getTime() + " >>" + this.client.getName() + " - " + line);
+                        clientConnected.getOutput().write(this.client.getColor() + getTime() + " >> " + this.client.getName() + " - " + line);
                         clientConnected.getOutput().newLine();
                         clientConnected.getOutput().flush();
                         System.out.println("message sended from " + this.client.getName() + " to " + clientConnected.getName());
