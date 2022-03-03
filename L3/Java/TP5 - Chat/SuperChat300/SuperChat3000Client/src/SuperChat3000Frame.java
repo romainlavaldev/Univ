@@ -8,6 +8,9 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * Main frame of the client application
+ */
 public class SuperChat3000Frame extends JFrame {
 
     JButton connexionBtn;{
@@ -15,6 +18,7 @@ public class SuperChat3000Frame extends JFrame {
         connexionBtn.setPreferredSize(new Dimension(20, 10));
         connexionBtn.setEnabled(false);
     }
+
 
     JTextField nameTxtField;{
         nameTxtField = new JTextField();
@@ -43,10 +47,12 @@ public class SuperChat3000Frame extends JFrame {
         portTxtField.setText("8888");
     }
 
+
     JList<String> connectedList;{
         connectedList = new JList<>();
         connectedList.setPreferredSize(new Dimension(100, 10));
     }
+
 
     JTextPane chatTextPane;{
         chatTextPane = new JTextPane();
@@ -59,6 +65,7 @@ public class SuperChat3000Frame extends JFrame {
         //chatTextPane.setMinimumSize(new Dimension(100, 250));
         chatTextPane.setEditable(false);
 
+        //Scroll the chat all the way down when a new message is printed
         chatTextPane.getDocument().addDocumentListener(new DocumentAdapter(){
 
             @Override
@@ -70,6 +77,7 @@ public class SuperChat3000Frame extends JFrame {
         });
     }
 
+
     JTextPane typingTextPane;{
         typingTextPane = new JTextPane();
         typingTextPane.addStyle("colorPrint", null);
@@ -78,27 +86,37 @@ public class SuperChat3000Frame extends JFrame {
         typingTextPane.setEditable(false);
     }
 
+
     JTextField messageTextField;{
         messageTextField = new JTextField();
         messageTextField.setMaximumSize(new Dimension(10000, 60));
 
     }
 
+
     JButton sendBtn;{
         sendBtn = new JButton("Send");
 
     }
+
 
     JButton emoteBtn;{
         emoteBtn = new JButton("Emote");
 
     }
 
+    private ChatManager chatManager;
     private boolean connected = false;
 
-    public SuperChat3000Frame(String name){
-        super(name);
+    /**
+     * Instantiates a new Super chat 3000 frame.
+     *
+     * @param name the name displayed on the frame
+     */
+    public SuperChat3000Frame(){
+        super("SuperChat3000");
 
+        //Listener on connexion fields
         DocumentListener dl = new DocumentAdapter(){
             @Override
             public void insertUpdate(DocumentEvent documentEvent) {
@@ -115,10 +133,13 @@ public class SuperChat3000Frame extends JFrame {
         ipTxtField.getDocument().addDocumentListener(dl);
         portTxtField.getDocument().addDocumentListener(dl);
 
+        //Using lambda -> correspond to a new action listener
         connexionBtn.addActionListener(actionEvent -> connect());
 
+
+        //Using lambda -> correspond to a new action listener
         emoteBtn.addActionListener(actionEvent -> {
-            IconeSelectionDialog isd = new IconeSelectionDialog();
+            IconSelectionDialog isd = new IconSelectionDialog();
             if (!isd.getEmoteJList().isSelectionEmpty()){
                 messageTextField.setText(messageTextField.getText() + " //" + isd.getEmoteJList().getSelectedValue());
             }
@@ -138,9 +159,12 @@ public class SuperChat3000Frame extends JFrame {
         });
     }
 
+
+    //Enable or disable the connexion button
     private void checkEmptyTextField() {
         connexionBtn.setEnabled(!nameTxtField.getText().isBlank() && !ipTxtField.getText().isBlank() && !portTxtField.getText().isBlank());
     }
+
 
     private void buildInterface(){
 
@@ -208,11 +232,12 @@ public class SuperChat3000Frame extends JFrame {
         this.getContentPane().add(chatPanel, BorderLayout.CENTER);
     }
 
-    private ChatManager chatManager;
-
+    /**
+     * Connect to the server (also used to disconnect if connected variable is true)
+     */
     public void connect(){
 
-        if (!connected){
+        if (!connected){ //Connect to server
             if(nameTxtField.getText().isBlank()){
                 JOptionPane.showMessageDialog(this, "Name field is empty !");
                 return;
@@ -251,7 +276,8 @@ public class SuperChat3000Frame extends JFrame {
 
             messageTextField.grabFocus();
             connected = true;
-        }else{
+
+        }else{ //Disconnect from server
             messageTextField.setText("%99%");
             sendBtn.doClick();
 

@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.net.*;
@@ -10,10 +8,19 @@ import java.util.List;
 import java.util.Random;
 import java.io.*;
 
+
+/**
+ * A stream used to redirect a stream into a JTextArea
+ */
 class TextAreaOutputStream extends OutputStream {
 
     private JTextArea ta;
 
+    /**
+     * Instantiates a new Text area output stream.
+     *
+     * @param ta the text area component
+     */
     public TextAreaOutputStream(JTextArea ta) {
         this.ta = ta;
     }
@@ -23,10 +30,19 @@ class TextAreaOutputStream extends OutputStream {
     }
 }
 
+/**
+ * Main class of the server which create and load a server window
+ */
 public class Server {
 
     private static List<Client> connectedClients;
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws IOException the io exception
+     */
     public static void main(String[] args) throws IOException {
         String port;
 
@@ -35,11 +51,14 @@ public class Server {
             //Version GUI
             port = JOptionPane.showInputDialog("Port ?");
 
+
+            //Forcing the port to be 4 or 5 digits
             while (!port.matches("[0-9]{4,5}")){
                 JOptionPane.showMessageDialog(null,"Port provided is incorrect (5-6 digits above 1023 required)");
                 port = JOptionPane.showInputDialog("Port ?");
             }
 
+            //Building the app
             JFrame mainFrame = new JFrame("SuperChat3000 Server");
 
             JTextArea consoleTextArea = new JTextArea();
@@ -65,14 +84,15 @@ public class Server {
 
 
         }else{
+            //Run in terminal version. Don't load any Java Swing component
+
             port = args[0];
         }
 
 
-
-        //Ouverture du server
         ServerSocket listener = null;
 
+        //Opening the server on the provided port
         try {
             listener = new ServerSocket(Integer.parseInt(port));
         }catch (BindException e){
@@ -87,28 +107,30 @@ public class Server {
 
 
         Socket clientConnexion = null;
+
+        //Main loop of the server
         while(true){
-            //Attente d'un client
+            //Waiting for a client to connect
             System.out.println("Waiting for a client to connect");
             clientConnexion = listener.accept();
             System.out.println("Client connected");
 
-            //Recuperatons du nom
             BufferedReader input = new BufferedReader(new InputStreamReader(clientConnexion.getInputStream()));
             BufferedWriter output = new BufferedWriter(new OutputStreamWriter(clientConnexion.getOutputStream()));
 
+            //Saving the new client
             Client client = new Client(output, input, input.readLine(), getRandomColor(), null);
 
+            //Starting a communication thread with this client
             new ChatConnexion(client, connectedClients);
             
         }
-
-        //listener.close();
 
     }
 
     private static void closeServer() {
 
+        //Disconnect all connected users
         if (connectedClients != null && connectedClients.size() != 0 ){
             for (Client client : connectedClients) {
                 try {
@@ -125,15 +147,18 @@ public class Server {
         System.exit(0);
     }
 
+    //Get a random hex formated color
     private static String getRandomColor() {
 
+        //Random in a list (only visible colors on the client background)
         String colors[] = {"#3d9624", "#3de258", "#f9eb3b", "#c84de6", "#fe95a4", "#e39f0e", "#ec5617", "#d0ed00", "#8c782f", "#fc15b2", "#7dddd2", "#7f85d0", "#738765", "#cf7974", "#75335c", "#c65eda"};
-
         return colors[new Random().nextInt(colors.length)];
 
-        //Random obj = new Random();
-        //int rand_num = obj.nextInt(0xffffff + 1);
-
-        //return String.format("#%06x", rand_num);
+        //Random color (can be a non-visible color on the client background)
+        /*
+        Random obj = new Random();
+        int rand_num = obj.nextInt(0xffffff + 1);
+        return String.format("#%06x", rand_num);
+        */
     }
 }

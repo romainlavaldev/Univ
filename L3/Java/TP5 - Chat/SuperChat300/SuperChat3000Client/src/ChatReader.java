@@ -7,11 +7,12 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A thread used to read the server output while using the client
+ */
 public class ChatReader extends Thread{
 
     private final BufferedReader input;
@@ -34,6 +35,15 @@ public class ChatReader extends Thread{
         }
     }
 
+    /**
+     * Instantiates a new Chat reader.
+     *
+     * @param input              the input stream of the client
+     * @param chatTextPane       the chat text pane
+     * @param connectedList      the connected user list
+     * @param superChat3000Frame the super chat 3000 frame
+     * @param typingTextPane     the users typing text pane
+     */
     public ChatReader(BufferedReader input, JTextPane chatTextPane, JList<String> connectedList, SuperChat3000Frame superChat3000Frame, JTextPane typingTextPane) {
         this.input = input;
         this.chatTextPane = chatTextPane;
@@ -93,6 +103,7 @@ public class ChatReader extends Thread{
                             }
                         }
 
+                        //Display the current users typing state with names and colors
                         for (String clientName : clientsMap.keySet()) {
                             for (String messagePart : clientName.split(" ")) {
 
@@ -114,7 +125,7 @@ public class ChatReader extends Thread{
                                     sDoc.insertString(sDoc.getLength(), " ", null);
 
                                 } else {
-                                    //Affichage du message en couleur
+                                    //Displaying the colored message
                                     s = typingTextPane.getStyle("colorPrint");
                                     StyleConstants.setForeground(s, Color.decode(clientsMap.get(clientName)));
 
@@ -127,10 +138,10 @@ public class ChatReader extends Thread{
                             sDoc.insertString(sDoc.getLength(), " | ", s);
                         }
 
-                    } else if (received.equals("%99%")){
+                    } else if (received.equals("%99%")){ //Disconnect
                         superChat3000Frame.connect();
                         JOptionPane.showMessageDialog(superChat3000Frame,"server closed by operator ");
-                    } else {
+                    } else { //Normal treatment of a message
                         String color = received.substring(0, 7);
                         String message = received.replace(color, "");
                         String time = message.substring(0, 8);
@@ -140,7 +151,7 @@ public class ChatReader extends Thread{
 
                         StyledDocument sDoc = chatTextPane.getStyledDocument();
 
-                        //Affichage de l'heure d'envoi du message
+                        //Display the time of the message
                         Style s = chatTextPane.getStyle("colorPrint");
                         StyleConstants.setForeground(s, Color.white);
                         sDoc.insertString(sDoc.getLength(), time, s);
@@ -165,7 +176,7 @@ public class ChatReader extends Thread{
                                 sDoc.insertString(sDoc.getLength(), " ", null);
 
                             }else{
-                                //Affichage du message en couleur
+                                //Display the colored message
                                 s = chatTextPane.getStyle("colorPrint");
                                 StyleConstants.setForeground(s, Color.decode(color));
 
@@ -188,10 +199,16 @@ public class ChatReader extends Thread{
     }
 
 
+    /**
+     * Set running state
+     *
+     * @param running the running state
+     */
     public void setRunning(boolean running){
         this.running = running;
     }
 
+    //Populate the connected client JList with colored names
     private void populateConnectedClients(Map<String, String> clients) {
         DefaultListModel<String> lm = new DefaultListModel<> ();
 

@@ -1,20 +1,30 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IconeSelectionDialog extends VerticalPanel {
+/**
+ * Dialog used to select emote
+ */
+public class IconSelectionDialog extends VerticalPanel {
+
     private final Map<String, ImageIcon> emoteMap;
     private final JList<String> emoteJList;
 
+    /**
+     * Gets emote JList.
+     *
+     * @return the emote JList
+     */
     public JList<String> getEmoteJList() {
         return emoteJList;
     }
 
-    public IconeSelectionDialog() {
+    /**
+     * Instantiates a new Icon selection dialog.
+     */
+    public IconSelectionDialog() {
 
         emoteMap = new HashMap<>();
 
@@ -28,7 +38,7 @@ public class IconeSelectionDialog extends VerticalPanel {
 
         emoteJList = new JList<>(lm);
 
-        emoteJList.setCellRenderer(new DefaultListCellRenderer(){
+        emoteJList.setCellRenderer(new DefaultListCellRenderer(){ //Customise a ListCellRenderer to display emote name with corresponding Icon
             @Override
             public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 
@@ -41,13 +51,13 @@ public class IconeSelectionDialog extends VerticalPanel {
         });
 
 
-
-
         this.add(new JScrollPane(emoteJList));
 
+        //Show a popup with this dialog content
         JOptionPane.showMessageDialog(null, this, "Choose an emote", JOptionPane.DEFAULT_OPTION);
     }
 
+    //Get emotes Icon and name from resources files
     private void populateEmoteMap() {
         File dir = null;
 

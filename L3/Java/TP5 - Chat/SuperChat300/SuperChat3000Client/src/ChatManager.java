@@ -15,6 +15,18 @@ public class ChatManager {
         writing = false;
     }
 
+    /**
+     * Instantiates a new Chat manager.
+     *
+     * @param serverConnexion    the server connexion socket
+     * @param chatTextPane       the chat text pane
+     * @param messageTxtField    the message txt field
+     * @param sendBtn            the send btn
+     * @param nomClient          the nom client
+     * @param connectedList      the connected users list
+     * @param superChat3000Frame the super chat 3000 frame
+     * @param typingTextPane     the typing text pane
+     */
     public ChatManager(Socket serverConnexion, JTextPane chatTextPane, JTextField messageTxtField, JButton sendBtn, String nomClient, JList<String> connectedList, SuperChat3000Frame superChat3000Frame, JTextPane typingTextPane) {
         this.messageTxtField = messageTxtField;
         this.sendBtn = sendBtn;
@@ -76,6 +88,7 @@ public class ChatManager {
         });
     }
 
+    //Seding to the server the typing state
     private void sendWrite(boolean b) {
         String code = b ? "%88%TRUE" : "%88%FALSE";
         System.out.println("Sending writing state (" + code + ") ...");
@@ -108,6 +121,9 @@ public class ChatManager {
 
     }
 
+    /**
+     * Disconnect.
+     */
     public void disconnect(){
 
 
