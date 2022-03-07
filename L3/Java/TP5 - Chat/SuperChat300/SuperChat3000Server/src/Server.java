@@ -1,34 +1,50 @@
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Style;
+import javax.swing.text.StyleConstants;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.net.*;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.io.*;
 
-
 /**
- * A stream used to redirect a stream into a JTextArea
+ * A stream used to redirect a stream into a JTextPane with color
  */
-class TextAreaOutputStream extends OutputStream {
+class TextPaneOutputStream extends OutputStream {
 
-    private JTextArea ta;
+    private JTextPane tp;
+    private Color c;
 
     /**
-     * Instantiates a new Text area output stream.
+     * Instantiates a new Text pane output stream.
      *
-     * @param ta the text area component
+     * @param tp the text pane component
      */
-    public TextAreaOutputStream(JTextArea ta) {
-        this.ta = ta;
+    public TextPaneOutputStream(JTextPane tp, Color c) {
+        this.tp = tp;
+        this.c = c;
     }
 
     public synchronized void write(int b) throws IOException {
-        ta.append(String.valueOf((char) b));
+        
+        Style s = tp.getStyle("colorPrint");
+        StyleConstants.setForeground(s, c);
+
+        try {
+            tp.getDocument().insertString(tp.getDocument().getLength(), String.valueOf((char) b), s);
+        } catch (BadLocationException e) {
+            e.printStackTrace();
+        }
     }
 }
+
 
 /**
  * Main class of the server which create and load a server window
@@ -59,14 +75,20 @@ public class Server {
             }
 
             //Building the app
+
+            
             JFrame mainFrame = new JFrame("SuperChat3000 Server");
 
-            JTextArea consoleTextArea = new JTextArea();
-            PrintStream ps = new PrintStream(new TextAreaOutputStream(consoleTextArea));
-            System.setOut(ps);
-            System.setErr(ps);
+            JTextPane consoleTextPane = new JTextPane();
+            consoleTextPane.addStyle("colorPrint", null);
 
-            JScrollPane js = new JScrollPane(consoleTextArea);
+            //Redirecting System.out and System.err to the JTextPane with colored error printing
+            PrintStream psOut = new PrintStream(new TextPaneOutputStream(consoleTextPane, Color.BLACK));
+            PrintStream psErr = new PrintStream(new TextPaneOutputStream(consoleTextPane, Color.RED));
+            System.setOut(psOut);
+            System.setErr(psErr);
+
+            JScrollPane js = new JScrollPane(consoleTextPane);
             js.setPreferredSize(new Dimension(600, 400));
 
             mainFrame.add (js);
@@ -101,7 +123,7 @@ public class Server {
         }
 
 
-        System.out.println("Starting server on port " + port + ", local address is " + InetAddress.getLocalHost().getHostAddress());
+        printlnTimedMessae("Starting server on port " + port + ", local address is " + InetAddress.getLocalHost().getHostAddress() + "\n");
 
         connectedClients = new ArrayList<Client>();
 
@@ -111,9 +133,9 @@ public class Server {
         //Main loop of the server
         while(true){
             //Waiting for a client to connect
-            System.out.println("Waiting for a client to connect");
+            printlnTimedMessae("Waiting for a client to connect");
             clientConnexion = listener.accept();
-            System.out.println("Client connected");
+            printlnTimedMessae("Client connected" + "\n");
 
             BufferedReader input = new BufferedReader(new InputStreamReader(clientConnexion.getInputStream()));
             BufferedWriter output = new BufferedWriter(new OutputStreamWriter(clientConnexion.getOutputStream()));
@@ -134,7 +156,7 @@ public class Server {
         if (connectedClients != null && connectedClients.size() != 0 ){
             for (Client client : connectedClients) {
                 try {
-                    System.out.println("Forcing " + client.getName() + " to disconnect");
+                    printlnTimedMessae("Forcing " + client.getName() + " to disconnect" + "\n");
                     client.getOutput().write("%99%");
                     client.getOutput().newLine();
                     client.getOutput().flush();
@@ -160,5 +182,18 @@ public class Server {
         int rand_num = obj.nextInt(0xffffff + 1);
         return String.format("#%06x", rand_num);
         */
+    }
+
+    static void printlnTimedMessae(String msg){
+        System.out.println(getTime() + " " + msg);
+    }
+
+    static void printlnTimedError(String errorMessage){
+        System.err.println("\nERROR\n" + getTime() + " " + errorMessage);
+    }
+
+    static String getTime(){
+        Format f = new SimpleDateFormat("HH:mm:ss");
+        return f.format(new Date());
     }
 }

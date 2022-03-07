@@ -82,6 +82,7 @@ public class SuperChat3000Frame extends JFrame {
         typingTextPane = new JTextPane();
         typingTextPane.addStyle("colorPrint", null);
         typingTextPane.addStyle("emoteStyle", null);
+        typingTextPane.setMaximumSize(new Dimension(100000, 80));
 
         typingTextPane.setEditable(false);
     }
@@ -89,7 +90,7 @@ public class SuperChat3000Frame extends JFrame {
 
     JTextField messageTextField;{
         messageTextField = new JTextField();
-        messageTextField.setMaximumSize(new Dimension(10000, 60));
+        messageTextField.setMaximumSize(new Dimension(10000, 180));
 
     }
 

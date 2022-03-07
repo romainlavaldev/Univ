@@ -1,7 +1,5 @@
 import java.io.*;
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.net.Socket;
 import java.util.List;
 
 /**
@@ -32,22 +30,28 @@ public class ChatConnexion extends Thread {
         System.out.printf("Client added to the list. count : (%d)\n", connectedClients.size());
 
         //Send a message to all clients to welcome the new client
+        System.out.println("\n");
+        Server.printlnTimedMessae("Sending " + client.getName() + " connexion message");
+        Server.printlnTimedMessae("START");
         for (Client clientConnected : connectedClients){
             try {
-                clientConnected.getOutput().write("#FF0000" + getTime() + " SYSTEM" + " - " + this.client.getName() + " connected");
+                clientConnected.getOutput().write("#FF0000" + Server.getTime() + " SYSTEM" + " - " + this.client.getName() + " connected");
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
 
-                System.out.println("Connexion message sended to " + clientConnected.getName());
+                Server.printlnTimedMessae("Connexion message sended to " + clientConnected.getName());
             } catch (IOException e) {
-                System.err.println("Error while sending message to " + clientConnected.getName());
+                Server.printlnTimedError("Error while sending message to " + clientConnected.getName());
                 clientConnected.disconnect();
                 e.printStackTrace();
             }
         }
 
+        Server.printlnTimedMessae("DONE\n");
 
         sendClientList();
+
+        Server.printlnTimedMessae("Client " + client.getName() + " fully connected to server" + "\n");
 
         start();
     }
@@ -61,18 +65,22 @@ public class ChatConnexion extends Thread {
             data += clienConnected.getColor() + "%55%" + clienConnected.getName() + "%23%";
         }
 
+        Server.printlnTimedMessae("Sending client list");
+        Server.printlnTimedMessae("START");
+
         for (Client clientConnected : connectedClients) {
             try {
                 clientConnected.getOutput().write(data);
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
-                System.out.println("Client list sended to " + clientConnected.getName());
+                Server.printlnTimedMessae("Client list sended to " + clientConnected.getName());
             } catch (IOException e) {
-                System.out.println("Error while sending connected list to " + clientConnected.getName());
+                Server.printlnTimedMessae("Error while sending connected list to " + clientConnected.getName());
                 clientConnected.disconnect();
                 e.printStackTrace();
             }
         }
+        Server.printlnTimedMessae("DONE" + "\n");
     }
 
     @Override
@@ -85,7 +93,7 @@ public class ChatConnexion extends Thread {
             try {
                 line = client.getInput().readLine();
             } catch (IOException e) {
-                System.err.println("Erreur while reading message from " + this.client.getName());
+                Server.printlnTimedError("Erreur while reading message from " + this.client.getName());
                 disconnect();
                 e.printStackTrace();
                 //connectedClients.remove(client);
@@ -101,30 +109,36 @@ public class ChatConnexion extends Thread {
                     return;
                 }else if(line.startsWith("%88%")){ //%88% correspond to a currently typing state (start typing or stop typing)
                     if (line.replace("%88%", "").equals("TRUE")){
-                        System.out.println(client.getName() + " started typing");
+                        Server.printlnTimedMessae(client.getName() + " started typing");
                         client.setTyping(true);
 
                         sendTypingClients();
                     }
                     else if (line.replace("%88%", "").equals("FALSE")){
-                        System.out.println(client.getName() + " stopped typing");
+                        Server.printlnTimedMessae(client.getName() + " stopped typing");
                         client.setTyping(false);
 
                         sendTypingClients();
                     }
                 }else{ //Normal treatment of message
+
+                    System.out.println("\n");
+                    Server.printlnTimedMessae("Sending message from : " + client.getName() + " with content : " + line);
+                    Server.printlnTimedMessae("START");
                     for (Client clientConnected : connectedClients) {
                         try {
-                            clientConnected.getOutput().write(this.client.getColor() + getTime() + " >> " + this.client.getName() + " - " + line);
+                            clientConnected.getOutput().write(this.client.getColor() + Server.getTime() + " >> " + this.client.getName() + " - " + line);
                             clientConnected.getOutput().newLine();
                             clientConnected.getOutput().flush();
-                            System.out.println("message sended from " + this.client.getName() + " to " + clientConnected.getName());
+                            Server.printlnTimedMessae("message sended from " + this.client.getName() + " to " + clientConnected.getName());
                         } catch (IOException e) {
-                            System.err.println("Erreur while sending message from " + this.client.getName() + " to " + clientConnected.getName());
+                            Server.printlnTimedError("Erreur while sending message from " + this.client.getName() + " to " + clientConnected.getName());
                             clientConnected.disconnect();
                             e.printStackTrace();
                         }
                     }
+
+                    Server.printlnTimedMessae("DONE\n");
                 }
             }
         }
@@ -140,16 +154,16 @@ public class ChatConnexion extends Thread {
             }
         }
 
-        System.out.println(data);
+        //Server.printlnTimedMessae(data);
 
         for (Client clientConnected : connectedClients) {
             try {
                 clientConnected.getOutput().write(data);
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
-                System.out.println("Client typing list sended to " + clientConnected.getName());
+                //Server.printlnTimedMessae("Client typing list sended to " + clientConnected.getName());
             } catch (IOException e) {
-                System.out.println("Error while sending client typing list " + clientConnected.getName());
+                Server.printlnTimedMessae("Error while sending client typing list " + clientConnected.getName());
                 clientConnected.disconnect();
                 e.printStackTrace();
             }
@@ -171,17 +185,23 @@ public class ChatConnexion extends Thread {
 
 
         //Send a message to all clients to tell them that the client has gone
+
+        System.out.println("\n");
+        Server.printlnTimedMessae("Sending " + client.getName() + " disconexion message");
+        Server.printlnTimedMessae("START");
         for (Client clientConnected : connectedClients){
             try {
-                clientConnected.getOutput().write("#FF0000" + getTime() + " SYSTEM" + " - " + this.client.getName() + " diconnected");
+                clientConnected.getOutput().write("#FF0000" + Server.getTime() + " SYSTEM" + " - " + this.client.getName() + " diconnected");
                 clientConnected.getOutput().newLine();
                 clientConnected.getOutput().flush();
-                System.out.println("Connexion message sended from " + this.client.getName() + " to " + clientConnected.getName());
+                Server.printlnTimedMessae("Disconnexion message sended from " + this.client.getName() + " to " + clientConnected.getName());
             } catch (IOException e) {
-                System.err.println("Error while sending message from " + this.client.getName() + " to " + clientConnected.getName());
+                Server.printlnTimedError("Error while sending message from " + this.client.getName() + " to " + clientConnected.getName());
                 e.printStackTrace();
             }
         }
+        Server.printlnTimedMessae("DONE");
+
 
         //Send the updated connected client list and client typing list to all users
         if(connectedClients.size() != 0){
@@ -191,12 +211,9 @@ public class ChatConnexion extends Thread {
 
         //Stopping the thread
         running = false;
-        System.out.println(client.getName() + " disconnected");
+        Server.printlnTimedMessae(client.getName() + " disconnected");
 
     }
 
-    private String getTime(){
-        Format f = new SimpleDateFormat("HH:mm:ss");
-        return f.format(new Date());
-    }
+    
 }
