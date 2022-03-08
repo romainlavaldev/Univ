@@ -3,6 +3,8 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
+import javax.swing.text.AttributeSet.ColorAttribute;
+
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -138,7 +140,70 @@ public class ChatReader extends Thread{
                             sDoc.insertString(sDoc.getLength(), " | ", s);
                         }
 
-                    } else if (received.equals("%99%")){ //Disconnect
+                    }else if (received.startsWith("PRIVATEMSG")){
+                        received = received.replace("PRIVATEMSG", "");
+
+                        String color = received.substring(0, 7);
+                        String message = received.replace(color, "");
+                        String time = message.substring(0, 8);
+                        message = message.replace(time, "");
+
+                        StyledDocument sDoc = chatTextPane.getStyledDocument();
+
+                        //Display the time of the message
+                        Style s = chatTextPane.getStyle("colorPrint");
+                        StyleConstants.setForeground(s, Color.white);
+                        sDoc.insertString(sDoc.getLength(), time, s);
+
+                        
+                        Color oldFg = StyleConstants.getForeground(s);
+
+                        for (String messagePart : message.split(" ")){
+
+
+                            if (messagePart.startsWith("//")){
+                                s = chatTextPane.getStyle("emoteStyle");
+
+                                ImageIcon ico;
+
+                                if (emoteMap.get(messagePart.replace("//", "")) == null){
+                                    ico = emoteMap.get("unknown");
+                                }else{
+                                    ico = emoteMap.get(messagePart.replace("//", ""));
+                                }
+
+                                StyleConstants.setIcon(s, ico);
+                                StyleConstants.setBackground(s, Color.decode(color));
+
+                                sDoc.insertString(sDoc.getLength(), "replaced text", s);
+
+                                sDoc.insertString(sDoc.getLength(), " ", null);
+
+                            }else{
+                                //Display the colored message
+                                s = chatTextPane.getStyle("colorPrint");
+
+                                StyleConstants.setBackground(s, Color.decode(color));
+                                StyleConstants.setForeground(s, Color.BLACK);
+
+                                sDoc.insertString(sDoc.getLength(), messagePart + " ", s);
+
+
+                            }
+                        }
+                        s = chatTextPane.getStyle("emoteStyle");
+                        StyleConstants.setBackground(s, Color.decode("#191a2a"));
+                        s = chatTextPane.getStyle("colorPrint");
+                        StyleConstants.setBackground(s, Color.decode("#191a2a"));
+                        StyleConstants.setForeground(s, oldFg);
+
+
+
+                        s = chatTextPane.getStyle("colorPrint");
+                        StyleConstants.setForeground(s, Color.decode(color));
+
+                        sDoc.insertString(sDoc.getLength(), "\n", s);                    
+                    }else if (received.equals("%99%")){ //Disconnect
                         superChat3000Frame.connect();
                         JOptionPane.showMessageDialog(superChat3000Frame,"server closed by operator ");
                     } else { //Normal treatment of a message
@@ -190,7 +255,6 @@ public class ChatReader extends Thread{
                         sDoc.insertString(sDoc.getLength(), "\n", s);
                     }
                 }
-
             } catch(BadLocationException | IOException e){
                 e.printStackTrace();
             }

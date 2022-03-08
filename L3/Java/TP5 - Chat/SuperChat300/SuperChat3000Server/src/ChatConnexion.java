@@ -120,6 +120,43 @@ public class ChatConnexion extends Thread {
 
                         sendTypingClients();
                     }
+                }else if (line.startsWith("/msg ")){ //Private message treatment
+                    String receiver = line.replace("/msg ", "").split(" ")[0].trim();
+                    String message = line.replace("/msg " + receiver, "");
+
+                    boolean found = false;
+
+                    for (Client clientConnected : connectedClients){
+                        if (clientConnected.getName().equals(receiver)){
+                            found = true;
+                            try {
+                                clientConnected.getOutput().write("PRIVATEMSG" + this.client.getColor() + Server.getTime() + " >> " + this.client.getName() + " - " + message);
+                                clientConnected.getOutput().newLine();
+                                clientConnected.getOutput().flush();
+
+                                this.client.getOutput().write("PRIVATEMSG" + this.client.getColor() + Server.getTime() + " >> SENDED TO : " + clientConnected.getName() + " - " + message);
+                                this.client.getOutput().newLine();
+                                this.client.getOutput().flush();
+                            } catch (IOException e) {
+                                Server.printlnTimedError("Erreur while sending private message from " + this.client.getName() + " to " + clientConnected.getName());
+                                //clientConnected.disconnect();
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    if (!found){
+                        try {
+                            client.getOutput().write("#FF0000" + Server.getTime() + " SYSTEM" + " - " + " Can't found provided user ! ("+ receiver +")");
+                            client.getOutput().newLine();
+                            client.getOutput().flush();
+                        } catch (IOException e) {
+                            Server.printlnTimedError("Erreur while sending private message from " + this.client.getName());
+                            client.disconnect();
+                            e.printStackTrace();
+                        }
+                    }
+                
                 }else{ //Normal treatment of message
 
                     System.out.println("\n");
