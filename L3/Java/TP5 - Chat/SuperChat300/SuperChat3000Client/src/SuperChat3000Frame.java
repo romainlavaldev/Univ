@@ -3,6 +3,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -50,7 +52,7 @@ public class SuperChat3000Frame extends JFrame {
 
     JList<String> connectedList;{
         connectedList = new JList<>();
-        connectedList.setPreferredSize(new Dimension(100, 10));
+        //connectedList.setPreferredSize(new Dimension(100, 10));
     }
 
 
@@ -146,6 +148,39 @@ public class SuperChat3000Frame extends JFrame {
             }
 
         });
+
+
+        connectedList.addMouseListener(new MouseListener(){
+
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    messageTextField.setText("/msg " + connectedList.getSelectedValue() + " " + messageTextField.getText());;
+                }                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent arg0) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent arg0) {
+                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent arg0) {
+                
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent arg0) {
+                
+            }
+
+        });
+
 
         buildInterface();
 

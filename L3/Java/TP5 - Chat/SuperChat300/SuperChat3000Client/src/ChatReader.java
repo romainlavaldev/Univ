@@ -292,7 +292,13 @@ public class ChatReader extends Thread{
                     String nextUser = (String) value;
                     setText(nextUser);
                     String color = clients.get(nextUser);
-                    setForeground(Color.decode(color));
+
+                    if (color == null){
+
+                        setForeground(Color.WHITE);
+                    }else{
+                        setForeground(Color.decode(color));
+                    }
 
                     if (isSelected) {
                         setBackground(getBackground().darker());
