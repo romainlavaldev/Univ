@@ -1,0 +1,45 @@
+# MAKEFILE for TP Bataille Navale
+#
+#
+
+#
+# Directories
+#
+# top_dir = /lium/buster1/jacob/Enseignements/Licence/L3/Inf310A_SE/TP/TP_Bataille_Navale
+top_dir = .
+commun_dir = $(top_dir)/Commun
+mer_dir = $(top_dir)/Mer
+coord_dir = $(top_dir)/Coord
+bateau_dir = $(top_dir)/Bateau
+signaux_dir = $(top_dir)/Signaux
+verrous_dir = $(top_dir)/Verrous
+
+
+all : 
+	cd $(coord_dir) ; make -f Makefile all ; cd $(top_dir)
+	cd $(bateau_dir) ; make -f Makefile all ; cd $(top_dir)
+	cd $(mer_dir) ; make -f Makefile all ; cd $(top_dir)
+	cd $(signaux_dir) ; make -f Makefile all ; cd $(top_dir)
+	cd $(verrous_dir) ; make -f Makefile all ; cd $(top_dir)
+
+
+clean :
+	cd $(coord_dir) ; make -f Makefile clean ; cd $(top_dir)
+	cd $(bateau_dir) ; make -f Makefile clean ; cd $(top_dir)
+	cd $(mer_dir) ; make -f Makefile clean ; cd $(top_dir)
+	cd $(signaux_dir) ; make -f Makefile clean ; cd $(top_dir)
+	cd $(verrous_dir) ; make -f Makefile clean ; cd $(top_dir)
+
+
+tags :
+	cd $(coord_dir) ; make -f Makefile tags ; cd $(top_dir)
+	cd $(bateau_dir) ; make -f Makefile tags ; cd $(top_dir)
+	cd $(mer_dir) ; make -f Makefile tags ; cd $(top_dir)
+	cd $(signaux_dir) ; make -f Makefile tags ; cd $(top_dir)
+	cd $(verrous_dir) ; make -f Makefile tags ; cd $(top_dir)
+
+dist : 
+	cp -f $(coord_dir)/*.c $(coord_dir)/*.h $(coord_dir)/Makefile Etudiants/Coord/. 
+	cp -f $(bateau_dir)/*.c $(bateau_dir)/*.h $(bateau_dir)/Makefile Etudiants/Bateau/. 
+	cp -f $(mer_dir)/*.c $(mer_dir)/*.h $(mer_dir)/Makefile Etudiants/Mer/. 
+	cd Etudiants ; rm -f TP_Bataille_Navale.tar.gz ; tar cvf TP_Bataille_Navale.tar * ; gzip TP_Bataille_Navale.tar ; cd ..

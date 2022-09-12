@@ -1,0 +1,18 @@
+#
+# Option compilation 
+#
+
+# Macros pour creation des objets et edition de liens
+ CCOBJ=gcc -c
+ CCLNK=gcc 
+
+
+# Macro pour Debuggage: affichage de traces plus detaillees
+# Valeurs possibles: yes , no 
+DEBUG=yes
+
+ifeq ($(DEBUG),yes)
+	 FLAGS=-Wall -g -D_DEBUG_
+else
+	 FLAGS=-Wall  
+endif

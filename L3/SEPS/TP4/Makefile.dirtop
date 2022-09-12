@@ -1,0 +1,9 @@
+#
+# Parents Directories
+#
+
+DirMessages=./Messages
+DirV1=./Version_1
+DirV2=./Version_2
+DirSujet=./Sujet
+DirEtudiants=./Etudiants

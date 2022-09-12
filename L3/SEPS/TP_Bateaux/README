@@ -1,0 +1,50 @@
+Description de l'archive pour realiser le TP de la bataille navale
+
+ Bateau : 
+	bateau.{c,h} : TDA bateau 
+	test_bateau.c : programme de test des primitives du TDA bateau
+	test_bateaux.c : programme de test des primitives d'une liste de bateaux
+	Makefile : pour creer les executables des programmes de ce repertoire avec "make" 
+
+Commun :
+	commun.h : definition des constantes utilisees par tousles programmes de ce TP
+
+Coord : 
+	coord.{c,h} : TDA Coord(onnees) 
+	coords.{c,h} : Liste de Coord(onnees) 
+	test_coord.c : programme de test des primitives du TDA coord
+	test_coords.c : programme de test des primitives des listes de coord
+	Makefile : pour creer les executables des programmes de ce repertoire avec "make" 
+
+Fichiers : 
+	repertoire ou l'on met tous les fichiers de travail , par exemple
+	le fichier mer (mer.bin)
+
+Mer : 
+	mer.{c,h} : TDA mer 
+	test_mer.c : programme de test des primitives du TDA mer
+	init_fich_mer.c : programme de creation d'un fichier-tableau de la mer
+	Makefile : pour creer les executables des programmes de ce repertoire avec "make" 
+
+Verrous : 
+	repertoire conseille pour faire la 1ere partie du TP utilisant les verrous
+	navire.c : squellette du programme navire a faire 
+	vision.c : squelette du programme visio a faire
+	lancer_navires.sh : script pour lancer en paralelle plusieurs navires  
+	Makefile : pour creer 2 executables nommes arbitrairement "navire" et "vision" dont les roles sont expliques dans le sujet du TP
+
+Signaux :
+	repertoire conseille pour faire la 2ieme partie du TP utilisant les signaux 
+	amiral.c : squelette du programme amiral a faire 	
+	navire.c : squelette du programme navire a faire 
+	lancer_navires.sh : script pour lancer en paralelle plusieurs navires  
+	Makefile : pour creer 2 executables nommes arbitrairement "navire" et "amiral" dont les roles sont expliques dans le sujet du TP,
+
+Sujet : 
+      sujet_tp_bataille.pdf : sujet du tp a faire
+            
+Makefile , Makefile.compilation, Makefile.dir : 
+	Fichiers Makefile pour creer depuis la racine de votre TP tous les executables
+
+README : 
+	le fichier que vous etes en train de lire 

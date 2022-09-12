@@ -1,0 +1,30 @@
+include Makefile.dirtop
+include Makefile.compilation
+
+clean : 
+	cd $(DirMessages) ;  make $@
+	cd $(DirEtudiants) ; make $@
+
+
+
+all : 
+ifeq ($(DEBUG),yes)
+	@echo "Mode debug"
+else
+	@echo "Mode release"
+endif
+
+	cd $(DirMessages) ;  make $@
+	cd $(DirEtudiants) ; make $@
+
+#
+#-- Tags sur les fonctions pour emacs 
+#
+
+tags : 
+	etags --language=c  */*.[ch] --output=PC_COURSE.TAGS
+
+
+
+
+

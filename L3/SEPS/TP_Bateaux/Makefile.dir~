@@ -1,0 +1,11 @@
+#
+# Directories
+#
+
+commun_dir = $(top_dir)/Commun
+terrain_dir = $(top_dir)/Terrain
+vers_dir = $(top_dir)/Vers
+verrous_dir = $(top_dir)/Verrous
+signaux_dir = $(top_dir)/Signaux
+distrib_dir = $(top_dir)/Etudiants
+

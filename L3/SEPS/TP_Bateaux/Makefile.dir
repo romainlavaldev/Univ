@@ -1,0 +1,12 @@
+#
+# Directories
+#
+
+commun_dir = $(top_dir)/Commun
+coord_dir = $(top_dir)/Coord
+mer_dir = $(top_dir)/Mer
+bateau_dir = $(top_dir)/Bateau
+verrous_dir = $(top_dir)/Verrous
+signaux_dir = $(top_dir)/Signaux
+distrib_dir = $(top_dir)/Etudiants
+
