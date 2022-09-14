@@ -1,0 +1,32 @@
+
+/!\ connaitre les etapes du KDD /!\
+
+bouclage 3-4-5 tant que pas convaincu
+
+répartitions étapes :
+	1,2   : Data
+	3,4,5 : Model / Data mining
+	6,7   : Eval
+
+infos supp des etapes:
+	1 : Choix propositions à analyser
+	-> phénomène à étudier ?
+	   Variable cile, résultat attendu
+	
+	=> Conditionne tous les choix
+	
+	2 : Inventaire : données utiles ?
+	    Collecte : rapatrier ? achat ? créer ?
+	    Integration : Format ? ...
+	    
+	3 : Selection/Préparration : 
+	    Choix colonnes / lignes  -  Enlever/Créer-Transformer
+	    
+	4 : Application de l'IA
+	    -> differents modèles : differentes données ? différents algos ? (un ou l'autre) combiner differents modèles
+	    
+	5 : Identiier le meilleur modèle
+	    -> choisir une mesure d'évaluation
+	
+	
+
