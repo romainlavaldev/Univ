@@ -1,0 +1,43 @@
+exemple golf OneR:
+
+calcul erreurs :
+
+	feature outlook :
+				yes	 no
+		sunny :		 2!	|3|
+		overcast :	|4|	 0
+		rainy :		|3|	 2!
+		
+		4 erreurs -> CER = 4/14
+		
+	
+	feature windy :
+				yes	 no
+		true :		 3!	|3|
+		false :		|6|	 2!
+		
+		5 erreurs -> CER = 5/14
+		
+		
+	feature temperature :
+				yes	 no
+		hot :	 	 2!	|2|
+		mild :		|4|	 2!
+		cool :		|3|	 1!
+		
+		5 erreurs -> CER = 5/14
+		
+	
+	feature humidity :
+				yes	 no
+		high :		 3!	|4|
+		normal :	|6|	 1!
+		
+		4 erreurs -> CER = 4/14
+		
+		
+On choisi outlook car pas discretisé.
+
+OneR ->	if outlook == sunny then no
+	if outlook == overcast then yes
+	if outlook == rainy then yes
