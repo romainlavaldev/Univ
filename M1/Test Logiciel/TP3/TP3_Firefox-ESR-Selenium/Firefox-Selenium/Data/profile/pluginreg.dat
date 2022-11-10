@@ -1,0 +1,35 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version|0.18f|$
+Arch|x86_64-msvc|$
+
+[PLUGINS]
+npctrl.dll|$
+C:\Program Files\Microsoft Silverlight\5.1.50907.0\npctrl.dll|$
+5.1.50907.0|$
+1493845322000|0|0|0|$
+5.1.50907.0|$
+Silverlight Plug-In|$
+2
+0|application/x-silverlight|npctrl|scr|$
+1|application/x-silverlight-2|||$
+NPSWF64_27_0_0_130.dll|$
+C:\WINDOWS\system32\Macromed\Flash\NPSWF64_27_0_0_130.dll|$
+27.0.0.130|$
+1509960116917|0|0|0|$
+Shockwave Flash 27.0 r0|$
+Shockwave Flash|$
+2
+0|application/x-shockwave-flash|Adobe Flash movie|swf|$
+1|application/futuresplash|FutureSplash movie|spl|$
+
+[INVALID]
+C:\Program Files\Microsoft Silverlight\5.1.50907.0\npctrlui.dll|$
+1493845322000|$
+C:\Program Files (x86)\Samsung\SmartCam\npSmartCamFinder.dll|$
+1471859994000|$
+C:\Program Files (x86)\Samsung\SmartCam\npwViewer_lib.dll|$
+1471859998000|$
+C:\Program Files (x86)\Samsung\SmartCam\npwViewer_lib_turn.dll|$
+1471860000000|$
