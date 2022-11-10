@@ -122,10 +122,26 @@ main( int nb_arg , char * tab_arg[] )
       /* 
        * Verif si pas decanille 
        */
-      if (elem_etat_lire(elem_cheval) == DECANILLE){
+
+      int ind;
+      liste_elem_rechercher(&ind, liste, elem_cheval);
+
+      if(elem_decanille(liste_elem_lire(liste, ind))){
         fini = VRAI;
-        break;
         printf("je suis decanillé");
+        
+        op.sem_num = 1;
+        op.sem_op = -1;
+        semop(listeSemId, &op, 1);
+
+        int ind;
+        liste_elem_rechercher(&ind, liste, elem_cheval);
+        liste_elem_supprimer(liste, ind);
+
+        op.sem_op = 1;
+        semop(listeSemId, &op, 1);
+
+        exit(0);
       }
 
       /*Blocage de la case actuelle jusqu'a la fin du deplacement*/
@@ -145,7 +161,7 @@ main( int nb_arg , char * tab_arg[] )
 
       arrivee = depart+deplacement ;
 
-      if( arrivee > PISTE_LONGUEUR-1 )
+      if( arrivee >= PISTE_LONGUEUR-1 )
 	{
 	  arrivee = PISTE_LONGUEUR-1 ;
 	  fini = VRAI ;
@@ -171,9 +187,17 @@ main( int nb_arg , char * tab_arg[] )
       op.sem_op = -1;
       semop(listeSemId, &op, 1);
 
-      struct cell_s c;
-      piste_cell_lire(piste, arrivee, &c);
-      liste_elem_decaniller(liste, cell_pid_lire(c));
+      cell_t cellArrive;
+      elem_t chevalADeca;
+
+      piste_cell_lire(piste, arrivee, &cellArrive);
+      elem_cell_affecter(&chevalADeca, cellArrive);
+
+      int indChevalDeca;
+      liste_elem_rechercher(&indChevalDeca, liste, chevalADeca);
+
+
+      liste_elem_decaniller(liste, indChevalDeca);
 
        /*Délocage de la liste*/
       op.sem_op = 1;
@@ -184,10 +208,16 @@ main( int nb_arg , char * tab_arg[] )
 	   * Deplacement: effacement case de depart, affectation case d'arrivee 
 	   */
 
+
+    /*
+    
+    */
     struct cell_s cA;
     
     struct cell_s cD;
-    piste_cell_affecter(piste, depart, cD);
+    //piste_cell_affecter(piste, depart, cD);
+    piste_cell_effacer(piste, depart);
+    piste_cell_effacer(piste, arrivee);
 
     cA.pid = getpid();
     cA.marque = marque;
@@ -215,6 +245,18 @@ main( int nb_arg , char * tab_arg[] )
       depart = arrivee ;
     }
 
+    
+  
+      op.sem_num = arrivee;
+      op.sem_op = -1;
+      semop(pisteSemId, &op, 1);
+
+      
+  
+      op.sem_num = 1;
+      op.sem_op = -1;
+      semop(listeSemId, &op, 1);
+
   printf( "Le cheval \"%c\" A FRANCHIT LA LIGNE D ARRIVEE\n" , marque );
 
  
@@ -223,28 +265,26 @@ main( int nb_arg , char * tab_arg[] )
    * Suppression du cheval de la liste 
    */
 
+      int ind;
+      liste_elem_rechercher(&ind, liste, elem_cheval);
+      liste_elem_supprimer(liste, ind);
+
+
+      piste_cell_effacer(piste, arrivee);
+
+      op.sem_num = arrivee;
+      op.sem_op = 1;
+      semop(pisteSemId, &op, 1);
+
+      
+      op.sem_op = 1;
+      semop(listeSemId, &op, 1);
+      
+      
+      
+      
+
   /*Blocage de la liste pour se retirer*/
-      op.sem_num = 1;
-      op.sem_op = -1;
-      semop(listeSemId, &op, 1);
-
-      liste_elem_supprimer(liste, getpid());
-
-
-      op.sem_num = arrivee;
-      op.sem_op = -1;
-      semop(pisteSemId, &op, 1);
-
-      struct cell_s c;
-      piste_cell_affecter(piste, arrivee, c);
-
-      op.sem_num = arrivee;
-      op.sem_op = 1;
-      semop(pisteSemId, &op, 1);
-
-       /*Délocage de la liste*/
-      op.sem_op = 1;
-      semop(listeSemId, &op, 1);
   
   exit(0);
 }
