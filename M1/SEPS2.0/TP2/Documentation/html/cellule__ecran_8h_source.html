@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie:  Fichier source de Cellule/cellule_ecran.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17676eace7541fe8073d122163021686.html">Cellule</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">cellule_ecran.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cellule__ecran_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _CELLULE_ECRAN_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _CELLULE_ECRAN_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="ecran_8h.html">ecran.h</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="cellule_8h.html">cellule.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="cellule__ecran_8h.html#a0ad5bc3ec8399a50237859e4b76e5164">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="cellule__ecran_8h.html#a0ad5bc3ec8399a50237859e4b76e5164">cellule_wprint</a>( <a class="code hl_struct" href="structecran__t.html">ecran_t</a> * <span class="keyword">const</span> <a class="code hl_variable" href="test__automate__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> ,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>             <span class="keyword">const</span> <span class="keywordtype">int</span> lig ,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>             <span class="keyword">const</span> <span class="keywordtype">int</span> col ,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>             <span class="keyword">const</span> <a class="code hl_struct" href="structcellule__t.html">cellule_t</a> * <span class="keyword">const</span> cellule ,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>             <span class="keyword">const</span> <a class="code hl_enumeration" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a> dynamique ) ;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="acellule_8h_html"><div class="ttname"><a href="cellule_8h.html">cellule.h</a></div><div class="ttdoc">Type et primitives du type cellule_t.</div></div>
+<div class="ttc" id="acellule__ecran_8h_html_a0ad5bc3ec8399a50237859e4b76e5164"><div class="ttname"><a href="cellule__ecran_8h.html#a0ad5bc3ec8399a50237859e4b76e5164">cellule_wprint</a></div><div class="ttdeci">void cellule_wprint(ecran_t *const ecran, const int lig, const int col, const cellule_t *const cellule, const booleen_t dynamique)</div><div class="ttdoc">Affichage d'un cellule sur un ecran.</div></div>
+<div class="ttc" id="acommun_8h_html_a92d7e7c3f294e4ec971caee12626243c"><div class="ttname"><a href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a></div><div class="ttdeci">booleen_t</div><div class="ttdef"><b>Definition:</b> commun.h:52</div></div>
+<div class="ttc" id="aecran_8h_html"><div class="ttname"><a href="ecran_8h.html">ecran.h</a></div><div class="ttdoc">Structures et Primitives de l'écran.</div></div>
+<div class="ttc" id="astructcellule__t_html"><div class="ttname"><a href="structcellule__t.html">cellule_t</a></div><div class="ttdoc">Type d'une cellule.</div><div class="ttdef"><b>Definition:</b> cellule.h:38</div></div>
+<div class="ttc" id="astructecran__t_html"><div class="ttname"><a href="structecran__t.html">ecran_t</a></div><div class="ttdoc">Type d'écran.</div><div class="ttdef"><b>Definition:</b> ecran.h:92</div></div>
+<div class="ttc" id="atest__automate__ecran_8c_html_a256159c27c11f65fc4d45837e9f9c921"><div class="ttname"><a href="test__automate__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a></div><div class="ttdeci">ecran_t * ecran</div><div class="ttdoc">Variable globale pointant sur l'écran d'affichage.</div><div class="ttdef"><b>Definition:</b> test_automate_ecran.c:41</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

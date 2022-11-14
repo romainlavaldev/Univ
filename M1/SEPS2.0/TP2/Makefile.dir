@@ -1,0 +1,16 @@
+#
+# Parents Directories
+#
+
+DirCommun = $(top_dir)/Commun
+DirCoord = $(top_dir)/Coord
+DirCellule =  $(top_dir)/Cellule
+DirAutomate = $(top_dir)/Automate
+DirProgStandard = $(top_dir)/Prog_Standard
+DirEcran=$(top_dir)/Ecran
+
+#
+# Chemin de l'utilitaire de documentation 
+#
+DirDoc=$(top_dir)/Documentation
+doxygen=/Applications/Doxygen.app/Contents/Resources/doxygen

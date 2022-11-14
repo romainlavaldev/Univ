@@ -1,0 +1,52 @@
+#
+# Option compilation 
+#
+
+# Macros pour creation des objets et edition de liens
+CCOBJ=gcc -c
+CCLNK=gcc 
+
+# Macros pour utilisation des threads de la norme POSIX
+LIB_PTHREAD = -lpthread
+MACRO_PTHREAD = -D_REENTRANT
+
+# Macro pour Debuggage: affichage de traces plus detaillees
+# Valeurs possibles: yes , no 
+DEBUG=yes
+
+# Macro pour architecture de la machine 
+# Valeurs possibles : mac_os , ubuntu , other_linux  ( fedora , cygwin )  
+ARCH=ubuntu
+
+ifeq ($(DEBUG),yes)
+	 FLAGS=-Wall -g -D_DEBUG_
+else
+	 FLAGS=-Wall  
+endif
+
+
+ifeq ($(ARCH),mac_os)
+	CFLAGS=$(FLAGS) -D_MAC_OS_
+
+	LIB_CURSES=-lcurses
+	LIB_M=-lm 
+endif
+
+
+ifeq ($(ARCH),ubuntu)
+	CFLAGS=$(FLAGS) -D_UBUNTU_
+
+	LIB_CURSES=-lncurses -L/opt/ncurses/lib
+	INC_CURSES=-I/opt/ncurses/include
+	LIB_M=-lm
+endif
+
+
+ifeq ($(ARCH),other_linux)
+	CFLAGS=$(FLAGS) -ansi -D_LINUX_
+
+	LIB_CURSES=-lcurses
+	LIB_M=-lm 
+endif
+
+

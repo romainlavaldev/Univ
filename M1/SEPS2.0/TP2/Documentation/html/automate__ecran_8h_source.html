@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie:  Fichier source de Automate/automate_ecran.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_33106d160ad7cea1c56410712bfb1b2b.html">Automate</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">automate_ecran.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="automate__ecran_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _AUTOMATE_ECRAN_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _AUTOMATE_ECRAN_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="automate_8h.html">automate.h</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="cellule__ecran_8h.html">cellule_ecran.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * TYPES </span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <a class="code hl_struct" href="structecran__t.html">ecran_t</a> * <a class="code hl_function" href="automate__ecran_8h.html#a4f91811f586ff9c5b10243ccae91e605">automate_ecran_creer</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structautomate__t.html">automate_t</a> * <span class="keyword">const</span> automate );</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="automate__ecran_8h.html#ae96c701d6e3f147b70226ff2922d0314">automate_wprint</a>( <a class="code hl_struct" href="structecran__t.html">ecran_t</a> * <span class="keyword">const</span> <a class="code hl_variable" href="test__automate__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , <span class="keyword">const</span> <a class="code hl_struct" href="structautomate__t.html">automate_t</a> * <span class="keyword">const</span> automate )  ;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aautomate_8h_html"><div class="ttname"><a href="automate_8h.html">automate.h</a></div><div class="ttdoc">Définitions Structure et Primitives d'un automate.</div></div>
+<div class="ttc" id="aautomate__ecran_8h_html_a4f91811f586ff9c5b10243ccae91e605"><div class="ttname"><a href="automate__ecran_8h.html#a4f91811f586ff9c5b10243ccae91e605">automate_ecran_creer</a></div><div class="ttdeci">ecran_t * automate_ecran_creer(const automate_t *const automate)</div><div class="ttdoc">Creation d'un ecran pour l'affichage d'un automate.</div><div class="ttdef"><b>Definition:</b> automate_ecran.c:8</div></div>
+<div class="ttc" id="aautomate__ecran_8h_html_ae96c701d6e3f147b70226ff2922d0314"><div class="ttname"><a href="automate__ecran_8h.html#ae96c701d6e3f147b70226ff2922d0314">automate_wprint</a></div><div class="ttdeci">void automate_wprint(ecran_t *const ecran, const automate_t *const automate)</div><div class="ttdoc">Affichage normal d'un automate.</div><div class="ttdef"><b>Definition:</b> automate_ecran.c:28</div></div>
+<div class="ttc" id="acellule__ecran_8h_html"><div class="ttname"><a href="cellule__ecran_8h.html">cellule_ecran.h</a></div><div class="ttdoc">Affichages d'une cellule sur un ecran</div></div>
+<div class="ttc" id="astructautomate__t_html"><div class="ttname"><a href="structautomate__t.html">automate_t</a></div><div class="ttdoc">Type d'un automate.</div><div class="ttdef"><b>Definition:</b> automate.h:33</div></div>
+<div class="ttc" id="astructecran__t_html"><div class="ttname"><a href="structecran__t.html">ecran_t</a></div><div class="ttdoc">Type d'écran.</div><div class="ttdef"><b>Definition:</b> ecran.h:92</div></div>
+<div class="ttc" id="atest__automate__ecran_8c_html_a256159c27c11f65fc4d45837e9f9c921"><div class="ttname"><a href="test__automate__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a></div><div class="ttdeci">ecran_t * ecran</div><div class="ttdoc">Variable globale pointant sur l'écran d'affichage.</div><div class="ttdef"><b>Definition:</b> test_automate_ecran.c:41</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

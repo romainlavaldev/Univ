@@ -1,0 +1,4 @@
+# --- Ecran ---
+
+$(DirEcran)/ecran.o : $(DirEcran)/ecran.c $(DirEcran)/ecran.h 
+	cd $(DirEcran) ; make -f Makefile ecran.o 

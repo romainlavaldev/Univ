@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie: Référence du fichier Cellule/cellule.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17676eace7541fe8073d122163021686.html">Cellule</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#enum-members">Énumérations</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier cellule.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Type et primitives du type <a class="el" href="structcellule__t.html" title="Type d&#39;une cellule.">cellule_t</a>.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="commun_8h_source.html">commun.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="coords_8h_source.html">coords.h</a>&gt;</code><br />
+</div>
+<p><a href="cellule_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcellule__t.html">cellule_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type d'une cellule.  <a href="structcellule__t.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type contenant les règles de naissance et de mort d'une cellule.  <a href="structcellule__regles__t.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a924faa05e9da1d65048120092a6ac4bf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> { <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a>
+, <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfaa5966337e49d3e30c824714ee4e49304">MORTE</a>
+, <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfa667c3003145038001c08947299bc72eb">VIVANTE</a>
+ }</td></tr>
+<tr class="memdesc:a924faa05e9da1d65048120092a6ac4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de l'etat d'une cellule.  <a href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a924faa05e9da1d65048120092a6ac4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Fonctions get/set</div></td></tr>
+<tr class="memitem:a22fba2c8c3656f32946dfaec56ea2932"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a22fba2c8c3656f32946dfaec56ea2932">cellule_set</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const <a class="el" href="structcoord__t.html">coord_t</a> *const coords, const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:a22fba2c8c3656f32946dfaec56ea2932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64156cee27e8784489a0eb23c5a6b3e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcoord__t.html">coord_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a64156cee27e8784489a0eb23c5a6b3e9">cellule_coords_get</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a64156cee27e8784489a0eb23c5a6b3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f64c38b8185e6c5df8fd7c14da55501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a9f64c38b8185e6c5df8fd7c14da55501">cellule_coords_set</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const <a class="el" href="structcoord__t.html">coord_t</a> *const coord)</td></tr>
+<tr class="separator:a9f64c38b8185e6c5df8fd7c14da55501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a200b9bc639c625f30586beab884ecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a5a200b9bc639c625f30586beab884ecd">cellule_etat_get</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a5a200b9bc639c625f30586beab884ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd1908dc36da120f4f46f945025cb96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#acdd1908dc36da120f4f46f945025cb96">cellule_etat_set</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:acdd1908dc36da120f4f46f945025cb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71927cee4e25c286aa186ee54e37322c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a71927cee4e25c286aa186ee54e37322c">cellule_etat_next_get</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a71927cee4e25c286aa186ee54e37322c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46fb0cc79fcbc41704421481fa8845c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ac46fb0cc79fcbc41704421481fa8845c">cellule_etat_next_set</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:ac46fb0cc79fcbc41704421481fa8845c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46592a4788de3f74350cccc62c9a851b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a46592a4788de3f74350cccc62c9a851b">cellule_tuer</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a46592a4788de3f74350cccc62c9a851b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad151e1f23af2bbf90ff289da853f0cc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ad151e1f23af2bbf90ff289da853f0cc8">cellule_naitre</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:ad151e1f23af2bbf90ff289da853f0cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb141a8600fa61b8aeefb48fe69fd9de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#aeb141a8600fa61b8aeefb48fe69fd9de">cellule_next_tuer</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:aeb141a8600fa61b8aeefb48fe69fd9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d7c349ffd8654f13d3fbc26d8ed8063"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a5d7c349ffd8654f13d3fbc26d8ed8063">cellule_next_naitre</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a5d7c349ffd8654f13d3fbc26d8ed8063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247afadf3d8d0533d1966561d404739f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a247afadf3d8d0533d1966561d404739f">cellule_generation_get</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a247afadf3d8d0533d1966561d404739f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6b384b2d8bfaf63a34e8d94b0b1ec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a9d6b384b2d8bfaf63a34e8d94b0b1ec5">cellule_generation_set</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const int generation)</td></tr>
+<tr class="separator:a9d6b384b2d8bfaf63a34e8d94b0b1ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7cdb43e5717290c22446c8b85ecc161"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ad7cdb43e5717290c22446c8b85ecc161">cellule_regles_naissance_get</a> (const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="separator:ad7cdb43e5717290c22446c8b85ecc161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c05928eeab1b2724b4296b3d2e22a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a42c05928eeab1b2724b4296b3d2e22a4">cellule_regles_naissance_set</a> (<a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles, const int naissance)</td></tr>
+<tr class="separator:a42c05928eeab1b2724b4296b3d2e22a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb62fd52ed645c8df72ea0e63ade7cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#accb62fd52ed645c8df72ea0e63ade7cc">cellule_regles_isolement_get</a> (const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="separator:accb62fd52ed645c8df72ea0e63ade7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae690f133d639bd3997ddf0630806953a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ae690f133d639bd3997ddf0630806953a">cellule_regles_isolement_set</a> (<a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles, const int isolement)</td></tr>
+<tr class="separator:ae690f133d639bd3997ddf0630806953a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d32fd9c016ee960b5b35eb4c93b9941"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a1d32fd9c016ee960b5b35eb4c93b9941">cellule_regles_etouffement_get</a> (const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="separator:a1d32fd9c016ee960b5b35eb4c93b9941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3faf49f5bf2d7b8cb4ca556faa49c1ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a3faf49f5bf2d7b8cb4ca556faa49c1ec">cellule_regles_etouffement_set</a> (<a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles, const int etouffement)</td></tr>
+<tr class="separator:a3faf49f5bf2d7b8cb4ca556faa49c1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Constructeur/Destructeur d'une cellule</div></td></tr>
+<tr class="memitem:abd835ec914d24299b2df2e9cdb853a69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcellule__t.html">cellule_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#abd835ec914d24299b2df2e9cdb853a69">cellule_new</a> (const int lig, const int col, const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:abd835ec914d24299b2df2e9cdb853a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62ebd07267afeb0d2af326c0e16d713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcellule__t.html">cellule_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ab62ebd07267afeb0d2af326c0e16d713">cellule_coord_new</a> (const <a class="el" href="structcoord__t.html">coord_t</a> *const coords, const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:ab62ebd07267afeb0d2af326c0e16d713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c04226365ac6f85ac636dece058092"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a55c04226365ac6f85ac636dece058092">cellule_destroy</a> (<a class="el" href="structcellule__t.html">cellule_t</a> **cellule)</td></tr>
+<tr class="separator:a55c04226365ac6f85ac636dece058092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Gestion d'une cellule</div></td></tr>
+<tr class="memitem:a8089369215833516df681fb794364c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcellule__t.html">cellule_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a8089369215833516df681fb794364c67">cellule_initialiser</a> (const int lig, const int col, const <a class="el" href="structcoords__t.html">coords_t</a> *const liste_coords)</td></tr>
+<tr class="separator:a8089369215833516df681fb794364c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f0e46b059a0b170320d07fef98accc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#af8f0e46b059a0b170320d07fef98accc">cellule_evoluer</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule, const int nb_voisins, const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="separator:af8f0e46b059a0b170320d07fef98accc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7f57e14fbd7311c2f7376b7b2edf2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a0b7f57e14fbd7311c2f7376b7b2edf2b">cellule_generer</a> (<a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a0b7f57e14fbd7311c2f7376b7b2edf2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Transformation</div></td></tr>
+<tr class="memitem:ab5c42879979e9eb280a6c9ee7d48c0e1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#ab5c42879979e9eb280a6c9ee7d48c0e1">cellule_etat_2_string</a> (<a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> etat)</td></tr>
+<tr class="separator:ab5c42879979e9eb280a6c9ee7d48c0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Tests</div></td></tr>
+<tr class="memitem:a94255f38cfda9fab55444437374069e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a94255f38cfda9fab55444437374069e2">cellule_vivante</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a94255f38cfda9fab55444437374069e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0443140ed605f11bf2b6777b7b4ed228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a0443140ed605f11bf2b6777b7b4ed228">cellule_morte</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a0443140ed605f11bf2b6777b7b4ed228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974127493e6af059b6f5f0df7b640aa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a974127493e6af059b6f5f0df7b640aa9">cellule_existe</a> (const <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="separator:a974127493e6af059b6f5f0df7b640aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Initialisations</div></td></tr>
+<tr class="memitem:afcf9dffc9dc0832a8261d124607c6464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#afcf9dffc9dc0832a8261d124607c6464">cellule_regles_default</a> ()</td></tr>
+<tr class="separator:afcf9dffc9dc0832a8261d124607c6464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae56e6ff47c23289fde2f1547073b90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cellule_8h.html#a7ae56e6ff47c23289fde2f1547073b90">cellule_regles_initialiser</a> (<a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="separator:a7ae56e6ff47c23289fde2f1547073b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Type et primitives du type <a class="el" href="structcellule__t.html" title="Type d&#39;une cellule.">cellule_t</a>. </p>
+</div><h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a924faa05e9da1d65048120092a6ac4bf" name="a924faa05e9da1d65048120092a6ac4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924faa05e9da1d65048120092a6ac4bf">&#9670;&nbsp;</a></span>cellule_etat_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type de l'etat d'une cellule. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a924faa05e9da1d65048120092a6ac4bfa0cb1b2c6a7db1f1084886c98909a3f36" name="a924faa05e9da1d65048120092a6ac4bfa0cb1b2c6a7db1f1084886c98909a3f36"></a>INIT&#160;</td><td class="fielddoc"><p >Etat initial d'une cellule </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a924faa05e9da1d65048120092a6ac4bfaa5966337e49d3e30c824714ee4e49304" name="a924faa05e9da1d65048120092a6ac4bfaa5966337e49d3e30c824714ee4e49304"></a>MORTE&#160;</td><td class="fielddoc"><p >Cellule morte <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a924faa05e9da1d65048120092a6ac4bfa667c3003145038001c08947299bc72eb" name="a924faa05e9da1d65048120092a6ac4bfa667c3003145038001c08947299bc72eb"></a>VIVANTE&#160;</td><td class="fielddoc"><p >Cellule vivante </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ab62ebd07267afeb0d2af326c0e16d713" name="ab62ebd07267afeb0d2af326c0e16d713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62ebd07267afeb0d2af326c0e16d713">&#9670;&nbsp;</a></span>cellule_coord_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcellule__t.html">cellule_t</a> * cellule_coord_new </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoord__t.html">coord_t</a> *const&#160;</td>
+          <td class="paramname"><em>coords</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Création d'une cellule à partir d'une coordonnée </p>
+
+</div>
+</div>
+<a id="a64156cee27e8784489a0eb23c5a6b3e9" name="a64156cee27e8784489a0eb23c5a6b3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64156cee27e8784489a0eb23c5a6b3e9">&#9670;&nbsp;</a></span>cellule_coords_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcoord__t.html">coord_t</a> * cellule_coords_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention des coordonnees d'une cellule </p>
+
+</div>
+</div>
+<a id="a9f64c38b8185e6c5df8fd7c14da55501" name="a9f64c38b8185e6c5df8fd7c14da55501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f64c38b8185e6c5df8fd7c14da55501">&#9670;&nbsp;</a></span>cellule_coords_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_coords_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoord__t.html">coord_t</a> *const&#160;</td>
+          <td class="paramname"><em>coord</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation des coordonnees d'une cellule </p>
+
+</div>
+</div>
+<a id="a55c04226365ac6f85ac636dece058092" name="a55c04226365ac6f85ac636dece058092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55c04226365ac6f85ac636dece058092">&#9670;&nbsp;</a></span>cellule_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> **&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Destruction une cellule </p>
+
+</div>
+</div>
+<a id="ab5c42879979e9eb280a6c9ee7d48c0e1" name="ab5c42879979e9eb280a6c9ee7d48c0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c42879979e9eb280a6c9ee7d48c0e1">&#9670;&nbsp;</a></span>cellule_etat_2_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * cellule_etat_2_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Transformation d'une cellule en ue chaine de caracteres </p>
+
+</div>
+</div>
+<a id="a5a200b9bc639c625f30586beab884ecd" name="a5a200b9bc639c625f30586beab884ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a200b9bc639c625f30586beab884ecd">&#9670;&nbsp;</a></span>cellule_etat_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> cellule_etat_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention de l'état d'une cellule à la génération courante </p>
+
+</div>
+</div>
+<a id="a71927cee4e25c286aa186ee54e37322c" name="a71927cee4e25c286aa186ee54e37322c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71927cee4e25c286aa186ee54e37322c">&#9670;&nbsp;</a></span>cellule_etat_next_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a> cellule_etat_next_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention de l'état d'une cellule à la prochiane génération </p>
+
+</div>
+</div>
+<a id="ac46fb0cc79fcbc41704421481fa8845c" name="ac46fb0cc79fcbc41704421481fa8845c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46fb0cc79fcbc41704421481fa8845c">&#9670;&nbsp;</a></span>cellule_etat_next_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_etat_next_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état d'une cellule à la prochiane génération </p>
+
+</div>
+</div>
+<a id="acdd1908dc36da120f4f46f945025cb96" name="acdd1908dc36da120f4f46f945025cb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd1908dc36da120f4f46f945025cb96">&#9670;&nbsp;</a></span>cellule_etat_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_etat_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état d'une cellule à la génération courante </p>
+
+</div>
+</div>
+<a id="af8f0e46b059a0b170320d07fef98accc" name="af8f0e46b059a0b170320d07fef98accc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f0e46b059a0b170320d07fef98accc">&#9670;&nbsp;</a></span>cellule_evoluer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_evoluer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nb_voisins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Calcul de la nouvelle génération d'une cellule en fonction de ses voisins </p>
+
+</div>
+</div>
+<a id="a974127493e6af059b6f5f0df7b640aa9" name="a974127493e6af059b6f5f0df7b640aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a974127493e6af059b6f5f0df7b640aa9">&#9670;&nbsp;</a></span>cellule_existe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a> cellule_existe </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Teste si une cellule existe </p>
+
+</div>
+</div>
+<a id="a247afadf3d8d0533d1966561d404739f" name="a247afadf3d8d0533d1966561d404739f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247afadf3d8d0533d1966561d404739f">&#9670;&nbsp;</a></span>cellule_generation_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cellule_generation_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention du numero de generation d'une cellule </p>
+
+</div>
+</div>
+<a id="a9d6b384b2d8bfaf63a34e8d94b0b1ec5" name="a9d6b384b2d8bfaf63a34e8d94b0b1ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6b384b2d8bfaf63a34e8d94b0b1ec5">&#9670;&nbsp;</a></span>cellule_generation_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_generation_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>generation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation du numero de generation d'une cellule </p>
+
+</div>
+</div>
+<a id="a0b7f57e14fbd7311c2f7376b7b2edf2b" name="a0b7f57e14fbd7311c2f7376b7b2edf2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7f57e14fbd7311c2f7376b7b2edf2b">&#9670;&nbsp;</a></span>cellule_generer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_generer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prise en compte de la nouvelle generation d'une cellule: la prochaine génération devient la génération actuelle/courante </p>
+
+</div>
+</div>
+<a id="a8089369215833516df681fb794364c67" name="a8089369215833516df681fb794364c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8089369215833516df681fb794364c67">&#9670;&nbsp;</a></span>cellule_initialiser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcellule__t.html">cellule_t</a> * cellule_initialiser </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoords__t.html">coords_t</a> *const&#160;</td>
+          <td class="paramname"><em>liste_coords</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Initialisation d'une cellule. Verifie si les coordonnees d'une cellule a creer sont dans une liste de coordonnees d'initialisation. Si oui alors creation d'une cellule vivante sinon creation d'une cellule morte </p>
+
+</div>
+</div>
+<a id="a0443140ed605f11bf2b6777b7b4ed228" name="a0443140ed605f11bf2b6777b7b4ed228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0443140ed605f11bf2b6777b7b4ed228">&#9670;&nbsp;</a></span>cellule_morte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a> cellule_morte </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Teste si une cellule est morte </p>
+
+</div>
+</div>
+<a id="ad151e1f23af2bbf90ff289da853f0cc8" name="ad151e1f23af2bbf90ff289da853f0cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad151e1f23af2bbf90ff289da853f0cc8">&#9670;&nbsp;</a></span>cellule_naitre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_naitre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfa667c3003145038001c08947299bc72eb">VIVANTE</a> à une cellule pour la génération courante </p>
+
+</div>
+</div>
+<a id="abd835ec914d24299b2df2e9cdb853a69" name="abd835ec914d24299b2df2e9cdb853a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd835ec914d24299b2df2e9cdb853a69">&#9670;&nbsp;</a></span>cellule_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcellule__t.html">cellule_t</a> * cellule_new </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Création d'une cellule à partir des indices ligne/colonnes </p>
+
+</div>
+</div>
+<a id="a5d7c349ffd8654f13d3fbc26d8ed8063" name="a5d7c349ffd8654f13d3fbc26d8ed8063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d7c349ffd8654f13d3fbc26d8ed8063">&#9670;&nbsp;</a></span>cellule_next_naitre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_next_naitre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfa667c3003145038001c08947299bc72eb">VIVANTE</a> à une cellule pour la prochaine génération </p>
+
+</div>
+</div>
+<a id="aeb141a8600fa61b8aeefb48fe69fd9de" name="aeb141a8600fa61b8aeefb48fe69fd9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb141a8600fa61b8aeefb48fe69fd9de">&#9670;&nbsp;</a></span>cellule_next_tuer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_next_tuer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfaa5966337e49d3e30c824714ee4e49304">MORTE</a> à une cellule pour la prochaine génération </p>
+
+</div>
+</div>
+<a id="afcf9dffc9dc0832a8261d124607c6464" name="afcf9dffc9dc0832a8261d124607c6464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf9dffc9dc0832a8261d124607c6464">&#9670;&nbsp;</a></span>cellule_regles_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> cellule_regles_default </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Fournit une structure des regles avec les valeurs par défaut </p>
+
+</div>
+</div>
+<a id="a1d32fd9c016ee960b5b35eb4c93b9941" name="a1d32fd9c016ee960b5b35eb4c93b9941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d32fd9c016ee960b5b35eb4c93b9941">&#9670;&nbsp;</a></span>cellule_regles_etouffement_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cellule_regles_etouffement_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention du nombre de voisins au dessus duquel une cellule meurt étouffée </p>
+
+</div>
+</div>
+<a id="a3faf49f5bf2d7b8cb4ca556faa49c1ec" name="a3faf49f5bf2d7b8cb4ca556faa49c1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3faf49f5bf2d7b8cb4ca556faa49c1ec">&#9670;&nbsp;</a></span>cellule_regles_etouffement_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_regles_etouffement_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>etouffement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation du nombre de voisins au dessus duquel une cellule meurt étouffée </p>
+
+</div>
+</div>
+<a id="a7ae56e6ff47c23289fde2f1547073b90" name="a7ae56e6ff47c23289fde2f1547073b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ae56e6ff47c23289fde2f1547073b90">&#9670;&nbsp;</a></span>cellule_regles_initialiser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_regles_initialiser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Initialise une structure de règles avec les valeurs par défaut </p>
+
+</div>
+</div>
+<a id="accb62fd52ed645c8df72ea0e63ade7cc" name="accb62fd52ed645c8df72ea0e63ade7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb62fd52ed645c8df72ea0e63ade7cc">&#9670;&nbsp;</a></span>cellule_regles_isolement_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cellule_regles_isolement_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention du nombre de voisins au dessous duquel une cellule meurt isolée </p>
+
+</div>
+</div>
+<a id="ae690f133d639bd3997ddf0630806953a" name="ae690f133d639bd3997ddf0630806953a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae690f133d639bd3997ddf0630806953a">&#9670;&nbsp;</a></span>cellule_regles_isolement_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_regles_isolement_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>isolement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation du nombre de voisins au dessous duquel une cellule meurt isolée </p>
+
+</div>
+</div>
+<a id="ad7cdb43e5717290c22446c8b85ecc161" name="ad7cdb43e5717290c22446c8b85ecc161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7cdb43e5717290c22446c8b85ecc161">&#9670;&nbsp;</a></span>cellule_regles_naissance_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cellule_regles_naissance_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention du nombre de voisins pour faire naître une cellule </p>
+
+</div>
+</div>
+<a id="a42c05928eeab1b2724b4296b3d2e22a4" name="a42c05928eeab1b2724b4296b3d2e22a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c05928eeab1b2724b4296b3d2e22a4">&#9670;&nbsp;</a></span>cellule_regles_naissance_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_regles_naissance_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>naissance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation du nombre de voisins pour faire naître une cellule </p>
+
+</div>
+</div>
+<a id="a22fba2c8c3656f32946dfaec56ea2932" name="a22fba2c8c3656f32946dfaec56ea2932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fba2c8c3656f32946dfaec56ea2932">&#9670;&nbsp;</a></span>cellule_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoord__t.html">coord_t</a> *const&#160;</td>
+          <td class="paramname"><em>coords</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bf">cellule_etat_t</a>&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation des caracteristiques complètes d'une cellule </p>
+
+</div>
+</div>
+<a id="a46592a4788de3f74350cccc62c9a851b" name="a46592a4788de3f74350cccc62c9a851b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46592a4788de3f74350cccc62c9a851b">&#9670;&nbsp;</a></span>cellule_tuer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> cellule_tuer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de l'état <a class="el" href="cellule_8h.html#a924faa05e9da1d65048120092a6ac4bfaa5966337e49d3e30c824714ee4e49304">MORTE</a> à une cellule pour la génération courante </p>
+
+</div>
+</div>
+<a id="a94255f38cfda9fab55444437374069e2" name="a94255f38cfda9fab55444437374069e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94255f38cfda9fab55444437374069e2">&#9670;&nbsp;</a></span>cellule_vivante()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a> cellule_vivante </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Teste si une cellule est vivante </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie: Référence du fichier Automate/automate.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_33106d160ad7cea1c56410712bfb1b2b.html">Automate</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier automate.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Définitions Structure et Primitives d'un automate.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="cellule_8h_source.html">cellule.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="coords_8h_source.html">coords.h</a>&gt;</code><br />
+</div>
+<p><a href="automate_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautomate__t.html">automate_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type d'un automate.  <a href="structautomate__t.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Fonctions set/get</div></td></tr>
+<tr class="memitem:a57945c277b7a4162b818e48e8c6517e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a57945c277b7a4162b818e48e8c6517e8">automate_hauteur_get</a> (const <a class="el" href="structautomate__t.html">automate_t</a> *const automate)</td></tr>
+<tr class="separator:a57945c277b7a4162b818e48e8c6517e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660e85d625d887b845300acabc0a5d17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a660e85d625d887b845300acabc0a5d17">automate_largeur_get</a> (const <a class="el" href="structautomate__t.html">automate_t</a> *const automate)</td></tr>
+<tr class="separator:a660e85d625d887b845300acabc0a5d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd6ea81592b1b56e81661d4851bf352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#abdd6ea81592b1b56e81661d4851bf352">automate_dim_get</a> (const <a class="el" href="structautomate__t.html">automate_t</a> *const automate, int *hauteur, int *largeur)</td></tr>
+<tr class="separator:abdd6ea81592b1b56e81661d4851bf352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac765b6b80e053e3d66008b2f4b6e5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a0ac765b6b80e053e3d66008b2f4b6e5a">automate_hauteur_set</a> (<a class="el" href="structautomate__t.html">automate_t</a> *const automate, const int hauteur)</td></tr>
+<tr class="separator:a0ac765b6b80e053e3d66008b2f4b6e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9958d5d367676e1d99045dbd269b6efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a9958d5d367676e1d99045dbd269b6efb">automate_largeur_set</a> (<a class="el" href="structautomate__t.html">automate_t</a> *const automate, const int largeur)</td></tr>
+<tr class="separator:a9958d5d367676e1d99045dbd269b6efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1707d65b2e309a484b58a30713ff6b10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a1707d65b2e309a484b58a30713ff6b10">automate_dim_set</a> (<a class="el" href="structautomate__t.html">automate_t</a> *const automate, const int hauteur, const int largeur)</td></tr>
+<tr class="separator:a1707d65b2e309a484b58a30713ff6b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb94b83fd7f311a1643e7f2c7335ea51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcellule__t.html">cellule_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#acb94b83fd7f311a1643e7f2c7335ea51">automate_get</a> (const <a class="el" href="structautomate__t.html">automate_t</a> *const automate, const int i, const int j)</td></tr>
+<tr class="memdesc:acb94b83fd7f311a1643e7f2c7335ea51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtention d'une cellule.  <a href="automate_8h.html#acb94b83fd7f311a1643e7f2c7335ea51">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acb94b83fd7f311a1643e7f2c7335ea51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129aa6acfb60d0063b2e68a738417a50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a129aa6acfb60d0063b2e68a738417a50">automate_set</a> (<a class="el" href="structautomate__t.html">automate_t</a> *const automate, const int i, const int j, <a class="el" href="structcellule__t.html">cellule_t</a> *const cellule)</td></tr>
+<tr class="memdesc:a129aa6acfb60d0063b2e68a738417a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affectation d'une cellule.  <a href="automate_8h.html#a129aa6acfb60d0063b2e68a738417a50">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a129aa6acfb60d0063b2e68a738417a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Constructeur/Destructeur</div></td></tr>
+<tr class="memitem:af391df4d3798b3f4c96120f5b08ae1fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structautomate__t.html">automate_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#af391df4d3798b3f4c96120f5b08ae1fd">automate_new</a> (const int hauteur, const int largeur, <a class="el" href="structcoords__t.html">coords_t</a> *coords_init)</td></tr>
+<tr class="memdesc:af391df4d3798b3f4c96120f5b08ae1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation d'un automate :  <a href="automate_8h.html#af391df4d3798b3f4c96120f5b08ae1fd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af391df4d3798b3f4c96120f5b08ae1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0a730d775148b731a6d628bebcae8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a0c0a730d775148b731a6d628bebcae8a">automate_destroy</a> (<a class="el" href="structautomate__t.html">automate_t</a> **automate)</td></tr>
+<tr class="separator:a0c0a730d775148b731a6d628bebcae8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Gestion d'un automate</div></td></tr>
+<tr class="memitem:ae9f65e3fc6777a28579169769def9819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#ae9f65e3fc6777a28579169769def9819">automate_nb_voisins_get</a> (<a class="el" href="structautomate__t.html">automate_t</a> *automate, <a class="el" href="structcoord__t.html">coord_t</a> *coord, int *nb_voisins)</td></tr>
+<tr class="memdesc:ae9f65e3fc6777a28579169769def9819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul du nombre de cellules vivantes autour d'une case de l'automate.  <a href="automate_8h.html#ae9f65e3fc6777a28579169769def9819">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae9f65e3fc6777a28579169769def9819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73349e1939124922c20f886809875727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a73349e1939124922c20f886809875727">automate_cellule_evoluer</a> (<a class="el" href="structautomate__t.html">automate_t</a> *automate, <a class="el" href="structcellule__t.html">cellule_t</a> *cellule, const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const regles)</td></tr>
+<tr class="memdesc:a73349e1939124922c20f886809875727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul de la nouvelle generation d'une cellule dans un automate en fonction de ses voisins.  <a href="automate_8h.html#a73349e1939124922c20f886809875727">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a73349e1939124922c20f886809875727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1c4269b6a319db7663f3d7d62fb09b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automate_8h.html#a9f1c4269b6a319db7663f3d7d62fb09b">automate_generer</a> (<a class="el" href="structautomate__t.html">automate_t</a> *automate)</td></tr>
+<tr class="memdesc:a9f1c4269b6a319db7663f3d7d62fb09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prise en compte de la nouvelle generation d'un automate: pour chaque cellule, la génération prochaine devient la génération courante.  <a href="automate_8h.html#a9f1c4269b6a319db7663f3d7d62fb09b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9f1c4269b6a319db7663f3d7d62fb09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Définitions Structure et Primitives d'un automate. </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a73349e1939124922c20f886809875727" name="a73349e1939124922c20f886809875727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73349e1939124922c20f886809875727">&#9670;&nbsp;</a></span>automate_cellule_evoluer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_cellule_evoluer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *&#160;</td>
+          <td class="paramname"><em>cellule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcellule__regles__t.html">cellule_regles_t</a> *const&#160;</td>
+          <td class="paramname"><em>regles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcul de la nouvelle generation d'une cellule dans un automate en fonction de ses voisins. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">automate</td><td>: automate contenant la cellule </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cellule</td><td>: cellule à faire évoluer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">regles</td><td>: règles de vie/mort d'une cellule </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>code erreur <a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698" title="Type des codes erreurs.">err_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="a0c0a730d775148b731a6d628bebcae8a" name="a0c0a730d775148b731a6d628bebcae8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0a730d775148b731a6d628bebcae8a">&#9670;&nbsp;</a></span>automate_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> **&#160;</td>
+          <td class="paramname"><em>automate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Destruction d'un automate </p>
+
+</div>
+</div>
+<a id="abdd6ea81592b1b56e81661d4851bf352" name="abdd6ea81592b1b56e81661d4851bf352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd6ea81592b1b56e81661d4851bf352">&#9670;&nbsp;</a></span>automate_dim_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_dim_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>hauteur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>largeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention de la hauteur et la largeur </p>
+
+</div>
+</div>
+<a id="a1707d65b2e309a484b58a30713ff6b10" name="a1707d65b2e309a484b58a30713ff6b10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1707d65b2e309a484b58a30713ff6b10">&#9670;&nbsp;</a></span>automate_dim_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_dim_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hauteur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>largeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de la hauteur et la largeur </p>
+
+</div>
+</div>
+<a id="a9f1c4269b6a319db7663f3d7d62fb09b" name="a9f1c4269b6a319db7663f3d7d62fb09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1c4269b6a319db7663f3d7d62fb09b">&#9670;&nbsp;</a></span>automate_generer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_generer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *&#160;</td>
+          <td class="paramname"><em>automate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prise en compte de la nouvelle generation d'un automate: pour chaque cellule, la génération prochaine devient la génération courante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">automate</td><td>: automate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>code erreur <a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698" title="Type des codes erreurs.">err_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="acb94b83fd7f311a1643e7f2c7335ea51" name="acb94b83fd7f311a1643e7f2c7335ea51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb94b83fd7f311a1643e7f2c7335ea51">&#9670;&nbsp;</a></span>automate_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcellule__t.html">cellule_t</a> * automate_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtention d'une cellule. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">automate</td><td>: automate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>: indice de ligne </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>: indice de colonne </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur sur la <a class="el" href="structcellule__t.html" title="Type d&#39;une cellule.">cellule_t</a> de la case [i,j] de l'automate </dd></dl>
+
+</div>
+</div>
+<a id="a57945c277b7a4162b818e48e8c6517e8" name="a57945c277b7a4162b818e48e8c6517e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57945c277b7a4162b818e48e8c6517e8">&#9670;&nbsp;</a></span>automate_hauteur_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automate_hauteur_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention de la hauteur </p>
+
+</div>
+</div>
+<a id="a0ac765b6b80e053e3d66008b2f4b6e5a" name="a0ac765b6b80e053e3d66008b2f4b6e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac765b6b80e053e3d66008b2f4b6e5a">&#9670;&nbsp;</a></span>automate_hauteur_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_hauteur_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hauteur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de la hauteur </p>
+
+</div>
+</div>
+<a id="a660e85d625d887b845300acabc0a5d17" name="a660e85d625d887b845300acabc0a5d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a660e85d625d887b845300acabc0a5d17">&#9670;&nbsp;</a></span>automate_largeur_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automate_largeur_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Obtention de la largeur </p>
+
+</div>
+</div>
+<a id="a9958d5d367676e1d99045dbd269b6efb" name="a9958d5d367676e1d99045dbd269b6efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9958d5d367676e1d99045dbd269b6efb">&#9670;&nbsp;</a></span>automate_largeur_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_largeur_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>largeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Affectation de la largeur </p>
+
+</div>
+</div>
+<a id="ae9f65e3fc6777a28579169769def9819" name="ae9f65e3fc6777a28579169769def9819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f65e3fc6777a28579169769def9819">&#9670;&nbsp;</a></span>automate_nb_voisins_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_nb_voisins_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcoord__t.html">coord_t</a> *&#160;</td>
+          <td class="paramname"><em>coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nb_voisins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcul du nombre de cellules vivantes autour d'une case de l'automate. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">automate</td><td>: automate contenant la cellule </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coord</td><td>: coordonnées de la cellule dont on veut calculer le nombre de voisins </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">nb_voisins</td><td>: nombre de voisins de la cellule </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>code erreur <a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698" title="Type des codes erreurs.">err_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="af391df4d3798b3f4c96120f5b08ae1fd" name="af391df4d3798b3f4c96120f5b08ae1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af391df4d3798b3f4c96120f5b08ae1fd">&#9670;&nbsp;</a></span>automate_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">automate_new </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hauteur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcoords__t.html">coords_t</a> *&#160;</td>
+          <td class="paramname"><em>coords_init</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creation d'un automate : </p>
+<ol type="1">
+<li>Création des cases de l'automate</li>
+<li>Création des cellules de l'automate en fonction des coordonnées d'initialisation.<ul>
+<li>Si les coordonnées d'une cellule sont dans la liste des coordonnées d'initialisation alors celle-ci est créée vivante</li>
+<li>sinon elle est créée morte</li>
+</ul>
+</li>
+<li>Affectation des cellules à l'automate <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hauteur</td><td>: nombre de lignes de l'automate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">largeur</td><td>: nombre de colonnes de l'automate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coords_init</td><td>: liste des coordonnées d'initialisation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>une instance de <a class="el" href="structautomate__t.html" title="Type d&#39;un automate.">automate_t</a> </dd></dl>
+</li>
+</ol>
+
+</div>
+</div>
+<a id="a129aa6acfb60d0063b2e68a738417a50" name="a129aa6acfb60d0063b2e68a738417a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129aa6acfb60d0063b2e68a738417a50">&#9670;&nbsp;</a></span>automate_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> automate_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structautomate__t.html">automate_t</a> *const&#160;</td>
+          <td class="paramname"><em>automate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcellule__t.html">cellule_t</a> *const&#160;</td>
+          <td class="paramname"><em>cellule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affectation d'une cellule. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">automate</td><td>: automate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>: indice de ligne </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>: indice de colonne </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cellule</td><td>: valeur de cellule a affecter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>code erreur <a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698" title="Type des codes erreurs.">err_t</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+# --- Automate ---
+
+$(DirAutomate)/automate.o : $(DirAutomate)/automate.c $(DirAutomate)/automate.h
+	cd $(DirAutomate) ; make -f Makefile automate.o
+
+$(DirAutomate)/automate_stdio.o : $(DirAutomate)/automate_stdio.c $(DirAutomate)/automate_stdio.h
+	cd $(DirAutomate) ; make -f Makefile automate_stdio.o
+
+$(DirAutomate)/automate_ecran.o : $(DirAutomate)/automate_ecran.c $(DirAutomate)/automate_ecran.h
+	cd $(DirAutomate) ; make -f Makefile automate_ecran.o

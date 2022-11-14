@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie: Référence du fichier Prog_Standard/test_automate_ecran.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2738e551cc4ea9e88bcc1c36cfcd850.html">Prog_Standard</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier test_automate_ecran.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Test des fonctions de gestion d'un automate avec sortie sur un écran géré par <code>ncurses</code>  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="automate__ecran_8h_source.html">automate_ecran.h</a>&gt;</code><br />
+<code>#include &lt;coords_stdio.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a51aa3bd5e3100e1227e2fbd3cf0082c3"><td class="memItemLeft" align="right" valign="top"><a id="a51aa3bd5e3100e1227e2fbd3cf0082c3" name="a51aa3bd5e3100e1227e2fbd3cf0082c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FICHIER_INIT</b>&#160;&#160;&#160;&quot;../Fichiers/planeurs.txt&quot;</td></tr>
+<tr class="separator:a51aa3bd5e3100e1227e2fbd3cf0082c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad629b1db4ee230dc5de47de843476e72"><td class="memItemLeft" align="right" valign="top"><a id="ad629b1db4ee230dc5de47de843476e72" name="ad629b1db4ee230dc5de47de843476e72"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAUTEUR</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ad629b1db4ee230dc5de47de843476e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d3bf5a2f88b1dba6c6bc13bf889c3cc"><td class="memItemLeft" align="right" valign="top"><a id="a3d3bf5a2f88b1dba6c6bc13bf889c3cc" name="a3d3bf5a2f88b1dba6c6bc13bf889c3cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LARGEUR</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a3d3bf5a2f88b1dba6c6bc13bf889c3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab34bd06e4a099e720494fe9f4c6a4070"><td class="memItemLeft" align="right" valign="top"><a id="ab34bd06e4a099e720494fe9f4c6a4070" name="ab34bd06e4a099e720494fe9f4c6a4070"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NB_GENERATIONS_SYNCHRONE</b>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:ab34bd06e4a099e720494fe9f4c6a4070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d4b2e99b1a871ee32d615ac35c8bc2"><td class="memItemLeft" align="right" valign="top"><a id="a56d4b2e99b1a871ee32d615ac35c8bc2" name="a56d4b2e99b1a871ee32d615ac35c8bc2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NB_GENERATIONS_ASYNCHRONE</b>&#160;&#160;&#160;200</td></tr>
+<tr class="separator:a56d4b2e99b1a871ee32d615ac35c8bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c1c7384818fdf52259942bb5fea8bc3"><td class="memItemLeft" align="right" valign="top"><a id="a9c1c7384818fdf52259942bb5fea8bc3" name="a9c1c7384818fdf52259942bb5fea8bc3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NB_GENERATIONS_ASYNCHRONE_MEMOIRE</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a9c1c7384818fdf52259942bb5fea8bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aa4aef217aeed27da1c7647e94ff6c1e2"><td class="memItemLeft" align="right" valign="top"><a id="aa4aef217aeed27da1c7647e94ff6c1e2" name="aa4aef217aeed27da1c7647e94ff6c1e2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int nb_arg, char *tab_arg[])</td></tr>
+<tr class="memdesc:aa4aef217aeed27da1c7647e94ff6c1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test des fonctions de gestion d'un automate avec sortie sur un écran géré par <code>ncurses</code> <br /></td></tr>
+<tr class="separator:aa4aef217aeed27da1c7647e94ff6c1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a256159c27c11f65fc4d45837e9f9c921"><td class="memItemLeft" align="right" valign="top"><a id="a256159c27c11f65fc4d45837e9f9c921" name="a256159c27c11f65fc4d45837e9f9c921"></a>
+ecran_t *&#160;</td><td class="memItemRight" valign="bottom"><b>ecran</b> = ECRAN_NULL</td></tr>
+<tr class="memdesc:a256159c27c11f65fc4d45837e9f9c921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable globale pointant sur l'écran d'affichage. <br /></td></tr>
+<tr class="separator:a256159c27c11f65fc4d45837e9f9c921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Test des fonctions de gestion d'un automate avec sortie sur un écran géré par <code>ncurses</code> </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

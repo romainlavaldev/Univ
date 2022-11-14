@@ -1,0 +1,9 @@
+
+# --- Cellule ---
+
+$(DirCellule)/cellule.o : $(DirCellule)/cellule.c $(DirCellule)/cellule.h 
+	cd $(DirCellule) ; make -f Makefile cellule.o 
+$(DirCellule)/cellule_stdio.o : $(DirCellule)/cellule_stdio.c $(DirCellule)/cellule_stdio.h  
+	cd $(DirCellule) ; make -f Makefile cellule_stdio.o 
+$(DirCellule)/cellule_ecran.o : $(DirCellule)/cellule_ecran.c $(DirCellule)/cellule_ecran.h
+	cd $(DirCellule) ; make -f Makefile cellule_ecran.o 

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie:  Fichier source de Coord/coord.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_cc96cca1ff54312d4c4e97a67ccc6e3c.html">Coord</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">coord.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="coord_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _COORD_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _COORD_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="commun_8h.html">commun.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *===================================================</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Realisation du TDA coord (coordonnees d&#39;une case) </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *=================================================== </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structcoord__t.html">   20</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structcoord__t.html#a50a276c9f55ab3c7ba3b37512d0d6cb4">   22</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="structcoord__t.html#a50a276c9f55ab3c7ba3b37512d0d6cb4">l</a> ;       </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structcoord__t.html#a83f6773a92270b97e36efe5fc8ba3c74">   23</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="structcoord__t.html#a83f6773a92270b97e36efe5fc8ba3c74">c</a> ;       </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="structcoord__t.html">coord_t</a> ;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="coord_8h.html#a759b8b854874de6c72a443af25a11037">   31</a></span><span class="preprocessor">#define COORD_VIDE coord_vide()</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="coord_8h.html#a9b4806ec3673715b9e2abddf2a82cce1">   32</a></span><span class="keyword">extern</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> <a class="code hl_function" href="coord_8h.html#a9b4806ec3673715b9e2abddf2a82cce1">coord_vide</a>() ;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> *===================================================</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * Primitives du TDA coord </span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> *=================================================== </span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="coord_8h.html#ae3aaf2f4522b2cbc674f2b7197160fbb">   44</a></span><span class="keyword">extern</span> <a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>  <a class="code hl_function" href="coord_8h.html#ae3aaf2f4522b2cbc674f2b7197160fbb">coord_set</a>( <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord , </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>             <span class="keyword">const</span> <span class="keywordtype">int</span> ligne,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>             <span class="keyword">const</span> <span class="keywordtype">int</span> colonne ) ; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">extern</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="coord_8h.html#a04d2221915de301fbcc40c668d496b70">   53</a></span><a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> <a class="code hl_function" href="coord_8h.html#a04d2221915de301fbcc40c668d496b70">coord_get</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord , </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>         <span class="keywordtype">int</span> * ligne,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>         <span class="keywordtype">int</span> * colonne);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="coord_8h.html#ac7c7da1265fdf23ab977456f47cd5291">   57</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="coord_8h.html#ac7c7da1265fdf23ab977456f47cd5291">coord_lig_get</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord ) ;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="coord_8h.html#a7d12bf7705c57228158dcbba695c1601">   59</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="coord_8h.html#a7d12bf7705c57228158dcbba695c1601">coord_col_get</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord ) ; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="coord_8h.html#a322726708c20413a8b1e126b1ac0b346">   64</a></span><span class="keyword">extern</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <a class="code hl_function" href="coord_8h.html#a322726708c20413a8b1e126b1ac0b346">coord_new</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ligne, <span class="keyword">const</span> <span class="keywordtype">int</span> colonne ) ;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="coord_8h.html#ab75f8604ae311e052fdb76f9b5c80993">   69</a></span><span class="keyword">extern</span> <a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> <a class="code hl_function" href="coord_8h.html#ab75f8604ae311e052fdb76f9b5c80993">coord_destroy</a>( <a class="code hl_struct" href="structcoord__t.html">coord_t</a> ** coord ) ;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="coord_8h.html#ab7742ade436684fbf0d93727ad33f819">   77</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="coord_8h.html#ab7742ade436684fbf0d93727ad33f819">coord_comparer</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * c1, <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * c2 );</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="coord_8h.html#a0b9c8927b2d5830cee9c03a8a7cf2ac6">   79</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="coord_8h.html#a0b9c8927b2d5830cee9c03a8a7cf2ac6">coord_comparer_cb</a>( <span class="keyword">const</span> <span class="keywordtype">void</span> * c1, <span class="keyword">const</span> <span class="keywordtype">void</span> * c2 ) ;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="coord_8h.html#a2516fb0445e1beaca9291245e3af6245">   85</a></span><span class="keyword">extern</span> <a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> <a class="code hl_function" href="coord_8h.html#a2516fb0445e1beaca9291245e3af6245">coord_copier</a>( <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord_cible,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>               <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord_source ) ; </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="coord_8h.html#af00c1b508ce4c67bc47e4496a34b3c81">   92</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span> * <a class="code hl_function" href="coord_8h.html#af00c1b508ce4c67bc47e4496a34b3c81">coord_2_string</a>( <span class="keyword">const</span> <a class="code hl_struct" href="structcoord__t.html">coord_t</a> * <span class="keyword">const</span> coord ) ;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acommun_8h_html"><div class="ttname"><a href="commun_8h.html">commun.h</a></div><div class="ttdoc">Définitions Structure et Primitives communes à tout le TP.</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a></div><div class="ttdeci">err_t</div><div class="ttdoc">Type des codes erreurs.</div><div class="ttdef"><b>Definition:</b> commun.h:21</div></div>
+<div class="ttc" id="acoord_8h_html_a04d2221915de301fbcc40c668d496b70"><div class="ttname"><a href="coord_8h.html#a04d2221915de301fbcc40c668d496b70">coord_get</a></div><div class="ttdeci">err_t coord_get(const coord_t *const coord, int *ligne, int *colonne)</div></div>
+<div class="ttc" id="acoord_8h_html_a0b9c8927b2d5830cee9c03a8a7cf2ac6"><div class="ttname"><a href="coord_8h.html#a0b9c8927b2d5830cee9c03a8a7cf2ac6">coord_comparer_cb</a></div><div class="ttdeci">int coord_comparer_cb(const void *c1, const void *c2)</div></div>
+<div class="ttc" id="acoord_8h_html_a2516fb0445e1beaca9291245e3af6245"><div class="ttname"><a href="coord_8h.html#a2516fb0445e1beaca9291245e3af6245">coord_copier</a></div><div class="ttdeci">err_t coord_copier(coord_t *const coord_cible, const coord_t *const coord_source)</div></div>
+<div class="ttc" id="acoord_8h_html_a322726708c20413a8b1e126b1ac0b346"><div class="ttname"><a href="coord_8h.html#a322726708c20413a8b1e126b1ac0b346">coord_new</a></div><div class="ttdeci">coord_t * coord_new(const int ligne, const int colonne)</div></div>
+<div class="ttc" id="acoord_8h_html_a7d12bf7705c57228158dcbba695c1601"><div class="ttname"><a href="coord_8h.html#a7d12bf7705c57228158dcbba695c1601">coord_col_get</a></div><div class="ttdeci">int coord_col_get(const coord_t *const coord)</div></div>
+<div class="ttc" id="acoord_8h_html_a9b4806ec3673715b9e2abddf2a82cce1"><div class="ttname"><a href="coord_8h.html#a9b4806ec3673715b9e2abddf2a82cce1">coord_vide</a></div><div class="ttdeci">coord_t coord_vide()</div><div class="ttdoc">fonction renvoyant la valeur initiale d'une coordonnée</div></div>
+<div class="ttc" id="acoord_8h_html_ab75f8604ae311e052fdb76f9b5c80993"><div class="ttname"><a href="coord_8h.html#ab75f8604ae311e052fdb76f9b5c80993">coord_destroy</a></div><div class="ttdeci">err_t coord_destroy(coord_t **coord)</div></div>
+<div class="ttc" id="acoord_8h_html_ab7742ade436684fbf0d93727ad33f819"><div class="ttname"><a href="coord_8h.html#ab7742ade436684fbf0d93727ad33f819">coord_comparer</a></div><div class="ttdeci">int coord_comparer(const coord_t *c1, const coord_t *c2)</div></div>
+<div class="ttc" id="acoord_8h_html_ac7c7da1265fdf23ab977456f47cd5291"><div class="ttname"><a href="coord_8h.html#ac7c7da1265fdf23ab977456f47cd5291">coord_lig_get</a></div><div class="ttdeci">int coord_lig_get(const coord_t *const coord)</div></div>
+<div class="ttc" id="acoord_8h_html_ae3aaf2f4522b2cbc674f2b7197160fbb"><div class="ttname"><a href="coord_8h.html#ae3aaf2f4522b2cbc674f2b7197160fbb">coord_set</a></div><div class="ttdeci">err_t coord_set(coord_t *const coord, const int ligne, const int colonne)</div></div>
+<div class="ttc" id="acoord_8h_html_af00c1b508ce4c67bc47e4496a34b3c81"><div class="ttname"><a href="coord_8h.html#af00c1b508ce4c67bc47e4496a34b3c81">coord_2_string</a></div><div class="ttdeci">char * coord_2_string(const coord_t *const coord)</div></div>
+<div class="ttc" id="astructcoord__t_html"><div class="ttname"><a href="structcoord__t.html">coord_t</a></div><div class="ttdoc">Type d'une coordonnée.</div><div class="ttdef"><b>Definition:</b> coord.h:21</div></div>
+<div class="ttc" id="astructcoord__t_html_a50a276c9f55ab3c7ba3b37512d0d6cb4"><div class="ttname"><a href="structcoord__t.html#a50a276c9f55ab3c7ba3b37512d0d6cb4">coord_t::l</a></div><div class="ttdeci">int l</div><div class="ttdef"><b>Definition:</b> coord.h:22</div></div>
+<div class="ttc" id="astructcoord__t_html_a83f6773a92270b97e36efe5fc8ba3c74"><div class="ttname"><a href="structcoord__t.html#a83f6773a92270b97e36efe5fc8ba3c74">coord_t::c</a></div><div class="ttdeci">int c</div><div class="ttdef"><b>Definition:</b> coord.h:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

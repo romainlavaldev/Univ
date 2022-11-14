@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie:  Fichier source de Commun/commun.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d51cc581318647c8f05356498286bf0b.html">Commun</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">commun.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="commun_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _COMMUN_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _COMMUN_H_</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">   21</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35">   22</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35">CORRECT</a>     =  0, </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a986ba25f0bb0fceab386445bf961a4d8">   23</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a986ba25f0bb0fceab386445bf961a4d8">ERREUR</a>      = -1, </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a30a016c2883dcb08e02cd99847009225">   24</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a30a016c2883dcb08e02cd99847009225">PAS_TROUVE</a>  = -2, </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aa5adfa848230154f452ac275e369df0a">   25</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aa5adfa848230154f452ac275e369df0a">ERR_NULL</a>    = -3, </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a1a945da4703d6f5953ea81519dcaaaad">   26</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a1a945da4703d6f5953ea81519dcaaaad">ERR_FILE</a>    = -4, </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a5e430736927eaac26c85c3dbf4568577">   27</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a5e430736927eaac26c85c3dbf4568577">ERR_DIM</a>     = -5, </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aaaeafdbf3aecc46864daa3cd829c7e05">   28</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aaaeafdbf3aecc46864daa3cd829c7e05">ERR_MEM</a>     = -6, </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ada4cdf64538736eedefd80dbca14c588">   29</a></span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ada4cdf64538736eedefd80dbca14c588">ERR_SCAN</a>    = -7, </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_enumvalue" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aee2636dfa4f419989a92f4fdcf321c9a">ERR_ECRAN_NULL</a> = -8  </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aee2636dfa4f419989a92f4fdcf321c9a">   31</a></span>} <a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> ;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="commun_8h.html#ac0b16f67896a5ce42388658d28a60a80">   36</a></span><span class="preprocessor">#define ERR_NB 9</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="commun_8h.html#afbcf61a9667e1411e22772868fdd5a0c">   46</a></span><span class="preprocessor">#define STRING_LG_MAX 1024</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">   51</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca1bb75a30f93b418be2d44aa0eafe9be3">   53</a></span>    <a class="code hl_enumvalue" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> , </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_enumvalue" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca763723ffe7a348ad0f5c1b58a331b523">VRAI</a>   </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca763723ffe7a348ad0f5c1b58a331b523">   55</a></span>  } <a class="code hl_enumeration" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a> ;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="commun_8h.html#ad738bd26e67565117b25067184b93696">   72</a></span><span class="preprocessor">#define NAISSANCE 3 </span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="commun_8h.html#ae2701791163caba3bb17e0cd0df1d851">   73</a></span><span class="preprocessor">#define ISOLEMENT 2 </span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="commun_8h.html#a0311ba25bfe0b97f01e523c31a4e2bd4">   74</a></span><span class="preprocessor">#define ETOUFFEMENT 3 </span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"> * FONCTIONS</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="commun_8h.html#a2ea416d0aaf1e91c9b75844b6f3bd366">   83</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="commun_8h.html#a2ea416d0aaf1e91c9b75844b6f3bd366">err_print</a>( <a class="code hl_enumeration" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> code ) ;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="commun_8h.html#ae216d84241fbd75f539723ead939977a">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="commun_8h.html#ae216d84241fbd75f539723ead939977a">Pause</a>( <span class="keywordtype">char</span> * mess ) ; </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acommun_8h_html_a2ea416d0aaf1e91c9b75844b6f3bd366"><div class="ttname"><a href="commun_8h.html#a2ea416d0aaf1e91c9b75844b6f3bd366">err_print</a></div><div class="ttdeci">void err_print(err_t code)</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a></div><div class="ttdeci">err_t</div><div class="ttdoc">Type des codes erreurs.</div><div class="ttdef"><b>Definition:</b> commun.h:21</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698a1a945da4703d6f5953ea81519dcaaaad"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a1a945da4703d6f5953ea81519dcaaaad">ERR_FILE</a></div><div class="ttdeci">@ ERR_FILE</div><div class="ttdef"><b>Definition:</b> commun.h:26</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698a30a016c2883dcb08e02cd99847009225"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a30a016c2883dcb08e02cd99847009225">PAS_TROUVE</a></div><div class="ttdeci">@ PAS_TROUVE</div><div class="ttdef"><b>Definition:</b> commun.h:24</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698a5e430736927eaac26c85c3dbf4568577"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a5e430736927eaac26c85c3dbf4568577">ERR_DIM</a></div><div class="ttdeci">@ ERR_DIM</div><div class="ttdef"><b>Definition:</b> commun.h:27</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698a986ba25f0bb0fceab386445bf961a4d8"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698a986ba25f0bb0fceab386445bf961a4d8">ERREUR</a></div><div class="ttdeci">@ ERREUR</div><div class="ttdef"><b>Definition:</b> commun.h:23</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698aa5adfa848230154f452ac275e369df0a"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aa5adfa848230154f452ac275e369df0a">ERR_NULL</a></div><div class="ttdeci">@ ERR_NULL</div><div class="ttdef"><b>Definition:</b> commun.h:25</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698aaaeafdbf3aecc46864daa3cd829c7e05"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aaaeafdbf3aecc46864daa3cd829c7e05">ERR_MEM</a></div><div class="ttdeci">@ ERR_MEM</div><div class="ttdef"><b>Definition:</b> commun.h:28</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ab58a0b1d4be8cd01c0e89e899a888e35">CORRECT</a></div><div class="ttdeci">@ CORRECT</div><div class="ttdef"><b>Definition:</b> commun.h:22</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698ada4cdf64538736eedefd80dbca14c588"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698ada4cdf64538736eedefd80dbca14c588">ERR_SCAN</a></div><div class="ttdeci">@ ERR_SCAN</div><div class="ttdef"><b>Definition:</b> commun.h:29</div></div>
+<div class="ttc" id="acommun_8h_html_a5edd7aad54ac059bf561cf2f92017698aee2636dfa4f419989a92f4fdcf321c9a"><div class="ttname"><a href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698aee2636dfa4f419989a92f4fdcf321c9a">ERR_ECRAN_NULL</a></div><div class="ttdeci">@ ERR_ECRAN_NULL</div><div class="ttdef"><b>Definition:</b> commun.h:30</div></div>
+<div class="ttc" id="acommun_8h_html_a92d7e7c3f294e4ec971caee12626243c"><div class="ttname"><a href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a></div><div class="ttdeci">booleen_t</div><div class="ttdef"><b>Definition:</b> commun.h:52</div></div>
+<div class="ttc" id="acommun_8h_html_a92d7e7c3f294e4ec971caee12626243ca1bb75a30f93b418be2d44aa0eafe9be3"><div class="ttname"><a href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a></div><div class="ttdeci">@ FAUX</div><div class="ttdef"><b>Definition:</b> commun.h:53</div></div>
+<div class="ttc" id="acommun_8h_html_a92d7e7c3f294e4ec971caee12626243ca763723ffe7a348ad0f5c1b58a331b523"><div class="ttname"><a href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243ca763723ffe7a348ad0f5c1b58a331b523">VRAI</a></div><div class="ttdeci">@ VRAI</div><div class="ttdef"><b>Definition:</b> commun.h:54</div></div>
+<div class="ttc" id="acommun_8h_html_ae216d84241fbd75f539723ead939977a"><div class="ttname"><a href="commun_8h.html#ae216d84241fbd75f539723ead939977a">Pause</a></div><div class="ttdeci">void Pause(char *mess)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

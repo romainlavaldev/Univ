@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie: Référence du fichier Ecran/ecran.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_239d87ce9101b63f8d944565a49246da.html">Ecran</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier ecran.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Structures et Primitives de l'&eacute;cran.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;ncurses.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="coord_8h_source.html">coord.h</a>&gt;</code><br />
+</div>
+<p><a href="ecran_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecran__t.html">ecran_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type d'&eacute;cran.  <a href="structecran__t.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aaf812652daf434e6d5f279a5f5b581ae"><td class="memItemLeft" align="right" valign="top"><a id="aaf812652daf434e6d5f279a5f5b581ae" name="aaf812652daf434e6d5f279a5f5b581ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECRAN_NULL</b>&#160;&#160;&#160;NULL</td></tr>
+<tr class="memdesc:aaf812652daf434e6d5f279a5f5b581ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur d'un ecran inexistant. <br /></td></tr>
+<tr class="separator:aaf812652daf434e6d5f279a5f5b581ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca526ea995c9e731e39e067c06b3483"><td class="memItemLeft" align="right" valign="top"><a id="afca526ea995c9e731e39e067c06b3483" name="afca526ea995c9e731e39e067c06b3483"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECRAN_LG_MESS</b>&#160;&#160;&#160;256</td></tr>
+<tr class="memdesc:afca526ea995c9e731e39e067c06b3483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Longueur max d'un message. <br /></td></tr>
+<tr class="separator:afca526ea995c9e731e39e067c06b3483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc18871eb1191398f8358e474306ad05"><td class="memItemLeft" align="right" valign="top"><a id="abc18871eb1191398f8358e474306ad05" name="abc18871eb1191398f8358e474306ad05"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECRAN_PAUSE_MESS</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:abc18871eb1191398f8358e474306ad05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de secondes minimum pendant lesquelles un message reste affiche. <br /></td></tr>
+<tr class="separator:abc18871eb1191398f8358e474306ad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7569e758fa96b5a3b2c7f45c6e39f8dd"><td class="memItemLeft" align="right" valign="top"><a id="a7569e758fa96b5a3b2c7f45c6e39f8dd" name="a7569e758fa96b5a3b2c7f45c6e39f8dd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECRAN_TEMPS_BREF</b>&#160;&#160;&#160;500000</td></tr>
+<tr class="memdesc:a7569e758fa96b5a3b2c7f45c6e39f8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause sur affichage durant un bref instant. <br /></td></tr>
+<tr class="separator:a7569e758fa96b5a3b2c7f45c6e39f8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ea44d84728226ad31b56be57caeb97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#ad0ea44d84728226ad31b56be57caeb97">ecran_lc_wprint0</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  l,  c,  mess)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , 0 , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td></tr>
+<tr class="separator:ad0ea44d84728226ad31b56be57caeb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5105a1b8c6cb3dec60535d9d14d0e448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a5105a1b8c6cb3dec60535d9d14d0e448">ecran_lc_wprint1</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  l,  c,  mess,  temps)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , temps , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td></tr>
+<tr class="separator:a5105a1b8c6cb3dec60535d9d14d0e448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a266029a028f7b534bdefca124059726a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a266029a028f7b534bdefca124059726a">ecran_lc_wprint2</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  l,  c,  mess,  temps,  mode)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , temps , mode )</td></tr>
+<tr class="separator:a266029a028f7b534bdefca124059726a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3457e94eda91f44d71686ab3a12811d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a3457e94eda91f44d71686ab3a12811d3">ecran_coord_wprint0</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  coord,  mess)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , 0 , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td></tr>
+<tr class="separator:a3457e94eda91f44d71686ab3a12811d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e06f3d3ae95fc1c992d117407bb6ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a99e06f3d3ae95fc1c992d117407bb6ac">ecran_coord_wprint1</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  coord,  mess,  temps)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , temps , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td></tr>
+<tr class="separator:a99e06f3d3ae95fc1c992d117407bb6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a4dedf4676463a1c4764426b72b55a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a3a4dedf4676463a1c4764426b72b55a3">ecran_coord_wprint2</a>(<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>,  coord,  mess,  temps,  mode)&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , temps , mode )</td></tr>
+<tr class="separator:a3a4dedf4676463a1c4764426b72b55a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:aa13e23b03209bc08318d94af7dda84a5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a> { <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> =0
+, <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a653ac682bebab995c4e29c878893dfbf">ECRAN_REVERSE</a> =1
+ }</td></tr>
+<tr class="memdesc:aa13e23b03209bc08318d94af7dda84a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode video de l'ecran.  <a href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa13e23b03209bc08318d94af7dda84a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ae19add82a6a288be395c33cd6afb0dec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structecran__t.html">ecran_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#ae19add82a6a288be395c33cd6afb0dec">ecran_creer</a> (const int H_affichage, const int L_affichage)</td></tr>
+<tr class="memdesc:ae19add82a6a288be395c33cd6afb0dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation d'un ecran type "ncurses".  <a href="ecran_8h.html#ae19add82a6a288be395c33cd6afb0dec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae19add82a6a288be395c33cd6afb0dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f1c8982bd3ffe13bbf610feeb9a3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#aa7f1c8982bd3ffe13bbf610feeb9a3c5">ecran_detruire</a> (<a class="el" href="structecran__t.html">ecran_t</a> **<a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:aa7f1c8982bd3ffe13bbf610feeb9a3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruction fenetre de l'affichage.  <a href="ecran_8h.html#aa7f1c8982bd3ffe13bbf610feeb9a3c5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7f1c8982bd3ffe13bbf610feeb9a3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f83e5ed5e7a63db6361c4a79735e6d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a1f83e5ed5e7a63db6361c4a79735e6d0">ecran_message_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, char *const mess)</td></tr>
+<tr class="memdesc:a1f83e5ed5e7a63db6361c4a79735e6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'un message dans la fenetre des messages.  <a href="ecran_8h.html#a1f83e5ed5e7a63db6361c4a79735e6d0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1f83e5ed5e7a63db6361c4a79735e6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6819777dea147f54cc093c8d313e43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#aff6819777dea147f54cc093c8d313e43">ecran_message_pause_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, char *const mess)</td></tr>
+<tr class="memdesc:aff6819777dea147f54cc093c8d313e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'un message avec une pause de ECRAN_PAUSE_MESS seconde(s) avant qu'il ne soit &eacute;ventuellment effac&eacute; dans la fenetre des messages.  <a href="ecran_8h.html#aff6819777dea147f54cc093c8d313e43">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aff6819777dea147f54cc093c8d313e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8082426d907f90f2687617cdb6ea0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a2c8082426d907f90f2687617cdb6ea0f">ecran_message_droite_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, char *const mess)</td></tr>
+<tr class="memdesc:a2c8082426d907f90f2687617cdb6ea0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'un message justifi&eacute; &agrave; droite dans la fenetre des messages.  <a href="ecran_8h.html#a2c8082426d907f90f2687617cdb6ea0f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2c8082426d907f90f2687617cdb6ea0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a428c0ae5e0afbdd488ee4347e9d01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#ab5a428c0ae5e0afbdd488ee4347e9d01">ecran_message_droite_pause_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, char *const mess)</td></tr>
+<tr class="memdesc:ab5a428c0ae5e0afbdd488ee4347e9d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'un message justifi&eacute; &agrave; droite avec une pause de ECRAN_PAUSE_MESS seconde(s) avant qu'il ne soit &eacute;ventuellment effac&eacute; dans la fenetre des messages.  <a href="ecran_8h.html#ab5a428c0ae5e0afbdd488ee4347e9d01">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab5a428c0ae5e0afbdd488ee4347e9d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30013457af34b32a6bc647b4e58e2ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a30013457af34b32a6bc647b4e58e2ad4">ecran_stderr_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:a30013457af34b32a6bc647b4e58e2ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la sortie standard d'erreurs sur l'ecran dans la fenetre des messages.  <a href="ecran_8h.html#a30013457af34b32a6bc647b4e58e2ad4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a30013457af34b32a6bc647b4e58e2ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0adc635ad1a6bcd413c704cc3a0b2d38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, const int lig, const int col, char *const mess, unsigned int micro_seconds, <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a> video_mode)</td></tr>
+<tr class="memdesc:a0adc635ad1a6bcd413c704cc3a0b2d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran.  <a href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0adc635ad1a6bcd413c704cc3a0b2d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12849f8e46851311fda8126bfb9699ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, const <a class="el" href="structcoord__t.html">coord_t</a> *const coord, char *const mess, unsigned int micro_seconds, <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a> video_mode)</td></tr>
+<tr class="memdesc:a12849f8e46851311fda8126bfb9699ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran.  <a href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a12849f8e46851311fda8126bfb9699ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289b54ace99733dc01d877f121a2f04c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a289b54ace99733dc01d877f121a2f04c">ecran_message_stop_afficher</a> (<a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, char *const mess)</td></tr>
+<tr class="memdesc:a289b54ace99733dc01d877f121a2f04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop l'affichage jusqu'a l'entree d'une touche avec inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran en clignotant.  <a href="ecran_8h.html#a289b54ace99733dc01d877f121a2f04c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a289b54ace99733dc01d877f121a2f04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methodes d'acces</div></td></tr>
+<tr class="memitem:a87d1d83a4152ab0f39ea46372ee948f7"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a87d1d83a4152ab0f39ea46372ee948f7">ecran_affichage_get</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:a87d1d83a4152ab0f39ea46372ee948f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acces &agrave; la fenetre d'affichage.  <a href="ecran_8h.html#a87d1d83a4152ab0f39ea46372ee948f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a87d1d83a4152ab0f39ea46372ee948f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbd59abda599f58a44f69ecf1d68c82"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a0bbd59abda599f58a44f69ecf1d68c82">ecran_messages_get</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:a0bbd59abda599f58a44f69ecf1d68c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acces &agrave; la fenetre des messages.  <a href="ecran_8h.html#a0bbd59abda599f58a44f69ecf1d68c82">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0bbd59abda599f58a44f69ecf1d68c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bad21dd362d47912d5e1cde51ac7989"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a3bad21dd362d47912d5e1cde51ac7989">ecran_y_messages_get</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:a3bad21dd362d47912d5e1cde51ac7989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acces au numero de la affichage (l'ordonnee y) ou commence la fenetre des messages.  <a href="ecran_8h.html#a3bad21dd362d47912d5e1cde51ac7989">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3bad21dd362d47912d5e1cde51ac7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60b08a2a80db413bedf076290213f57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#ac60b08a2a80db413bedf076290213f57">ecran_largeur_get</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:ac60b08a2a80db413bedf076290213f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largeur de la fenetre de la affichage <br  />
+  <a href="ecran_8h.html#ac60b08a2a80db413bedf076290213f57">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac60b08a2a80db413bedf076290213f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8a37907b848caeaeaedebd40c685bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#afb8a37907b848caeaeaedebd40c685bc">ecran_hauteur_get</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:afb8a37907b848caeaeaedebd40c685bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largeur de la fenetre de la affichage <br  />
+  <a href="ecran_8h.html#afb8a37907b848caeaeaedebd40c685bc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afb8a37907b848caeaeaedebd40c685bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Tests</div></td></tr>
+<tr class="memitem:a7bcec0c82f3912580d7bae7789a76a2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#a92d7e7c3f294e4ec971caee12626243c">booleen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecran_8h.html#a7bcec0c82f3912580d7bae7789a76a2b">ecran_existe</a> (const <a class="el" href="structecran__t.html">ecran_t</a> *const <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>)</td></tr>
+<tr class="memdesc:a7bcec0c82f3912580d7bae7789a76a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test d'exsiatnce d'un ecran.  <a href="ecran_8h.html#a7bcec0c82f3912580d7bae7789a76a2b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7bcec0c82f3912580d7bae7789a76a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Structures et Primitives de l'&eacute;cran. </p>
+<p >L'ecran est g&eacute;r&eacute; par les primitives de la biblioth&egrave;que "curses" <br  />
+ L'ecran est divise en 2 fenetres : </p><ul>
+<li>la fenetre d'affichage </li>
+<li>la fenetre des messages </li>
+</ul>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a3457e94eda91f44d71686ab3a12811d3" name="a3457e94eda91f44d71686ab3a12811d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3457e94eda91f44d71686ab3a12811d3">&#9670;&nbsp;</a></span>ecran_coord_wprint0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_coord_wprint0</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">coord, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , 0 , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pou <code>ecran_coord_wprint( ecran , coord , mess , 0 , ECRAN_NORMAL )</code> </p>
+
+</div>
+</div>
+<a id="a99e06f3d3ae95fc1c992d117407bb6ac" name="a99e06f3d3ae95fc1c992d117407bb6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e06f3d3ae95fc1c992d117407bb6ac">&#9670;&nbsp;</a></span>ecran_coord_wprint1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_coord_wprint1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">coord, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">temps&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , temps , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pour <code>ecran_coord_wprint( ecran , coord , mess , temps , ECRAN_NORMAL )</code> </p>
+
+</div>
+</div>
+<a id="a3a4dedf4676463a1c4764426b72b55a3" name="a3a4dedf4676463a1c4764426b72b55a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4dedf4676463a1c4764426b72b55a3">&#9670;&nbsp;</a></span>ecran_coord_wprint2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_coord_wprint2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">coord, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">temps, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a12849f8e46851311fda8126bfb9699ab">ecran_coord_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , coord , mess , temps , mode )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pour <code>ecran_coord_wprint( ecran , coord , mess , temps , mode )</code> </p>
+
+</div>
+</div>
+<a id="ad0ea44d84728226ad31b56be57caeb97" name="ad0ea44d84728226ad31b56be57caeb97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ea44d84728226ad31b56be57caeb97">&#9670;&nbsp;</a></span>ecran_lc_wprint0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_lc_wprint0</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">l, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , 0 , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pour <code>ecran_lc_wprint( ecran , l , c , mess , 0 , ECRAN_NORMAL ) </code> </p>
+
+</div>
+</div>
+<a id="a5105a1b8c6cb3dec60535d9d14d0e448" name="a5105a1b8c6cb3dec60535d9d14d0e448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5105a1b8c6cb3dec60535d9d14d0e448">&#9670;&nbsp;</a></span>ecran_lc_wprint1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_lc_wprint1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">l, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">temps&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , temps , <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d">ECRAN_NORMAL</a> )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pour <code>ecran_lc_wprint( ecran , l , c , mess , temps , ECRAN_NORMAL ) </code> </p>
+
+</div>
+</div>
+<a id="a266029a028f7b534bdefca124059726a" name="a266029a028f7b534bdefca124059726a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a266029a028f7b534bdefca124059726a">&#9670;&nbsp;</a></span>ecran_lc_wprint2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ecran_lc_wprint2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">l, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mess, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">temps, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="ecran_8h.html#a0adc635ad1a6bcd413c704cc3a0b2d38">ecran_lc_wprint</a>( <a class="el" href="automate__synchrone__ecran_8c.html#a256159c27c11f65fc4d45837e9f9c921">ecran</a> , l , c , mess , temps , mode )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Raccourci pour <code>ecran_lc_wprint( ecran , l , c , mess , temps , mode ) </code> </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="aa13e23b03209bc08318d94af7dda84a5" name="aa13e23b03209bc08318d94af7dda84a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13e23b03209bc08318d94af7dda84a5">&#9670;&nbsp;</a></span>ecran_mode_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mode video de l'ecran. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d" name="aa13e23b03209bc08318d94af7dda84a5a3ec41210228976579cad12dd65c0114d"></a>ECRAN_NORMAL&#160;</td><td class="fielddoc"><p >Ecran en mode normal </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa13e23b03209bc08318d94af7dda84a5a653ac682bebab995c4e29c878893dfbf" name="aa13e23b03209bc08318d94af7dda84a5a653ac682bebab995c4e29c878893dfbf"></a>ECRAN_REVERSE&#160;</td><td class="fielddoc"><p >Ecran en mode inverse vidéo </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a87d1d83a4152ab0f39ea46372ee948f7" name="a87d1d83a4152ab0f39ea46372ee948f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d1d83a4152ab0f39ea46372ee948f7">&#9670;&nbsp;</a></span>ecran_affichage_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOWS * ecran_affichage_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acces &agrave; la fenetre d'affichage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a12849f8e46851311fda8126bfb9699ab" name="a12849f8e46851311fda8126bfb9699ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12849f8e46851311fda8126bfb9699ab">&#9670;&nbsp;</a></span>ecran_coord_wprint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_coord_wprint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoord__t.html">coord_t</a> *const&#160;</td>
+          <td class="paramname"><em>coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>micro_seconds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a>&#160;</td>
+          <td class="paramname"><em>video_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coord</td><td>: coordonnees d'affichage du message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">micro_seconds</td><td>: temps de pause du message en microsecondes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">video_mode</td><td>: mode ecran pour afficher le message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae19add82a6a288be395c33cd6afb0dec" name="ae19add82a6a288be395c33cd6afb0dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19add82a6a288be395c33cd6afb0dec">&#9670;&nbsp;</a></span>ecran_creer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structecran__t.html">ecran_t</a> * ecran_creer </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>H_affichage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>L_affichage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creation d'un ecran type "ncurses". </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">H_affichage</td><td>: hauteur demandée pour l'écran </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">L_affichage</td><td>: largeur demandée pour l'écran</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>On ne peut avoir qu'un ecran par console/terminal</p><ul>
+<li>si H_affichage = 0 --&gt; hauteur ecran = hauteur console</li>
+<li>si L_affichage = 0 --&gt; largeur ecran = largeur console </li>
+</ul>
+<p >La sortie erreur standard est redirig&eacute;e dans un fichier pour afficher les erreurs dans la fenetre des messages et ne pas polluer l'affichage de l'ecran </p><dl class="section return"><dt>Renvoie</dt><dd>la structure <a class="el" href="structecran__t.html" title="Type d&#39;écran.">ecran_t</a> instanciée </dd></dl>
+
+</div>
+</div>
+<a id="aa7f1c8982bd3ffe13bbf610feeb9a3c5" name="aa7f1c8982bd3ffe13bbf610feeb9a3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f1c8982bd3ffe13bbf610feeb9a3c5">&#9670;&nbsp;</a></span>ecran_detruire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="commun_8h.html#a5edd7aad54ac059bf561cf2f92017698">err_t</a> ecran_detruire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> **&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruction fenetre de l'affichage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ecran</td><td>fenetre &agrave; d&eacute;truire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>code erreur err_t </dd></dl>
+
+</div>
+</div>
+<a id="a7bcec0c82f3912580d7bae7789a76a2b" name="a7bcec0c82f3912580d7bae7789a76a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcec0c82f3912580d7bae7789a76a2b">&#9670;&nbsp;</a></span>ecran_existe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean_t ecran_existe </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test d'exsiatnce d'un ecran. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: un ecran </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb8a37907b848caeaeaedebd40c685bc" name="afb8a37907b848caeaeaedebd40c685bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8a37907b848caeaeaedebd40c685bc">&#9670;&nbsp;</a></span>ecran_hauteur_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ecran_hauteur_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Largeur de la fenetre de la affichage <br  />
+ </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac60b08a2a80db413bedf076290213f57" name="ac60b08a2a80db413bedf076290213f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60b08a2a80db413bedf076290213f57">&#9670;&nbsp;</a></span>ecran_largeur_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ecran_largeur_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Largeur de la fenetre de la affichage <br  />
+ </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0adc635ad1a6bcd413c704cc3a0b2d38" name="a0adc635ad1a6bcd413c704cc3a0b2d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0adc635ad1a6bcd413c704cc3a0b2d38">&#9670;&nbsp;</a></span>ecran_lc_wprint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_lc_wprint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>micro_seconds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ecran_8h.html#aa13e23b03209bc08318d94af7dda84a5">ecran_mode_t</a>&#160;</td>
+          <td class="paramname"><em>video_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lig</td><td>: numero de la ligne d'affichage du message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>: numero de colonne </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">micro_seconds</td><td>: temps de pause du message en microsecondes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">video_mode</td><td>: mode ecran pour afficher le message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f83e5ed5e7a63db6361c4a79735e6d0" name="a1f83e5ed5e7a63db6361c4a79735e6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f83e5ed5e7a63db6361c4a79735e6d0">&#9670;&nbsp;</a></span>ecran_message_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_message_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage d'un message dans la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c8082426d907f90f2687617cdb6ea0f" name="a2c8082426d907f90f2687617cdb6ea0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8082426d907f90f2687617cdb6ea0f">&#9670;&nbsp;</a></span>ecran_message_droite_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_message_droite_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage d'un message justifi&eacute; &agrave; droite dans la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab5a428c0ae5e0afbdd488ee4347e9d01" name="ab5a428c0ae5e0afbdd488ee4347e9d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5a428c0ae5e0afbdd488ee4347e9d01">&#9670;&nbsp;</a></span>ecran_message_droite_pause_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_message_droite_pause_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage d'un message justifi&eacute; &agrave; droite avec une pause de ECRAN_PAUSE_MESS seconde(s) avant qu'il ne soit &eacute;ventuellment effac&eacute; dans la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff6819777dea147f54cc093c8d313e43" name="aff6819777dea147f54cc093c8d313e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6819777dea147f54cc093c8d313e43">&#9670;&nbsp;</a></span>ecran_message_pause_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_message_pause_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage d'un message avec une pause de ECRAN_PAUSE_MESS seconde(s) avant qu'il ne soit &eacute;ventuellment effac&eacute; dans la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a289b54ace99733dc01d877f121a2f04c" name="a289b54ace99733dc01d877f121a2f04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289b54ace99733dc01d877f121a2f04c">&#9670;&nbsp;</a></span>ecran_message_stop_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_message_stop_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>mess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop l'affichage jusqu'a l'entree d'une touche avec inscription d'une chaine de caracteres dans la fenetre d'affichage de l'ecran en clignotant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mess</td><td>: message a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0bbd59abda599f58a44f69ecf1d68c82" name="a0bbd59abda599f58a44f69ecf1d68c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbd59abda599f58a44f69ecf1d68c82">&#9670;&nbsp;</a></span>ecran_messages_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW * ecran_messages_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acces &agrave; la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a30013457af34b32a6bc647b4e58e2ad4" name="a30013457af34b32a6bc647b4e58e2ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30013457af34b32a6bc647b4e58e2ad4">&#9670;&nbsp;</a></span>ecran_stderr_afficher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecran_stderr_afficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage de la sortie standard d'erreurs sur l'ecran dans la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran dans lequel on affiche </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3bad21dd362d47912d5e1cde51ac7989" name="a3bad21dd362d47912d5e1cde51ac7989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bad21dd362d47912d5e1cde51ac7989">&#9670;&nbsp;</a></span>ecran_y_messages_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecran_affichage_id_t ecran_y_messages_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structecran__t.html">ecran_t</a> *const&#160;</td>
+          <td class="paramname"><em>ecran</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acces au numero de la affichage (l'ordonnee y) ou commence la fenetre des messages. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ecran</td><td>: ecran d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

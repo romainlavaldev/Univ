@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP_Jeu_Vie: TP du Jeu de la Vie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TP_Jeu_Vie<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">TP du Jeu de la Vie </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>B. Jacob</dd></dl>
+<h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<h2><a class="anchor" id="Objectifs"></a>
+Objectifs</h2>
+<p >Les objectifs de ce TP sont d'avoir un aperçu </p><ul>
+<li>
+d'un code réentrant en transformant un code standard en un code utilisable par une thread </li>
+<li>
+de la gestion des threads POSIX </li>
+</ul>
+<h2><a class="anchor" id="cadre_sec"></a>
+Cadre</h2>
+<p >Le cadre de ce TP est le même que celui du Jeu de la Vie vu en L2 dans le module "Algorithmique 2" de Mme Py, avec les automates cellulaires<br  />
+</p>
+<p >Un automate cellulaire est constitué d’un ensemble de cellules qui évoluent par générations successives. On représente un automate cellulaire par une grille dont chaque case est occupée soit par une cellule vivante, soit par une cellule morte. Chaque case possède huit cases voisines (les quatre côtés plus les quatre coins). Les règles habituelles d’évolution d'une cellule sont les suivantes : </p><ul>
+<li>
+Si une cellule est vivante et est entourée par deux ou trois cellules vivantes alors elle reste en vie à la génération suivante, sinon elle meurt </li>
+<li>
+Si une cellule est morte et est entourée par exactement trois cellules vivantes alors elle naît à la génération suivante </li>
+</ul>
+<p>Ce seront les règles par défaut des programmes à faire dans ce TP mais vous pouvez les modifier avec les options. Pour plus d'information sur ces options vous pouvez: </p><ul>
+<li>
+appeler les programmes des répertoires <code>Prog_Standard</code> et <code>Prog_Concurrente</code> avec l'option <code>&ndash;help</code> </li>
+<li>
+voir quelques les exemples d'appels de <code><a class="el" href="automate__synchrone__stdio_8c.html" title="Exécution d&#39;un Automate Synchrone sur sortie standard.">automate_synchrone_stdio.c</a></code> à <a class="el" href="index.html#exemples_appels">exemples_appels</a> </li>
+</ul>
+<p >Nous allons dans ce TP ajouter la notion de synchronisme/asynchronisme à ces automates cellulaires: </p><ul>
+<li>
+<b>Automate Synchrone</b> Signifie que chaque cellule de l’automate cellulaire est mise à jour à chaque itération. C'est la même version que celle vue en L2 </li>
+<li>
+<b>Automate Asynchrone</b> Signifie qu'à chaque itération, une seule cellule, choisie aléatoirement, est mise à jour. Il existe deux types d’asynchronisme: <ul>
+<li>
+<b>A mémoire</b> : si l’automate possède <code>N</code> cellules, alors nous gardons en mémoire les cellules mises à jour de sorte que, durant toutes les <code>N</code> itérations, chaque cellule n’a été mise à jour qu’une seule fois. </li>
+<li>
+<b>Sans mémoire</b> : ici, à chaque itération, on choisit aléatoirement une cellule à mettre à jour, peu importe les mises à jour précédentes. </li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="TP_sec"></a>
+Sujet du TP</h1>
+<h2><a class="anchor" id="sources_sec"></a>
+Organisation des fichiers sources</h2>
+<p >Les fichiers sont répartis dans les répertoires suivants </p><ul>
+<li>
+<p class="startli"><code>Programmation_Concurrente</code> : répertoire dédié aux programmes que vous devez produire. Chaque cellule est gérée par une thread qui s'exécute en concurrence avec les autres </p><ul>
+<li>
+avec les E/S standards </li>
+<li>
+avec les E/S sur un écran géré par <code>ncurses</code> </li>
+</ul>
+<p class="endli"></p>
+</li>
+<li>
+<code>Programmation_Standard</code> : répertoire dédié aux exemples de programme de Jeu de la Vie. Les cellules sont gérées les unes après les autres, sans concurrence. <ul>
+<li>
+avec les E/S standards: <ul>
+<li>
+<p class="startli"><a class="el" href="automate__synchrone__stdio_8c.html" title="Exécution d&#39;un Automate Synchrone sur sortie standard.">automate_synchrone_stdio.c</a> : gestion d'un automate en synchrone ; chaque cellule de l’automate cellulaire est mise à jour à chaque itération. </p>
+<p class="interli"><a class="anchor" id="exemples_appels"></a> Exemples d'appels: </p><ul>
+<li>
+<p class="startli"><code>./automate_synchrone_stdio 10 10 3</code> : Calcule 3 générations sur un automate cellulaire de dimensions 10X10 avec les règles de vie/mort par défaut. <br  />
+ C'est un exemple d'automate qui n'évoluera jamais car il ne possède aucune cellule vivante à son initialisation.</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>./automate_synchrone_stdio 10 10 3 -f../Fichiers/planeurs.txt</code> : Calcule 3 générations sur un automate cellulaire de dimensions 10X10. Les coordonnées des cellules d'initialisation sont prises dans le fichier <em>../Fichiers/planeurs.txt</em>. Les règles de vie/mort d'une cellule sont celles par défaut.</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>./automate_synchrone_stdio 10 10 3 -c4,4 -n1 -e8 -i0</code> : Calcule 3 générations sur un automate cellulaire de dimensions 10X10 avec une seule cellule d'initialisation en [4,4] avec les règles suivantes </p><ul>
+<li>
+naissance : une cellule est créée si elle est morte et qu'elle a un seul voisin <br  />
+ </li>
+<li>
+étouffement : une cellule vivante meurt étoufée si elle a plus de 8 voisins (impossible) </li>
+<li>
+isolement : une cellule vivante meurt isolée si elle a moins de 0 voisins (impossible) </li>
+</ul>
+<p>C'est un exemple d'automate qui anihile les règles de mort d'une cellule</p>
+<p class="endli"></p>
+</li>
+<li>
+<code>./automate_synchrone_stdio 10 10 3 -c4,4 -c5,5 -f../Fichiers/planeurs.txt -n2</code> : Calcule 3 générations sur un automate cellulaire de dimensions 10X10 avec toutes les cellules contenues dans <em>../Fichiers/planeurs.txt</em> plus 2 cellules en [4,4] et [5,5] . Les règles de vie/mort sont celles par défaut sauf <ul>
+<li>
+naissance : une cellule est créée si elle est morte et qu'elle a 2 voisins </li>
+</ul>
+</li>
+</ul>
+<p class="endli"></p>
+</li>
+<li>
+<a class="el" href="automate__asynchrone__stdio_8c.html" title="Exécution d&#39;un Automate Asynchrone sur sortie standard.">automate_asynchrone_stdio.c</a> : gestion d'un automate en asynchronisme total sans mémoire ; à chaque itération, une cellule à mettre à jour est choisie aléatoirement, peu importe les mises à jour précédentes. </li>
+<li>
+<a class="el" href="automate__asynchrone__memoire__stdio_8c.html" title="Exécution d&#39;un Automate Asynchrone avec Memoire sur sortie standard.">automate_asynchrone_memoire_stdio.c</a> : gestion d'un automate en asynchronisme total avec mémoire ; si l’automate possède <b>N</b> cellules, alors on garde en mémoire les cellules mises à jour de sorte que durant toutes les <b>N</b> itérations , chaque cellule n’est mise à jour qu’une seule fois. Dans ce cas nous considérons que les <b>N</b> itérations forment une génération. </li>
+</ul>
+</li>
+<li>
+<p class="startli">avec les E/S sur un écran géré par <code>ncurses</code>. On retrouve les mêmes programmes, seul l'affichage est différent. </p><ul>
+<li>
+<a class="el" href="automate__synchrone__ecran_8c.html" title="Exécution d&#39;un Automate Synchrone avec sortie sur un écran géré par ncurses">automate_synchrone_ecran.c</a> </li>
+<li>
+<a class="el" href="automate__asynchrone__ecran_8c.html" title="Exécution d&#39;un Automate Asynchrone avec sortie sur un écran géré par ncurses">automate_asynchrone_ecran.c</a> </li>
+<li>
+automate_asynchrone_memoire_ecran.c </li>
+</ul>
+<p class="endli"></p>
+</li>
+</ul>
+</li>
+<li>
+<code>Automate</code> : TDA d'un Automate. C'est un tableau de cases. </li>
+<li>
+<code>Cellule</code> : TDA des Cellules. Une cellule est posée sur une case de l'automate </li>
+<li>
+<code>Commun</code> : fonctions, constantes communes à tous les TDA </li>
+<li>
+<code>Coord</code> : TDA d'une coordonnée. Les coordonnées sont utilisées pour repérer une case dans l'automate. Chaque cellule possède également les coordonnées de la case où elle se trouve. </li>
+<li>
+<code>Documentation</code> : répertoire dédié aux fichiers html de documentation de ce TP. </li>
+<li>
+<code>Ecran</code> : TDA écran géré par bibliothèque <code>ncurses</code> </li>
+</ul>
+<p>On y trouve aussi divers fichiers pour la gestion du TP: </p><ul>
+<li>
+<code>JEUVIE.TAGS</code> : fichier d'indexation des fonctions, constantes... (utile sous <code>emacs</code>) </li>
+<li>
+<p class="startli">les <code>Makefile*</code> : fichiers de compilation à utiliser avec <code>make</code></p>
+<p class="endli"></p>
+</li>
+</ul>
+<h2><a class="anchor" id="travail1_sec"></a>
+Travail à faire</h2>
+<p >Vous devez transformer les programmes du répertoire <code>Programmation_Standard</code>, dans lesquels les cellules sont gérées séquentiellement, dans des versions où les cellules sont indépendantes, gérées par des threads. Les versions modifiées que vous devez produire sont prévues pour être stockées dans le répertoire <code>Programmation_Concurrente</code>. Par ordre de difficulté il vaut mieux faire:</p>
+<ol>
+<li>
+<a class="el" href="automate__asynchrone__stdio_8c.html" title="Exécution d&#39;un Automate Asynchrone sur sortie standard.">automate_asynchrone_stdio.c</a> et <a class="el" href="automate__asynchrone__ecran_8c.html" title="Exécution d&#39;un Automate Asynchrone avec sortie sur un écran géré par ncurses">automate_asynchrone_ecran.c</a> </li>
+<li>
+<a class="el" href="automate__asynchrone__memoire__stdio_8c.html" title="Exécution d&#39;un Automate Asynchrone avec Memoire sur sortie standard.">automate_asynchrone_memoire_stdio.c</a> automate_asynchrone_memoire_ecran.c </li>
+<li>
+<a class="el" href="automate__synchrone__stdio_8c.html" title="Exécution d&#39;un Automate Synchrone sur sortie standard.">automate_synchrone_stdio.c</a> et automate_asynchrone_memoire_ecran.c </li>
+</ol>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

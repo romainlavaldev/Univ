@@ -1,0 +1,309 @@
+
+Automate/automate.c,423
+int automate_hauteur_get(8,59
+int automate_largeur_get(14,164
+int automate_dim_get(20,269
+int automate_hauteur_set(30,502
+int automate_largeur_set(38,649
+int automate_dim_set(46,796
+cellule_t * automate_get(62,1131
+int automate_set(88,1871
+automate_t * automate_new(114,2417
+int automate_destroy(154,3561
+int automate_nb_voisins_get(175,3966
+int automate_cellule_evoluer(223,5049
+int automate_generer(246,5552
+
+Automate/automate_ecran.c,66
+ecran_t * automate_ecran_creer(8,95
+void automate_wprint(28,598
+
+Automate/automate_stdio.c,26
+void automate_print(8,90
+
+Automate/test_automate_ecran.c,334
+#define FICHIER_INIT 27,761
+#define HAUTEUR 28,809
+#define LARGEUR 29,828
+#define NB_GENERATIONS_SYNCHRONE 30,847
+#define NB_GENERATIONS_ASYNCHRONE 31,883
+#define NB_GENERATIONS_ASYNCHRONE_MEMOIRE 32,921
+ecran_t * ecran 41,1184
+void hand_arret(46,1276
+int creer_cellules(56,1418
+int detruire_cellules(88,2346
+main(121,3236
+
+Automate/test_automate_stdio.c,303
+#define FICHIER_INIT 26,717
+#define HAUTEUR 27,765
+#define LARGEUR 28,784
+#define NB_GENERATIONS_SYNCHRONE 29,803
+#define NB_GENERATIONS_ASYNCHRONE 30,839
+#define NB_GENERATIONS_ASYNCHRONE_MEMOIRE 31,877
+void Pause(35,969
+int creer_cellules(45,1137
+int detruire_cellules(77,2043
+main(110,2868
+
+Cellule/cellule.c,1142
+char * cellule_etat_2_string(15,279
+int cellule_set(31,573
+coord_t * cellule_coords_get(54,1034
+int cellule_coords_set(61,1145
+cellule_etat_t cellule_etat_get(72,1352
+int cellule_etat_set(77,1464
+cellule_etat_t cellule_etat_next_get(85,1613
+int cellule_etat_next_set(90,1735
+int cellule_tuer(98,1892
+int cellule_naitre(104,2002
+int cellule_next_tuer(110,2116
+int cellule_next_naitre(116,2236
+int cellule_generation_get(126,2426
+int cellule_generation_set(131,2539
+cellule_t * cellule_new(143,2734
+cellule_t * cellule_coord_new(185,4021
+cellule_t * cellule_initialiser(199,4447
+int cellule_evoluer(221,4944
+int cellule_generer(259,5757
+int cellule_destroy(283,6158
+booleen_t cellule_vivante(300,6407
+booleen_t cellule_morte(306,6533
+booleen_t cellule_existe(312,6655
+cellule_regles_t cellule_regles_default(324,6937
+int cellule_regles_initialiser(334,7153
+int cellule_regles_naissance_get(350,7525
+int cellule_regles_naissance_set(355,7638
+int cellule_regles_isolement_get(362,7793
+int cellule_regles_isolement_set(367,7906
+int cellule_regles_etouffement_get(374,8061
+int cellule_regles_etouffement_set(379,8178
+
+Cellule/cellule_ecran.c,66
+void cellule_ecran_desintegrer(8,85
+void cellule_wprint(63,1407
+
+Cellule/cellule_stdio.c,52
+void cellule_map(12,187
+void cellule_print(38,773
+
+Cellule/test_cellule_ecran.c,60
+ecran_t * ecran 9,215
+void hand_arret(12,293
+main(21,398
+
+Cellule/test_cellule_stdio.c,49
+#define FICHIER_TEST_COORDS 11,259
+main(15,357
+
+Coord/coord.c,299
+int coord_set(14,220
+int coord_get(28,446
+int coord_lig_get(38,609
+int coord_col_get(44,691
+coord_t * coord_new(53,806
+int coord_destroy(80,1342
+int coord_comparer(96,1577
+int coord_comparer_cb(111,1818
+int coord_copier(123,1971
+coord_t coord_vide(142,2337
+char * coord_2_string(158,2537
+
+Coord/coord_stdio.c,48
+void coord_print(14,222
+int coord_scan(27,420
+
+Coord/coords.c,283
+int coords_nb_get(9,119
+coord_t coords_get(16,257
+coord_t * coords_adr_get(30,673
+extern int coords_set(54,1317
+extern int coords_add(79,1993
+int coords_del(117,2892
+coords_t * coords_new(175,4246
+int coords_destroy(196,4639
+coords_copier(220,5003
+int coords_seek(261,5913
+
+Coord/coords_stdio.c,50
+void coords_print(11,155
+int coords_scan(38,829
+
+Coord/test_coord_stdio.c,44
+#define FICHIER_TEST_COORD 3,26
+main(6,95
+
+Coord/test_coords_stdio.c,45
+#define FICHIER_TEST_COORDS 3,27
+main(6,99
+
+Ecran/ecran.c,737
+void ecran_dim_console_get(15,214
+WINDOW * ecran_affichage_get(34,493
+WINDOW * ecran_messages_get(40,599
+int ecran_y_messages_get(46,703
+int ecran_largeur_get(52,806
+int ecran_hauteur_get(58,903
+ecran_t * ecran_creer(71,1208
+int ecran_detruire(179,4704
+void ecran_message_effacer(222,5607
+void ecran_message_display(234,5844
+void ecran_message_droite_display(255,6345
+void ecran_message_afficher(284,7023
+void ecran_message_pause_afficher(290,7151
+void ecran_message_droite_afficher(297,7312
+void ecran_message_droite_pause_afficher(303,7454
+void ecran_message_stop_afficher(310,7629
+booleen_t  ecran_existe(327,7983
+void ecran_stderr_afficher(342,8222
+void ecran_lc_wprint(374,8978
+void ecran_coord_wprint(417,10073
+
+Ecran/test_ecran.c,11
+main(8,85
+
+Prog_Standard/automate_asynchrone_memoire_stdio.c,174
+int verifier_cellules(15,322
+int creer_cellules(48,1137
+int detruire_cellules(80,2076
+void usage(115,2942
+static struct option longopts[longopts128,3794
+main(141,4213
+
+Prog_Standard/automate_asynchrone_stdio.c,174
+int verifier_cellules(16,302
+int creer_cellules(50,1118
+int detruire_cellules(82,2058
+void usage(117,2924
+static struct option longopts[longopts130,3797
+main(143,4216
+
+Prog_Standard/automate_synchrone_ecran.c,222
+ecran_t * ecran 12,290
+void hand_arret(17,389
+int verifier_cellules(28,557
+int creer_cellules(61,1372
+int detruire_cellules(93,2314
+void usage(128,3180
+static struct option longopts[longopts141,4054
+main(156,4591
+
+Prog_Standard/automate_synchrone_stdio.c,174
+int verifier_cellules(16,300
+int creer_cellules(49,1115
+int detruire_cellules(81,2055
+void usage(116,2920
+static struct option longopts[longopts129,3796
+main(142,4215
+
+Prog_Standard/test_automate_ecran.c,329
+#define FICHIER_INIT 8,115
+#define HAUTEUR 9,163
+#define LARGEUR 10,182
+#define NB_GENERATIONS_SYNCHRONE 11,201
+#define NB_GENERATIONS_ASYNCHRONE 12,237
+#define NB_GENERATIONS_ASYNCHRONE_MEMOIRE 13,275
+ecran_t * ecran 22,538
+void hand_arret(27,637
+int creer_cellules(37,778
+int detruire_cellules(69,1705
+main(102,2640
+
+Automate/automate.h,118
+#define _AUTOMATE_H_2,21
+  int hauteur 34,602
+  int largeur 35,649
+  cellule_t ** tab 36,696
+} automate_t 37,768
+
+Automate/automate_ecran.h,32
+#define _AUTOMATE_ECRAN_H_2,27
+
+Automate/automate_stdio.h,32
+#define _AUTOMATE_STDIO_H_2,27
+
+Cellule/cellule.h,384
+#define _CELLULE_H_2,20
+typedef enum { INIT 22,398
+               MORTE 23,456
+               VIVANTE 24,502
+} cellule_etat_t 25,549
+  coord_t * coords 39,811
+  cellule_etat_t  etat 40,867
+  cellule_etat_t  etat_next 41,950
+  int generation 42,1038
+} cellule_t 43,1104
+  int naissance 51,1253
+  int isolement 52,1336
+  int etouffement 53,1433
+} cellule_regles_t 54,1531
+
+Cellule/cellule_ecran.h,31
+#define _CELLULE_ECRAN_H_2,26
+
+Cellule/cellule_stdio.h,31
+#define _CELLULE_STDIO_H_2,26
+
+Commun/commun.h,448
+#define _COMMUN_H_2,19
+#define CORRECT 37,829
+#define ERREUR 38,847
+#define PAS_TROUVE 39,866
+#define ERR_NULL 40,888
+#define ERR_FILE 41,908
+#define ERR_DIM 42,928
+#define ERR_MEM 43,947
+#define ERR_SCAN 44,966
+#define STRING_LG_MAX 52,1105
+typedef enum { FAUX 57,1177
+typedef enum { FAUX , VRAI 57,1177
+typedef enum { FAUX , VRAI } booleen_t 57,1177
+#define NAISSANCE 74,1594
+#define ISOLEMENT 75,1615
+#define ETOUFFEMENT 76,1636
+
+Coord/coord.h,136
+#define _COORD_H_2,18
+typedef struct coord_s18,335
+     int l 20,360
+     int c 21,395
+} coord_t 22,430
+#define COORD_VIDE 25,444
+
+Coord/coord_stdio.h,29
+#define _COORD_STDIO_H_2,24
+
+Coord/coords.h,118
+#define _COORDS_H_2,19
+typedef struct coords_s21,247
+  int nb 23,273
+  coord_t * coords 24,284
+} coords_t 25,305
+
+Coord/coords_stdio.h,30
+#define _COORDS_STDIO_H_2,25
+
+Ecran/ecran.h,812
+#define _ECRAN_H_2,18
+#define ECRAN_NULL 31,528
+#define ECRAN_LG_MESS 37,620
+#define ECRAN_PAUSE_MESS 43,762
+#define ERR_ECRAN_NULL 49,809
+#define ECRAN_TEMPS_BREF 59,955
+#define ecran_lc_wprint0(65,1006
+#define ecran_lc_wprint1(66,1116
+#define ecran_lc_wprint2(67,1238
+#define ecran_coord_wprint0(69,1360
+#define ecran_coord_wprint1(70,1474
+#define ecran_coord_wprint2(71,1600
+typedef struct ecran_s84,1858
+  WINDOW * affichage 86,1883
+  WINDOW * messages 87,1935
+  int largeur 88,1987
+  int y_messages 89,2033
+  char * nom_err 90,2097
+} ecran_t 91,2150
+typedef enum ecran_mode_s 97,2229
+typedef enum ecran_mode_s { ECRAN_NORMAL=97,2229
+typedef enum ecran_mode_s { ECRAN_NORMAL=0 , ECRAN_REVERSE=97,2229
+typedef enum ecran_mode_s { ECRAN_NORMAL=0 , ECRAN_REVERSE=1 } ecran_mode_t 97,2229

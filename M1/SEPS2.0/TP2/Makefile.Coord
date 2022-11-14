@@ -1,0 +1,11 @@
+
+# --- Coord ---
+
+$(DirCoord)/coord.o : $(DirCoord)/coord.c $(DirCoord)/coord.h 
+	cd $(DirCoord) ; make -f Makefile coord.o  
+$(DirCoord)/coord_stdio.o : $(DirCoord)/coord_stdio.c $(DirCoord)/coord_stdio.h
+	cd $(DirCoord) ; make -f Makefile coord_stdio.o 
+$(DirCoord)/coords.o : $(DirCoord)/coords.c $(DirCoord)/coords.h 
+	cd $(DirCoord) ; make -f Makefile coords.o 
+$(DirCoord)/coords_stdio.o :  $(DirCoord)/coords_stdio.c $(DirCoord)/coords_stdio.h 
+	cd $(DirCoord) ; make -f Makefile coords_stdio.o 

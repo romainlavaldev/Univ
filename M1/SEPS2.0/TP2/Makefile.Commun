@@ -1,0 +1,5 @@
+
+# --- Commun ---
+
+$(DirCommun)/commun.o : $(DirCommun)/commun.c $(DirCommun)/commun.h
+	cd $(DirCommun) ; make -f Makefile commun.o
