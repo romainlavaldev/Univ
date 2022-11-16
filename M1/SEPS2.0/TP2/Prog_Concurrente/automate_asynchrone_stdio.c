@@ -41,6 +41,19 @@ int verifier_cellules( const int hauteur , const int largeur , const coords_t * 
   return(CORRECT) ; 
 }
 
+void generation(int hauteur, int largeur, booleen_t verbose, automate_t* automate, cellule_regles_t regles, pthread_mutex_t mutex){
+  int i = random() % hauteur ;
+  int j = random() % largeur ; 
+  if( verbose) printf(" Evolution de la cellule [%d,%d]\n" , i, j ) ;
+
+  /*! <li> Evolution de cette cellule */
+  pthread_mutex_lock(&mutex);
+  automate_cellule_evoluer( automate , automate_get( automate , i , j ) , &regles );
+  pthread_mutex_unlock(&mutex);
+
+  pthread_exit(NULL);
+}
+
 /*
  * Programme Principal 
  */
@@ -209,6 +222,16 @@ main( int argc , char * argv[] )
   /********************************/
   /* Gestion des cellules A FAIRE */
   /********************************/
+
+  pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+  pthread_t thread_id;
+  pthread_attr_t attr;
+
+  for (int i = 0; i < nb_generations; i++)
+  {
+    pthread_create(&thread_id, &attr, void (*generation)(hauteur, largeur, verbose, automate, regles, mutex), (void *)NULL);
+  }
+  
   
   /* ----- */
 
