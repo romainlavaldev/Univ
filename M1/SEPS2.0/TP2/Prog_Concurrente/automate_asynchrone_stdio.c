@@ -41,7 +41,16 @@ int verifier_cellules( const int hauteur , const int largeur , const coords_t * 
   return(CORRECT) ; 
 }
 
-void generation(int hauteur, int largeur, booleen_t verbose, automate_t* automate, cellule_regles_t regles, pthread_mutex_t mutex){
+typedef struct param_s{
+  int hauteur,
+  int largeur,
+  booleen_t verbose,
+  automate_t* automate,
+  cellule_regles_t regles,
+  pthread_mutex_t mutex
+} params_t;
+
+void generation(params_t * params){
   int i = random() % hauteur ;
   int j = random() % largeur ; 
   if( verbose) printf(" Evolution de la cellule [%d,%d]\n" , i, j ) ;
@@ -224,12 +233,16 @@ main( int argc , char * argv[] )
   /********************************/
 
   pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-  pthread_t thread_id;
+  pthread_t thread_id[hauteur * largeur];
   pthread_attr_t attr;
 
-  for (int i = 0; i < nb_generations; i++)
+  params_t params;
+
+  params.
+
+  for (int j = 0; j < hauteur * largeur; j++)
   {
-    pthread_create(&thread_id, &attr, void (*generation)(hauteur, largeur, verbose, automate, regles, mutex), (void *)NULL);
+    pthread_create(&thread_id[j], &attr, (void *)generation, &params);
   }
   
   

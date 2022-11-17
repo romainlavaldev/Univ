@@ -1,0 +1,26 @@
+un plateau de 10x10 cases 
+
+
+20 pions de chaque couleur (2 couleurs différentes)
+
+le plateau possède de couleurs de cases
+de cases côte à côte non pas la même couleur
+
+Tous les pions sont posés sur les cases noires
+2 lignes au milieu du plateau sépare les 2 couleurs de points
+
+un pion peut se deplacer en diagonal en avant d'une case en restant sur sa couleur
+il ne peut pas se déplacer en arrière
+il ne peut pas se déplacer sur une case déjà occupé
+
+un pion peut sauter un autre de l'autre couleur pour le miam en diagonal
+
+tant qu'un point peut sauter un autre pion il continue de sauter
+
+un pion qui arrive en haut devient une dame
+
+une dame se deplace en diagonal d'autant de cases qu'elle veut
+
+un seul pion à la fois peut se deplacer en même temps
+
+Lorsqu’un pion se trouve en présence, diagonalement, d’une pièce adverse derrière laquelle se trouve une case libre, il doit obligatoirement sauter par-dessus cette pièce et occuper la case libre.

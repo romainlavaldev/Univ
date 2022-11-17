@@ -1,0 +1,57 @@
+Scenario : 
+
+--------------------------------------------------------------------------------------
+Initialisation de la partie
+--------------------------------------------------------------------------------------
+
+Lancer le jeu
+--
+affichage d'un plateau de jeu de 10*10 cases avec deux couleurs différentes dont les cases côte à côte n'ont pas la même couleur.
+Des points sont placés sur les cases d'une même couleurs. Deux lignes de cases vides au milieu du plateau séparent les pions de la première couleurs de la deuxième.
+C'est au tour du premier joueur de jouer.
+
+--------------------------------------------------------------------------------------
+Déroulement de la partie
+--------------------------------------------------------------------------------------
+
+Le deuxième joueur clique sur un poin pour le déplacer
+--
+Rien ne se passe il ne peut pas jouer.
+
+
+Le premier joueur clique sur un poin pour le déplacer
+--
+vérifier qu'un seul pion peut se mouvoir sur le plateau dans un tour. Un pion peut ce deplacer seulement de 1 case
+en diagonale, en restant sur sa couleur, vers l'avant.
+
+
+Le joueur 1 déplace un pion
+--
+vérifier que le pion se déplace bien sur la case sélectionner
+La main passe au deuxième joueur
+
+--------------------------------------------------------------------------------------
+Décanillement d'un pion
+--------------------------------------------------------------------------------------
+
+Si un pion peut manger un autre pion
+--
+Ce pion est obligé d'être joué.
+vérifier que le pion mangé n'est pas de la même couleur que le pion qui mange.
+
+
+Un pion va manger plusieurs pions dans le même tour
+--
+vérifier que le pion peut encore manger d'autre pions, aussi qu'il ne s'arrête pas tant qu'il peut manger.
+
+--------------------------------------------------------------------------------------
+Amélioration
+--------------------------------------------------------------------------------------
+
+Un pion arrive sur le côté opposé de son côté de départ
+--
+Le pion se transforme en dame.
+
+Un pion arrive sur le même côté que son côté de départ
+--
+Il ne se passe rien
