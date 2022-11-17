@@ -238,7 +238,12 @@ main( int argc , char * argv[] )
 
   params_t params;
 
-  params.
+  params.hauteur = hauteur;
+  params.largeur = largeur;
+  params.verbose = verbose;
+  params.automate = automate;
+  params.regles = regles;
+  params.mutex = mutex;
 
   for (int j = 0; j < hauteur * largeur; j++)
   {
