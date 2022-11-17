@@ -215,7 +215,7 @@ main( int argc , char * argv[] )
       /*! <ol> */
        if( verbose ) printf( "---Passage Generation %d\n" , n ) ;
       
-      nb_cell_evoluees = 0 ; 
+      nb_cell_evoluees = 0 ;
       while( nb_cell_evoluees < Nb_Cellules )
 	{
 	  /*! <li>  Choix d'une cellule au hasard */

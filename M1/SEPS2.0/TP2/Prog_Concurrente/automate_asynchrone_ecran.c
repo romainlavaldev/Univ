@@ -56,6 +56,55 @@ int verifier_cellules( const int hauteur , const int largeur , const coords_t * 
  * Programme Principal 
  */
 
+typedef struct params_s {
+  int i;
+  int j;
+  booleen_t verbose;
+  automate_t* automate;
+  cellule_regles_t * regles;
+  pthread_mutex_t * mutex;
+  int * gen;
+  int nb_gen;
+} params_t;
+
+void generation(void * args){
+
+  params_t * params = (params_t *)args; 
+  if( params->verbose) printf(" Evolution de la cellule [%d,%d]\n" , params->i, params->j ) ;
+
+  booleen_t fini = FAUX;
+
+  while(fini == FAUX){
+
+    usleep(random()%10000);
+    
+    pthread_mutex_lock(params->mutex);
+
+    if (*(params->gen) <= params->nb_gen)
+    {
+      automate_cellule_evoluer(params->automate, automate_get(params->automate, params->i, params->j), params->regles);
+      
+      system("clear") ;
+      printf("ASYCHRONE SANS MEMOIRE : Generation %d\n", *(params->gen)); 
+      automate_wprint(Ecran, params->automate);
+      usleep(100000);
+
+      automate_generer(params->automate);
+
+      *(params->gen) += 1;
+    }
+    else{
+      fini = VRAI;
+    }
+    
+      
+    pthread_mutex_unlock(params->mutex);
+  }
+
+  pthread_exit(NULL);
+}
+
+
 static
 void usage( char * nomprog ) 
 {
@@ -229,6 +278,50 @@ main( int argc , char * argv[] )
   /********************************/
   /* Gestion des cellules A FAIRE */
   /********************************/
+
+  pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+  pthread_t thread_id[hauteur][largeur];
+  pthread_attr_t attr;
+  pthread_attr_init(&attr);
+  pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
+
+  int gen_act = 1;
+
+
+  params_t params_tab[hauteur][largeur];
+  params_t params;
+
+  params.verbose = verbose;
+  params.automate = automate;
+  params.regles = &regles;
+  params.mutex = &mutex;
+  params.gen = &gen_act;
+  params.nb_gen = nb_generations;
+
+  for (int i = 0; i < hauteur; i++)
+  {
+    for (int j = 0; j < largeur; j++)
+    {
+      params.i = i;
+      params.j = j;
+      params_tab[i][j] = params;
+
+      pthread_create(&thread_id[i][j], &attr, (void *)generation, &params_tab[i][j]);
+    }
+  }
+
+
+  for(int i = 0; i < hauteur; i++){
+    for(int j = 0; j < largeur; j++){
+
+      pthread_join(thread_id[i][j], NULL);
+
+    }
+  }
+
+  pthread_attr_destroy(&attr);
+  pthread_mutex_destroy(&mutex);
+
   
   ecran_message_stop_afficher( Ecran , "<Entree>" ) ;
     

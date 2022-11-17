@@ -45,6 +45,88 @@ int verifier_cellules( const int hauteur , const int largeur , const coords_t * 
  * Programme Principal 
  */
 
+//Parametres pour les threads cellules
+typedef struct params_cellules_s {
+  int i;
+  int j;
+  booleen_t verbose;
+  automate_t* automate;
+  cellule_regles_t * regles;
+  pthread_mutex_t * mutex;
+  int * gen;
+  int nb_gen;
+  pthread_barrier_t * barriere;
+} params_cellules_t;
+
+//Parametres pour le thread de gestion des generations
+typedef struct params_gestion_gen_s {
+  pthread_mutex_t * mutex;
+  int * gen;
+  int nb_gen;
+  pthread_barrier_t * barriere;
+  automate_t * automate;
+} params_gestion_gen_t;
+
+//Fonction pour les threads cellules
+void generation(void * args){
+
+  params_cellules_t * params = (params_cellules_t *)args; 
+  if( params->verbose) printf(" Evolution de la cellule [%d,%d]\n" , params->i, params->j ) ;
+
+  booleen_t fini = FAUX;
+
+  while(fini == FAUX){
+
+    usleep(random()%10000);
+    
+    pthread_mutex_lock(params->mutex);
+
+    if (*(params->gen) <= params->nb_gen)
+    {
+      automate_cellule_evoluer(params->automate, automate_get(params->automate, params->i, params->j), params->regles);
+
+      automate_generer(params->automate);
+    }
+    else{
+      fini = VRAI;
+    }
+      
+    pthread_mutex_unlock(params->mutex);
+
+    //On se bloque sur la barriere pour signaler qu'on a fait notre generation
+    pthread_barrier_wait(params->barriere);
+  }
+
+  pthread_exit(NULL);
+}
+
+//fonction pour le thread de generation des cellules
+void gestion_gen(void * args){
+  params_gestion_gen_t * params = (params_gestion_gen_t *)args;
+
+  while (*(params->gen) <= params->nb_gen)
+  {
+    
+    //Attente que toutes les cellules aient passee leur tour
+    pthread_barrier_wait(params->barriere);
+
+    pthread_mutex_lock(params->mutex);
+
+    system("clear") ;
+      printf("SYNCHRONE : Generation %d\n" , *(params->gen) ) ; 
+    automate_print(stdout, params->automate);
+    usleep(100000);
+
+    *(params->gen) += 1;
+
+    pthread_mutex_unlock(params->mutex);
+  }
+
+  pthread_barrier_wait(params->barriere);
+  
+  pthread_exit(NULL);
+}
+
 static
 void usage( char * nomprog ) 
 {
@@ -207,6 +289,78 @@ main( int argc , char * argv[] )
   /********************************/
   /* Gestion des cellules A FAIRE */
   /********************************/
+
+   //Variables generales pour la gestion par threads
+  pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+  pthread_t thread_id[hauteur][largeur];
+  pthread_attr_t attr;
+  pthread_attr_init(&attr);
+  pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
+
+  int gen_act = 1;
+  int n_cellules = hauteur * largeur;
+  int cellules_evolue = 0;
+
+
+  //Parametres des threads cellules
+  pthread_barrier_t barriere;
+  //+1 important pour compter aussi le thread de gestion
+  pthread_barrier_init(&barriere, NULL, hauteur * largeur + 1);
+
+  params_cellules_t params_tab[hauteur][largeur];
+  params_cellules_t params;
+
+  params.verbose = verbose;
+  params.automate = automate;
+  params.regles = &regles;
+  params.mutex = &mutex;
+  params.gen = &gen_act;
+  params.nb_gen = nb_generations;
+  params.barriere = &barriere;
+
+
+
+  //Lancement threads cellules
+  for (int i = 0; i < hauteur; i++)
+  {
+    for (int j = 0; j < largeur; j++)
+    {
+      params.i = i;
+      params.j = j;
+      params_tab[i][j] = params;
+
+      pthread_create(&thread_id[i][j], &attr, (void *)generation, &params_tab[i][j]);
+    }
+  }
+
+  //Parametres pour le thread de gestion
+  pthread_t thread_id_gestion_gen;
+  params_gestion_gen_t params_gestion_gen;
+  params_gestion_gen.barriere = &barriere;
+  params_gestion_gen.gen = &gen_act;
+  params_gestion_gen.mutex = &mutex;
+  params_gestion_gen.nb_gen = nb_generations;
+  params_gestion_gen.automate = automate;
+
+  //Lancement gestion des generations
+  pthread_create(&thread_id_gestion_gen, &attr, (void *)gestion_gen, &params_gestion_gen);
+
+
+  //Attente des threads
+  for(int i = 0; i < hauteur; i++){
+    for(int j = 0; j < largeur; j++){
+
+      pthread_join(thread_id[i][j], NULL);
+
+    }
+  }
+
+  //Attente thread gestion des generations
+  pthread_join(thread_id_gestion_gen, NULL);
+
+  pthread_attr_destroy(&attr);
+  pthread_mutex_destroy(&mutex);
+  
   
   /* ----- */
 

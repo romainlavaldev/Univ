@@ -7,7 +7,7 @@ Initialisation de la partie
 Lancer le jeu
 --
 affichage d'un plateau de jeu de 10*10 cases avec deux couleurs différentes dont les cases côte à côte n'ont pas la même couleur.
-Des points sont placés sur les cases d'une même couleurs. Deux lignes de cases vides au milieu du plateau séparent les pions de la première couleurs de la deuxième.
+Des pions sont placés sur les cases d'une même couleurs. Deux lignes de cases vides au milieu du plateau séparent les pions de la première couleurs de la deuxième.
 C'est au tour du premier joueur de jouer.
 
 --------------------------------------------------------------------------------------

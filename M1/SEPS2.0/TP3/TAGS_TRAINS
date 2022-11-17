@@ -1,0 +1,243 @@
+
+ecran.c,435
+void ecran_dim_console_lire(14,194
+WINDOW * ecran_ligne_lire(30,461
+WINDOW * ecran_messages_lire(36,554
+ecran_ligne_id_t  ecran_y_messages_lire(42,653
+int ecran_largeur_lire(48,765
+ecran_t * ecran_creer(58,895
+int ecran_detruire(153,3574
+void ecran_message_afficher(188,4262
+void ecran_message_pause_afficher(209,4764
+void ecran_message_effacer(219,4960
+boolean_t  ecran_existe(233,5190
+void ecran_stderr_afficher(248,5428
+
+ligne.c,110
+ligne_initialiser(11,164
+ligne_moniteur_ajouter(29,569
+moniteur_voie_unique_t * ligne_moniteur_get(61,1320
+
+ligne_ncurses.c,21
+ligne_wprint(10,113
+
+ligne_stdio.c,41
+ligne_mapper(10,128
+ligne_print(29,538
+
+moniteur_voie_unique.c,517
+extern moniteur_voie_unique_t * moniteur_voie_unique_creer(13,209
+extern int moniteur_voie_unique_detruire(43,1168
+extern void moniteur_voie_unique_entree_ouest(66,1761
+extern void moniteur_voie_unique_sortie_est(85,2421
+extern void moniteur_voie_unique_entree_est(98,2928
+extern void moniteur_voie_unique_sortie_ouest(117,3590
+voie_unique_t * moniteur_voie_unique_get(135,4142
+train_id_t moniteur_max_trains_get(142,4277
+int moniteur_voie_unique_extraire(152,4462
+int moniteur_voie_unique_inserer(161,4695
+
+sens_ncurses.c,84
+void sens_wprint(5,53
+void sens_blanc_wprint(24,460
+void sens_vide_wprint(31,636
+
+sens_stdio.c,81
+void sens_print(5,51
+void sens_blanc_print(22,283
+void sens_vide_print(28,340
+
+test_ecran.c,11
+main(8,85
+
+test_ligne.c,11
+main(7,71
+
+test_ligne_ncurses.c,36
+#define TEMPS_VOIR 6,68
+main(9,96
+
+test_sens.c,11
+main(6,69
+
+test_sens_ncurses.c,11
+main(8,91
+
+test_train.c,11
+main(7,94
+
+test_train_ncurses.c,11
+main(8,92
+
+test_voie_unique.c,11
+main(8,97
+
+test_voie_unique_ncurses.c,38
+#define TEMPS_VOIR 7,94
+main(10,122
+
+trafic_1.c,161
+#define TAILLE_MARQUES 16,267
+#define trafic_attente(17,293
+moniteur_voie_unique_t * moniteur 21,355
+static void trafic_train_deplacer(30,517
+main(234,5782
+
+trafic_2.c,276
+#define TAILLE_MARQUES 15,231
+#define trafic_attente(16,257
+ligne_t ligne 20,319
+moniteur_voie_unique_t * tab_moniteurs_voies_uniques[tab_moniteurs_voies_uniques21,335
+moniteur_voie_unique_id_t nb_sections 22,420
+static void trafic_train_deplacer(31,585
+main(145,3063
+
+trafic_3.c,295
+#define TAILLE_MARQUES 23,432
+#define trafic_attente(24,458
+ecran_t * ecran 28,520
+ligne_t * ligne 29,538
+voie_unique_t * tab_voies_uniques[tab_voies_uniques30,556
+train_id_t nb_total_trains 31,612
+train_id_t nb_max_trains 32,641
+static void trafic_train_deplacer(41,793
+main(170,3043
+
+train.c,200
+sens_t train_sens_get(15,172
+void train_sens_set(20,249
+marque_t train_marque_get(27,362
+void train_marque_set(32,445
+void train_set(39,568
+int train_compare(48,691
+boolean_t train_vide(55,848
+
+train_ncurses.c,200
+void train_marque_wprint(14,177
+void train_marque_blanc_wprint(21,387
+void train_marque_vide_wprint(28,570
+void train_wprint(35,752
+void train_blanc_wprint(45,989
+void train_vide_wprint(52,1164
+
+train_stdio.c,193
+void train_marque_print(14,175
+void train_marque_blanc_print(20,266
+void train_marque_vide_print(26,331
+void train_print(32,395
+void train_blanc_print(44,564
+void train_vide_print(52,678
+
+voie_unique.c,248
+#define max(9,135
+voie_unique_creer(16,224
+voie_unique_detruire(41,782
+voie_unique_collision_verifier(55,1002
+voie_unique_train_rechercher(80,1538
+voie_unique_zone_decaler(113,2174
+voie_unique_inserer(129,2536
+voie_unique_extraire(150,2967
+
+voie_unique_ncurses.c,32
+void voie_unique_wprint(11,165
+
+voie_unique_stdio.c,280
+void voie_unique_voie_vide_print(9,106
+void voie_unique_voie_blanc_print(15,180
+extern void voie_unique_mapper(22,287
+extern void voie_unique_ligne_1_print(65,1234
+voie_unique_ligne_2_print(138,2926
+voie_unique_ligne_3_print(192,4135
+extern void voie_unique_print(244,5344
+
+attributs_voie_unique.h,52
+  train_id_t cpt[cpt1,0
+  train_t zone[zone2,67
+
+commun.h,218
+#define _COMMUN_H_2,19
+#define max(4,39
+typedef enum boolean_s 6,72
+typedef enum boolean_s { B_FALSE 6,72
+typedef enum boolean_s { B_FALSE , B_TRUE 6,72
+typedef enum boolean_s { B_FALSE , B_TRUE } boolean_t 6,72
+
+ecran.h,235
+#define _ECRAN_H_2,18
+#define ECRAN_NULL 30,523
+#define ECRAN_LG_MESS 36,615
+#define ECRAN_PAUSE_MESS 42,757
+int Ecran_Nb_Ref 52,911
+typedef unsigned int ecran_ligne_id_t 62,1031
+typedef struct ecran_s68,1148
+} ecran_t 75,1479
+
+ligne.h,69
+#define _LIGNE_H_2,18
+typedef struct ligne_s6,72
+} ligne_t 10,286
+
+ligne_ncurses.h,31
+#define _LIGNE_NCURSES_H_2,26
+
+ligne_stdio.h,30
+#define _LIGNE_STDOUT_H_2,25
+
+moniteur_voie_unique.h,205
+#define _MONITEUR_VOIE_UNIQUE_H_2,33
+typedef struct moniteur_voie_unique_s7,114
+} moniteur_voie_unique_t 18,743
+#define MAX_MONITEURS_VOIES_UNIQUES 20,771
+typedef int moniteur_voie_unique_id_t 22,860
+
+sens.h,199
+#define _SENS_H_2,17
+typedef enum sens_s 6,48
+typedef enum sens_s { OUEST_EST=6,48
+typedef enum sens_s { OUEST_EST=0, EST_OUEST=6,48
+typedef enum sens_s { OUEST_EST=0, EST_OUEST=1 } sens_t 6,48
+
+sens_ncurses.h,30
+#define _SENS_NCURSES_H_2,25
+
+sens_stdio.h,28
+#define _SENS_STDIO_H_2,23
+
+train.h,184
+#define _TRAIN_H_2,18
+#define MAX_TRAINS 8,99
+#define TRAIN_VIDE 10,123
+typedef char marque_t 12,171
+typedef int train_id_t 13,196
+typedef struct train_s19,270
+} train_t 23,337
+
+train_ncurses.h,67
+#define _TRAIN_NCURSES_H_2,26
+#define TAILLE_TRAIN_NCURSES 8,122
+
+train_stdio.h,29
+#define _TRAIN_STDIO_H_2,24
+
+voie_unique.h,926
+#define _VOIE_UNIQUE_H_2,24
+typedef enum zone_s 10,108
+typedef enum zone_s { OUEST=10,108
+typedef enum zone_s { OUEST=0 , UNIQUE=10,108
+typedef enum zone_s { OUEST=0 , UNIQUE=2, EST=10,108
+typedef enum zone_s { OUEST=0 , UNIQUE=2, EST=3 } zone_t 10,108
+typedef enum zone_id_s 11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=0, ZONE_ID_OUEST_EO=11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=0, ZONE_ID_OUEST_EO=1, ZONE_ID_UNIQUE=11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=0, ZONE_ID_OUEST_EO=1, ZONE_ID_UNIQUE=2, ZONE_ID_EST_OE=11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=0, ZONE_ID_OUEST_EO=1, ZONE_ID_UNIQUE=2, ZONE_ID_EST_OE=3, ZONE_ID_EST_EO=11,167
+typedef enum zone_id_s { ZONE_ID_OUEST_OE=0, ZONE_ID_OUEST_EO=1, ZONE_ID_UNIQUE=2, ZONE_ID_EST_OE=3, ZONE_ID_EST_EO=4 } zone_id_t 11,167
+typedef struct voie_unique_s13,301
+} voie_unique_t 17,464
+
+voie_unique_ncurses.h,37
+#define _VOIE_UNIQUE_NCURSES_H_2,32
+
+voie_unique_stdio.h,35
+#define _VOIE_UNIQUE_STDIO_H_2,30
